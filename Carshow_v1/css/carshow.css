@@ -26,3 +26,36 @@ body {
   background-color: #c13a3a;
 
 }
+.btn-nav-vehicletype{
+  margin-left: 0px;
+  color: #c13a3a;
+  background-color: #ffffff;
+  border-color: #333232;
+}
+
+.btn-nav-vehicletype:hover{
+  color: #ffffff;
+  background-color: #c14949;
+  border-color: #fff;
+}
+
+.btn-nav-vehicletype:not(:disabled):not(.disabled):active, .btn-nav-vehicletype:not(:disabled):not(.disabled).active,
+.show > .btn-nav-vehicletype.dropdown-toggle {
+  color: #ffffff;
+  background-color: #c14949;
+  border-color: #fff;
+}
+
+.hr-style {
+  margin-top: 0.01em;
+  margin-bottom: 0.01em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 0.5px;
+  border-color: rgba(0,0,0,.15);
+}
+
+.nav-bar-homepage{
+  padding-left: 1%;
+}
