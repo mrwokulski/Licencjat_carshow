@@ -26,23 +26,28 @@ body {
   background-color: #c13a3a;
 
 }
-.btn-nav-vehicletype{
+.btn-nav-vehicletype:hover{
   margin-left: 0px;
   color: #c13a3a;
-  background-color: #ffffff;
-  border-color: #333232;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.15);
+  border-radius: 0px;
+
+  margin: 0 auto;
+  text-align: center;
 }
 
-.btn-nav-vehicletype:hover{
-  color: #ffffff;
-  background-color: #c14949;
+.btn-nav-vehicletype{
+  color: #fff;
+  background-color: #c13a3a;
   border-color: #fff;
+  border-radius: 0px;
 }
 
 .btn-nav-vehicletype:not(:disabled):not(.disabled):active, .btn-nav-vehicletype:not(:disabled):not(.disabled).active,
 .show > .btn-nav-vehicletype.dropdown-toggle {
-  color: #ffffff;
-  background-color: #c14949;
+  color: #fff;
+  background-color: #c13a3a;
   border-color: #fff;
 }
 
@@ -57,5 +62,5 @@ body {
 }
 
 .nav-bar-homepage{
-  padding-left: 1%;
+  padding-left: 5%;
 }
