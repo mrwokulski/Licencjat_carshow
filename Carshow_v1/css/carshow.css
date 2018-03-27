@@ -19,17 +19,8 @@ body {
   }
 }
 
-.portfolio-item {
-  margin-bottom: 30px;
-}
-
-.pagination {
-  margin-bottom: 30px;
-}
-
 .nav-bg {
   background-color: #c13a3a;
-
 }
 
 .btn-nav-vehicletype{
@@ -159,4 +150,33 @@ body {
   background-color: #f2f3f6;
   height: 20px;
   padding-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .car-thumb {
+    margin-top: 20px;
+  }
+  .view-main-separator {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    background-color: #c13a3a;
+    height: 50px;
+    padding-top: 10px;
+  }
+  .view-main-blankseparator {
+    display: none;
+  }
+  .py-5 {
+    margin-top: 30px;
+  }
+}
+
+.main-footer {
+  width: 100%;
+}
+
+.row-margin{
+  margin-left: 0px;
+  margin-right: 0px;
 }
