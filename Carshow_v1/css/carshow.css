@@ -31,22 +31,23 @@ font-family: 'Titillium Web', sans-serif;
   background-color: #c13a3a;
 
 }
-.btn-nav-vehicletype:hover{
-  margin-left: 0px;
-  color: #c13a3a;
-  background-color: #fff;
-  border-color: rgba(0,0,0,.15);
-  border-radius: 0px;
-
-  margin: 0 auto;
-  text-align: center;
-}
 
 .btn-nav-vehicletype{
   color: #fff;
   background-color: #c13a3a;
   border-color: #fff;
   border-radius: 0px;
+  width: 228.33px;
+}
+
+.btn-nav-vehicletype:hover{
+  margin-left: 0px;
+  color: #c13a3a;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.15);
+  border-radius: 0px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .btn-nav-vehicletype:not(:disabled):not(.disabled):active, .btn-nav-vehicletype:not(:disabled):not(.disabled).active,
@@ -54,6 +55,23 @@ font-family: 'Titillium Web', sans-serif;
   color: #fff;
   background-color: #c13a3a;
   border-color: #fff;
+}
+
+.btn-nav-login{
+  color: #fff;
+  background-color: #c13a3a;
+  border-color: #fff;
+  border-radius: 0px;
+}
+
+.btn-nav-login:hover{
+  margin-left: 0px;
+  color: #c13a3a;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.15);
+  border-radius: 0px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hr-style {
@@ -68,4 +86,50 @@ font-family: 'Titillium Web', sans-serif;
 
 .nav-bar-homepage{
   padding-left: 5%;
+  padding-right: 10%;
+}
+
+.input-datatable {
+  background-color: #e2d5d5;
+  padding-top: 0;
+}
+
+@media (max-width: 550px) {
+  .input-datatable {
+    padding-top: 8%;
+  }
+}
+
+.input-form-search {
+  border-radius: 0;
+  background-color: rgb(255, 254, 254);
+}
+
+.input-form-search-year {
+  width: 40%;
+}
+
+.btn-search-form {
+  margin: 0 auto;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.btn-search {
+  color: #fff;
+  background-color: #c13a3a;
+  border-color: #fff;
+  border-radius: 0px;
+  width: 200px;
+  height: 40px;
+  padding-top: 5px;
+  margin-bottom: 15px;
+}
+
+.btn-search:hover{
+  margin-left: 0px;
+  color: #c13a3a;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.15);
+  border-radius: 0px;
 }
