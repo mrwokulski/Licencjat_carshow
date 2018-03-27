@@ -8,8 +8,8 @@
 
 body {
   /*font-family: 'Open Sans Condensed', sans-serif;*/
-font-family: 'Titillium Web', sans-serif;
-
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #f2f3f6;
   padding-top: 54px;
 }
 
@@ -105,8 +105,8 @@ font-family: 'Titillium Web', sans-serif;
   background-color: rgb(255, 254, 254);
 }
 
-.input-form-search-year {
-  width: 40%;
+.input-form-search:hover {
+  background-color: rgb(255, 254, 254);
 }
 
 .btn-search-form {
@@ -126,10 +126,37 @@ font-family: 'Titillium Web', sans-serif;
   margin-bottom: 15px;
 }
 
-.btn-search:hover{
+.btn-search:hover {
   margin-left: 0px;
   color: #c13a3a;
   background-color: #fff;
   border-color: rgba(0,0,0,.15);
   border-radius: 0px;
+}
+
+.view-main-content {
+  background-color: #f2f3f6;
+  padding-top: 0;
+}
+
+.car-thumb{
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.view-main-separator {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #c13a3a;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.view-main-blankseparator {
+  color: #fff;
+  background-color: #f2f3f6;
+  height: 20px;
+  padding-top: 10px;
 }
