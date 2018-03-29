@@ -242,15 +242,58 @@ body {
   border-radius: 0px;
 }
 
-
 .dropdown-item-nav-userpanel {
   display: block;
   width: 50%;
-  padding: 0.25rem 1.5rem;
+  padding: 0.5rem;
   clear: both;
   font-weight: 400;
   color: #212529;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
+}
+
+.userpanel-link-showmore {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+A.userpanel-link-showmore:hover{
+  color: #e2d5d5;
+  decoration: none;
+}
+
+.userpanel-link-showmore:visited{
+  color: #fff;
+  decoration: none;
+}
+
+/* Mobile versions */
+
+@media (max-width: 375px) {
+  .dropdown-menu-userpanel {
+    font-size: 4vw;
+  }
+  .userpanel-link-showmore{
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 665px) {
+  .dropdown-menu-userpanel {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 540px) {
+  .userpanel-link-showmore{
+    font-size: 3vw;
+  }
+}
+@media (min-width: 767px) {
+  .dropdown-menu-userpanel {
+    font-size: 0.85rem;
+  }
 }
