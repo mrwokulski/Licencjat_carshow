@@ -181,6 +181,18 @@ body {
   margin-right: 0px;
 }
 
+.index-link-showmore {
+  color: rgb(33, 37, 41);
+}
+
+.index-link-showmore:hover {
+  color: rgb(33, 37, 41);
+}
+
+.index-link-showmore:active {
+  color: rgb(33, 37, 41);
+}
+
 /* Userpanel-view css */
 
 .userpanel-view-table {
