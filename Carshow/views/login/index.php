@@ -1,60 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>2 Col Portfolio - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/carshow.css" rel="stylesheet">
-    <!-- JAK COS TYLKO TESTUJE TO-->
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">
-
-
-
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-bg">
-      <div class="container">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-nav-vehicletype" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kategorie pojazdów
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a><hr class="hr-style"/>
-            <a class="dropdown-item" href="#">Another action</a><hr class="hr-style"/>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-        <a class="navbar-brand nav-bar-homepage" href="#">Carshow</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        Lista rozwijana
-      -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="btn btn-nav-login" href="#">Zaloguj<span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-
-      </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
+<div class="container">
 
       <!-- Page Heading -->
       <!-- ADS
@@ -65,58 +9,15 @@
       <div class="row row-margin">
         <div class="col-md-5 input-datatable">
         <br/>
+        <form action="login/logIn" method="post">
+        Login:
+        <input type="text" name="login" value="admin" style="width: 100%">
+        Hasło:
+        <input type="password" name="password" value="qwerty123" style="width: 100%">
 
-        Marka:
-        <select class="form-control form-control-sm  input-form-search">
-          <option></option>
-        </select>
-        Model:
-        <select class="form-control form-control-sm input-form-search">
-            <option></option>
-        </select>
-        Rocznik:
-        <div class="row">
-          <div class="col-md-6">
-            <select class="form-control form-control-sm input-form-search" >
-              <option>od</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <select class="form-control form-control-sm input-form-search" >
-              <option>do</option>
-            </select>
-          </div>
-        </div>
-        Przebieg:
-        <div class="row">
-          <div class="col-md-6">
-            <select class="form-control form-control-sm input-form-search">
-              <option>od</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <select class="form-control form-control-sm input-form-search">
-              <option>do</option>
-            </select>
-          </div>
-        </div>
-        Cena:
-        <div class="row">
-          <div class="col-md-6">
-            <select class="form-control form-control-sm input-form-search">
-              <option>od</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <select class="form-control form-control-sm input-form-search">
-              <option>do</option>
-            </select>
-          </div>
-        </div>
-        <div class="">
-          <a class="index-link-showmore" href="#">Wyszukiwanie zaawansowane</a>
-        </div>
-          <p class="btn-search-form"><a class="btn btn-search" href="#">Szukaj</a></p>
+          <p class="btn-search-form"><input type="submit" value="Zaloguj" class="btn btn-search"></p>
+        </form>
+
         </div>
         <div class="col-md-7" style="background-color: gray;">
 
@@ -209,20 +110,3 @@
           <div class="view-main-blankseparator"></div>
     </div>
   </div>
-    <!-- /.container -->
-
-    <!-- Footer -->
-    <footer class="py-5 main-footer nav-bg">
-      <div>
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html>
