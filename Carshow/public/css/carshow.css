@@ -181,6 +181,18 @@ body {
   margin-right: 0px;
 }
 
+.index-link-showmore {
+  color: rgb(33, 37, 41);
+}
+
+.index-link-showmore:hover {
+  color: rgb(33, 37, 41);
+}
+
+.index-link-showmore:active {
+  color: rgb(33, 37, 41);
+}
+
 /* Userpanel-view css */
 
 .userpanel-view-table {
@@ -197,7 +209,8 @@ body {
   width: 100%;
 }
 
-.btn-nav-usermenu:hover{  
+.btn-nav-usermenu:hover{
+  margin-left: 0px;
   color: #c13a3a;
   background-color: #fff;
   border-color: rgba(0,0,0,.15);
@@ -221,7 +234,8 @@ body {
   border-color: rgba(0,0,0,.15);
 }
 
-.dropdown-menu-userpanel {  
+.dropdown-menu-userpanel {
+  position: absolute;
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -240,11 +254,10 @@ body {
   border-radius: 0px;
 }
 
-
 .dropdown-item-nav-userpanel {
   display: block;
   width: 50%;
-  padding: 0.25rem 1.5rem;
+  padding: 0.5rem;
   clear: both;
   font-weight: 400;
   color: #212529;
@@ -253,8 +266,46 @@ body {
   background-color: transparent;
 }
 
-.btn-dropdown-userpanel {
-  width: 100px;
-  margin-right: 100px;
- 
+.userpanel-link-showmore {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+A.userpanel-link-showmore:hover{
+  color: #e2d5d5;
+  decoration: none;
+}
+
+.userpanel-link-showmore:visited{
+  color: #fff;
+  decoration: none;
+}
+
+/* Mobile versions */
+
+@media (max-width: 375px) {
+  .dropdown-menu-userpanel {
+    font-size: 4vw;
+  }
+  .userpanel-link-showmore{
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 665px) {
+  .dropdown-menu-userpanel {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 540px) {
+  .userpanel-link-showmore{
+    font-size: 3vw;
+  }
+}
+@media (min-width: 767px) {
+  .dropdown-menu-userpanel {
+    font-size: 0.85rem;
+  }
 }

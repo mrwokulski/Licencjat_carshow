@@ -1,60 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>2 Col Portfolio - Start Bootstrap Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/carshow.css" rel="stylesheet">
-    <!-- JAK COS TYLKO TESTUJE TO-->
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">
-
-
-
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-bg">
-      <div class="container">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-nav-vehicletype" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kategorie pojazdów
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a><hr class="hr-style"/>
-            <a class="dropdown-item" href="#">Another action</a><hr class="hr-style"/>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-        <a class="navbar-brand nav-bar-homepage" href="#">Carshow</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        Lista rozwijana
-      -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="btn btn-nav-login" href="#">Zaloguj<span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-
-      </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
+ <div class="container">
 
       <!-- Page Heading -->
       <!-- ADS
@@ -209,20 +153,3 @@
           <div class="view-main-blankseparator"></div>
     </div>
   </div>
-    <!-- /.container -->
-
-    <!-- Footer -->
-    <footer class="py-5 main-footer nav-bg">
-      <div>
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
-</html>
