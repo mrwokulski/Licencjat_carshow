@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="">
-          <a class="index-link-showmore" href="#">Wyszukiwanie zaawansowane</a>
+          Wyszukiwanie zaawansowane
         </div>
           <p class="btn-search-form"><a class="btn btn-search" href="#">Szukaj</a></p>
         </div>
