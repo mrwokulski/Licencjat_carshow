@@ -197,8 +197,7 @@ body {
   width: 100%;
 }
 
-.btn-nav-usermenu:hover{
-  margin-left: 0px;
+.btn-nav-usermenu:hover{  
   color: #c13a3a;
   background-color: #fff;
   border-color: rgba(0,0,0,.15);
@@ -222,8 +221,7 @@ body {
   border-color: rgba(0,0,0,.15);
 }
 
-.dropdown-menu-userpanel {
-  position: absolute;
+.dropdown-menu-userpanel {  
   top: 100%;
   left: 0;
   z-index: 1000;
@@ -253,4 +251,10 @@ body {
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
+}
+
+.btn-dropdown-userpanel {
+  width: 100px;
+  margin-right: 100px;
+ 
 }
