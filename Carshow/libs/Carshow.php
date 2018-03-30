@@ -24,6 +24,9 @@ class Carshow {
 			$this->error();
 			exit();
 		}
+
+		$controller = new $url[0];
+		$controller->loadModel($url[0]);
 				
 
 		// calling methods
