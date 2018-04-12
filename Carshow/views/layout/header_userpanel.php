@@ -38,8 +38,8 @@
                 <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute;" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Ustawienia</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Wyloguj</a><hr class="hr-style-userpanel"/>
+                  <a class="dropdown-item dropdown-item-nav-userpanel" href="userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
+                  <a class="dropdown-item dropdown-item-nav-userpanel" href="logout/logOut">Wyloguj</a><hr class="hr-style-userpanel"/>
                 </div>
               </div>
             </li>
