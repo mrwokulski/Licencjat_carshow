@@ -7,9 +7,9 @@ class Login_Model extends Model {
 	}
 
 	public function logIn(){
-		
 
-	  if($_POST['login'] != null && $_POST['password'] != null){      
+
+	  if($_POST['login'] != null && $_POST['password'] != null){
 
 	      $login = filter_input(INPUT_POST, 'login');
 	      $password = filter_input(INPUT_POST, 'password');
@@ -18,20 +18,21 @@ class Login_Model extends Model {
 	      $loginQuery->bindValue(':login', $login, PDO::PARAM_STR);
 	      $loginQuery->execute();
 
-	      $user = $loginQuery->fetch();	     
-	       
+	      $user = $loginQuery->fetch();
+
 		      if(password_verify($password, $user['password'])){
 		         Session::init();
 		         Session::set('loggedIn', true);
-		         header('location: ../userpanel');          
+						 Session::set('login', $login);
+		         header('location: ../userpanel');
 
-		      } else 
+		      } else
 		         header('location: ../login');
-		      
-      
-	   } else 
-	      header('location: ../login');  
-    
+
+
+	   } else
+	      header('location: ../login');
+
 	}
 
 }

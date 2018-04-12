@@ -9,12 +9,19 @@ class View {
 	public function render($name, $noInclude = false)
 	{
 		if ($noInclude == true) {
-			require 'views/' . $name . '.php';	
+			require 'views/' . $name . '.php';
 		}
 		else {
-			require 'views/header.php';
-			require 'views/' . $name . '.php';
-			require 'views/footer.php';	
+			Session::init();
+			$logged = Session::get('loggedIn');
+
+			if($logged)
+				require 'views/layout/header_userpanel.php';
+			else
+				require 'views/layout/header.php';
+
+				require 'views/' . $name . '.php';
+				require 'views/layout/footer.php';
 		}
 	}
 

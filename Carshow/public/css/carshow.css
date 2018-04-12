@@ -206,7 +206,7 @@ body {
   background-color: #c13a3a;
   border-color: #fff;
   border-radius: 0px;
-  width: 100%;
+  width: 200px;
 }
 
 .btn-nav-usermenu:hover{
@@ -234,6 +234,11 @@ body {
   border-color: rgba(0,0,0,.15);
 }
 
+.dropdown-menu-container {
+  position: absolute;
+  width: 200px;
+}
+
 .dropdown-menu-userpanel {
   position: absolute;
   top: 100%;
@@ -256,7 +261,7 @@ body {
 
 .dropdown-item-nav-userpanel {
   display: block;
-  width: 50%;
+  width: 100%;
   padding: 0.5rem;
   clear: both;
   font-weight: 400;
