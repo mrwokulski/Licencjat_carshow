@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Test</title>
+	<title>Test</title>	
     <link rel="stylesheet" href="<?php echo URL; ?>public/vendor/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/carshow.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">
@@ -28,24 +28,13 @@
       -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <div class="dropdown" style="width: 200px;">
-                <button class="btn btn-secondary dropdown-toggle btn-nav-usermenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <?php
-                    $login = Session::get('login');
-                    echo $login;
-                   ?>
-                </button>
-                <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute;" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="logout/logOut">Wyloguj</a><hr class="hr-style-userpanel"/>
-                </div>
-              </div>
+              <a class="btn btn-nav-login" href="<?php echo URL; ?>login">Zaloguj<span class="sr-only">(current)</span></a>
             </li>
           </ul>
 
       </div>
     </nav>
-
+	
 <div id="content">
+	
+	
