@@ -19,7 +19,11 @@ class Userpanel extends Controller {
 	}
 
 	function settings() {
-		$this->view->renderPartial('userpanel','settings');
+		$this->view->render('userpanel/settings');
+	}
+
+	function addOffer() {
+		$this->view->render('userpanel/addOffer');
 	}
 
 }

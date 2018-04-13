@@ -25,11 +25,4 @@ class View {
 		}
 	}
 
-	public function renderPartial($name, $partialname){
-
-		require 'views/layout/header_userpanel.php';
-		require 'views/'. $name . '/' . $partialname . '.php';
-		require 'views/layout/footer.php';
-	}
-
 }

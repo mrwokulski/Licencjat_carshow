@@ -20,7 +20,7 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a class="navbar-brand nav-bar-homepage" href="#">Carshow</a>
+        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>index/index">Carshow</a>
     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,10 +36,10 @@
                    ?>
                 </button>
                 <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute;" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
+                  <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/addOffer">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="logout/logOut">Wyloguj</a><hr class="hr-style-userpanel"/>
+                  <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
+                  <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>logout/logOut">Wyloguj</a><hr class="hr-style-userpanel"/>
                 </div>
               </div>
             </li>
