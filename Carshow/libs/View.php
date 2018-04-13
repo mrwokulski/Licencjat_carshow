@@ -27,11 +27,18 @@ class View {
 
 
 	public static function printModal($str){
-		echo '<div class="alert alert-danger alert-dismissible">
-            	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-             	<strong>Uwaga!</strong> '.$str.'
-           		</div>
-              </div>';
+		if(!empty($str)){
+			echo '<div class="alert alert-danger alert-dismissible">
+	            	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	             	<strong>Uwaga!</strong> '.$str.'
+	           		</div>
+	              </div>';
+        }
+	}
+
+	public static function saveValue($key){
+		if(!empty(Session::get($key)))
+			echo Session::get($key);
 	}
 
 }

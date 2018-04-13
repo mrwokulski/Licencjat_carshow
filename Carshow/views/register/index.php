@@ -1,3 +1,4 @@
+
 <div class="container">
 
       <!-- Page Heading -->
@@ -13,21 +14,21 @@
 
         <form action="register/newAccount" method="post">
          Login:
-        <input type="text" name="login" style="width: 100%">
+        <input type="text" name="login" value="<?php View::saveValue('er_login') ?>" style="width: 100%">
          Hasło:
         <input type="password" name="password" style="width: 100%">
          Powtórz hasło:
         <input type="password" name="password2" style="width: 100%">
          Email:
-        <input type="text" name="mail" style="width: 100%">
+        <input type="text" name="mail" value="<?php View::saveValue('er_mail') ?>" style="width: 100%">
          Imię:
-        <input type="text" name="name"  style="width: 100%">
+        <input type="text" name="name" value="<?php View::saveValue('er_name') ?>"  style="width: 100%">
          Nazwisko:
-        <input type="text" name="surname" style="width: 100%">
+        <input type="text" name="surname" value="<?php View::saveValue('er_surname') ?>" style="width: 100%">
          Telefon:
-        <input type="text" name="tel" style="width: 100%">
+        <input type="text" name="tel" value="<?php View::saveValue('er_tel') ?>"  style="width: 100%">
 
-        <input type="checkbox" name="vehicle" value="Bike" style="margin-top: 10px;">  Akceptuję <a href="#">regulamin</a><br>
+        <input type="checkbox" name="rules" style="margin-top: 10px;">  Akceptuję <a href="#">regulamin</a><br>
 
           <p class="btn-search-form"><input type="submit" value="Załóż konto" class="btn btn-search"></p>
         </form>
@@ -36,7 +37,7 @@
         <div class="col-md-7" style="background-color: gray;">
 
 
-          <?php  $err = Session::get('error'); View::printModal($err); ?>
+          <?php  $err = Session::get('error'); View::printModal($err); Session::unset('error') ?>
 
 
         </div>
