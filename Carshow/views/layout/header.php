@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Test</title>	
+	<title>Test</title>
     <link rel="stylesheet" href="<?php echo URL; ?>public/vendor/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/carshow.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">
@@ -20,7 +20,7 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a class="navbar-brand nav-bar-homepage" href="#">Carshow</a>
+        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>index/index">Carshow</a>
     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +34,5 @@
 
       </div>
     </nav>
-	
+
 <div id="content">
-	
-	
