@@ -3,7 +3,7 @@ function zmien(){
 	document.getElementById('test').innerHTML = "SIEMANDERO";
 };
 
-function showOrHide(id) {
+function hide(id) {
 
   var elem = document.getElementById(id);
 
@@ -23,6 +23,6 @@ function generateCategories() {
 	     }
 	   };
 
-	 	xmlhttp.open("GET","models/addoffer_model/test1",true);
+	 	xmlhttp.open("GET","addoffer/getTest",true);
 		xmlhttp.send();
 };
