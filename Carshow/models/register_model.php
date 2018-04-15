@@ -6,29 +6,29 @@ class Register_Model extends Model {
 		parent::__construct();
 	}
 
-	private function saveValue(){	
+	private function saveValue(){
 
-	 $keys = array("login", "mail", "name", "surname", "tel");	
+	 $keys = array("login", "mail", "name", "surname", "tel");
 		for($i = 0; $i < count ($keys); $i++){
 			Session::set('er_'.$keys[$i], $_POST[$keys[$i]]);
 		}
 	}
 
 	public function newAccount(){
-	 
+
 	 Session::init();
-	 $correct_params = true;	
+	 $correct_params = true;
 	 $err = "";
 
 	 $keys = array("login", "password", "mail", "name", "surname");
 	 $labels = array("Login", "Hasło", "Email", "Imię", "Nazwisko");
 
 	 for($i = 0; $i < count ($keys); $i++){
-		 if (strlen($_POST[$keys[$i]]) < 6  || strlen($_POST[$keys[$i]]) > 30){ 
+		 if (strlen($_POST[$keys[$i]]) < 6  || strlen($_POST[$keys[$i]]) > 30){
 	    	$err = $err . '<br/>' . $labels[$i] . " - długość musi znajdować się w przedziale od 6 do 30 znaków ";
 	    	$correct_params = false;
 	    }
-	}  
+	}
 
 	if($_POST['password'] != $_POST['password2']){
 		$err = $err . '<br/>'. "Hasło nie są takie samo";
@@ -40,37 +40,37 @@ class Register_Model extends Model {
       	$correct_params = false;
 	}
 
-    if (!isset($_POST['rules'])){ 
+    if (!isset($_POST['rules'])){
     	$err = $err . '<br/>' . "Zaakceptuj regulamin";
     	$correct_params = false;
     }
 
-    if (!is_numeric($_POST['tel']) || strlen($_POST['tel']) < 8 ){ 
+    if (!is_numeric($_POST['tel']) || strlen($_POST['tel']) < 8 ){
     	$err = $err . '<br/>' . "Telefon jest niepoprawny";
     	$correct_params = false;
     }
 
-    
 
-    $login = filter_input(INPUT_POST, 'login');
-    $email = filter_input(INPUT_POST, 'mail');
 
-    $registerQuery = $this->db->prepare('SELECT COUNT(*) FROM users WHERE login= :login OR email= :email');
+  $login = filter_input(INPUT_POST, 'login');
+  $email = filter_input(INPUT_POST, 'mail');
+
+  $registerQuery = $this->db->prepare('SELECT COUNT(*) FROM users WHERE login= :login OR email= :email');
 	$registerQuery->bindValue(':login', $login, PDO::PARAM_STR);
 	$registerQuery->bindValue(':email', $email, PDO::PARAM_STR);
 	$registerQuery->execute();
 
-	$result = $registerQuery->fetch();	  
+	$result = $registerQuery->fetch();
 
-	if ($result[0] != 0 ){ 
+	if ($result[0] != 0 ){
     	$err = $err . '<br/>' . "Użytkownik o podanym loginie lub emailu jest już zarejestrowany";
     	$correct_params = false;
     }
-	
 
-	
+
+
 	if(!$correct_params){
-    
+
 	   $this->saveValue();
 	   Session::set('error',$err);
 	   header('Location: ../register');
@@ -105,19 +105,19 @@ class Register_Model extends Model {
 	      $loginQuery->bindValue(':login', $login, PDO::PARAM_STR);
 	      $loginQuery->execute();
 
-	      $user = $loginQuery->fetch();	     
-	       
+	      $user = $loginQuery->fetch();
+
 		      if(password_verify($password, $user['password'])){
 		         Session::init();
 		         Session::set('loggedIn', true);
-		         header('location: ../userpanel');          
+		         header('location: ../userpanel');
 
-		      } else 
+		      } else
 		         header('location: ../login');
-		      
-      
-	   } else 
-	      header('location: ../login');  
+
+
+	   } else
+	      header('location: ../login');
     */
 	}
 

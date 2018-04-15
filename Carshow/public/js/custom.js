@@ -1,5 +1,28 @@
-$(document).ready(function() {
-	
+function zmien(){
 
-	
-});
+	document.getElementById('test').innerHTML = "SIEMANDERO";
+};
+
+function showOrHide(id) {
+
+  var elem = document.getElementById(id);
+
+  elem.style.visibility = (elem.style.visibility === 'hidden')? 'visible' : 'hidden';
+};
+
+function generateCategories() {
+
+	 //document.getElementById('categories').innerHTML = "";
+	 xmlhttp = new XMLHttpRequest();
+
+	 xmlhttp.onreadystatechange = function()
+	   {
+	     if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+	     {
+	       document.getElementById("categories").innerHTML = xmlhttp.responseText;
+	     }
+	   };
+
+	 	xmlhttp.open("GET","models/addoffer_model/test1",true);
+		xmlhttp.send();
+};
