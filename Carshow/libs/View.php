@@ -9,13 +9,36 @@ class View {
 	public function render($name, $noInclude = false)
 	{
 		if ($noInclude == true) {
-			require 'views/' . $name . '.php';	
+			require 'views/' . $name . '.php';
 		}
 		else {
-			require 'views/header.php';
-			require 'views/' . $name . '.php';
-			require 'views/footer.php';	
+			Session::init();
+			$logged = Session::get('loggedIn');
+
+			if($logged)
+				require 'views/layout/header_userpanel.php';
+			else
+				require 'views/layout/header.php';
+
+				require 'views/' . $name . '.php';
+				require 'views/layout/footer.php';
 		}
+	}
+
+
+	public static function printModal($str){
+		if(!empty($str)){
+			echo '<div class="alert alert-danger alert-dismissible">
+	            	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	             	<strong>Uwaga!</strong> '.$str.'
+	           		</div>
+	              </div>';
+        }
+	}
+
+	public static function saveValue($key){
+		if(!empty(Session::get($key)))
+			echo Session::get($key);
 	}
 
 }
