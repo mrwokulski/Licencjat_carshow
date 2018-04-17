@@ -33,20 +33,17 @@ class Addoffer_Model extends Model {
 
         foreach($categoriesQuery as $row){
 
-          if(counter%4=0){
-            echo "</div></div>"
-          }
-          else {
+
           echo '<div class="col-md-3" id="' . $row[1] . '">
 									<div>
 										<img src="' . $row[3] . '"/>
 									</div>
 								</div>'
           counter++;
-          }
+
 
         }
-
+				echo "</div></div>";
      }
      else
       echo "0 results";
@@ -56,7 +53,7 @@ class Addoffer_Model extends Model {
 
 	public function test1() {
 
-		echo "sciezka xmlhttp dziala";
+		echo "<div>sciezka xmlhttp dziala</div>";
 	}
 }
 ?>

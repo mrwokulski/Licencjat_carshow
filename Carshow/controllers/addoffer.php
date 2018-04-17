@@ -17,4 +17,9 @@ class Addoffer extends Controller {
 
     $this->model->getCategories();
   }
+
+  public function getTest() {
+
+    $this->model->test1();
+  }
 }
