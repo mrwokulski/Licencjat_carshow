@@ -18,7 +18,7 @@
         <select class="form-control form-control-sm input-form-search">
             <option></option>
         </select>
-        Rocznik:
+        Typ:
         <div class="row">
           <div class="col-md-6">
             <select class="form-control form-control-sm input-form-search" >
@@ -31,7 +31,7 @@
             </select>
           </div>
         </div>
-        Przebieg:
+        Stan:
         <div class="row">
           <div class="col-md-6">
             <select class="form-control form-control-sm input-form-search">
@@ -56,6 +56,18 @@
               <option>do</option>
             </select>
           </div>
+           <form>
+            <div class="col-md-12">
+              Pokaż:
+              <br/>
+              <label class="checkbox-inline" style="padding-right: 20px;">
+                <input type="checkbox" value="">Oferty kupna
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" value="">Oferty sprzedaży
+              </label>            
+          </form>
+        </div>
         </div>
         <div class="">
           Wyszukiwanie zaawansowane
@@ -76,15 +88,16 @@
             Najpopularniejsze wyszukiwania:
           </div>
         </div>
+
+        <div id="demo"></div>
         <div class="row">
             <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
+              <div class="car-thumb" id="offer_1">
+                
               </div>
             </div>
             <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
+              <div class="car-thumb" id="offer_2">               
               </div>
             </div>
             <div class="col-md-3">
@@ -153,3 +166,24 @@
           <div class="view-main-blankseparator"></div>
     </div>
   </div>
+
+<script>
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);       
+
+        for(i=0; i<myObj.length; i++){
+        let offer = '<div class="car-thumb-type">Sprzedam</div><a href="#"><img src="'+ myObj[i].link +'" style="width: 100%; height: 90%;"/></a><div class="car-thumb-text">'+ myObj[i].maker+ " "+ myObj[i].model +'<span style="font-weight: bold; float: right; padding-right: 10px;">'+ myObj[i].price +' zł</span></div>';
+        let div = "offer_" + (i+1);
+        document.getElementById(div).innerHTML = offer;
+      }
+
+    }
+};
+xmlhttp.open("GET", "<?= URL ?>/index/topOffers", true);
+xmlhttp.send();
+
+</script>

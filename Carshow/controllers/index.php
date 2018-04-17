@@ -6,12 +6,16 @@ class Index extends Controller {
 		parent::__construct();
 	}
 	
-	function index() {	
+	function index() {		
 		$this->view->render('index/index');
 	}
 	
 	function details() {
 		$this->view->render('index/index');
+	}
+
+	function TopOffers(){
+		$this->model->topOffers();
 	}
 	
 }
