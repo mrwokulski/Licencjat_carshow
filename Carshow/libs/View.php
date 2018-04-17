@@ -41,4 +41,11 @@ class View {
 			echo Session::get($key);
 	}
 
+	public static function showArrayValue($key,$id){
+		if(!empty(Session::get($key))){
+			$value = Session::get($key);			
+			echo $value[$id];
+		}
+	}
+
 }

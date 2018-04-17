@@ -8,8 +8,7 @@ class Login_Model extends Model {
 
 	public function logIn(){
 
-
-	  if($_POST['login'] != null && $_POST['password'] != null){
+	  if(!empty($_POST['login']) && !empty($_POST['password'])){
 
 	      $login = filter_input(INPUT_POST, 'login');
 	      $password = filter_input(INPUT_POST, 'password');
@@ -20,18 +19,27 @@ class Login_Model extends Model {
 
 	      $user = $loginQuery->fetch();
 
-		      if(password_verify($password, $user['password'])){
-		         Session::init();
+	      Session::init();
+
+		      if(password_verify($password, $user['password'])){		         
 		         Session::set('loggedIn', true);
-						 Session::set('login', $login);
-		         header('location: ../userpanel');
+		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register']);
+		         Session::set('log', $logArr);
+				 Session::set('login', $login);				 
+		         header('location: ../index');
 
-		      } else
+		      } else {
+		       	 Session::set('error', 'Dane logowania są niepoprawne');
 		         header('location: ../login');
+		     }
+		        
 
 
-	   } else
+	   } else {
+	  	  Session::set('error', 'Dane logowania są niepoprawne');
 	      header('location: ../login');
+	    }
+
 
 	}
 

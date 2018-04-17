@@ -25,5 +25,9 @@ class Userpanel extends Controller {
 	function addOffer() {
 		$this->view->render('userpanel/addOffer');
 	}
+	function messages() {
+		$this->view->render('userpanel/messages');
+	}
+
 
 }

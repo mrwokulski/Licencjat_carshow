@@ -20,22 +20,20 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>index/index">Carshow</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        Lista rozwijana
-      -->
-          <ul class="navbar-nav ml-auto">
+        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>index/index">Elektronika</a>
+
+
+          <ul class="navbar-nav ml-auto">    
             <li class="nav-item active">
               <div class="dropdown" style="width: 200px;">
-                <button class="btn btn-secondary dropdown-toggle btn-nav-usermenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle btn-nav-usermenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= URL ?>public/images/msg2.png" width="40">
                   <?php
                     $login = Session::get('login');
                     echo $login;
                    ?>
                 </button>
-                <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute;" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute; width: 200px;" aria-labelledby="dropdownMenuButton">
+                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/messages">Pokaż wiadomości (1)</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/addOffer">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
