@@ -1,5 +1,4 @@
 </div>
-
  <footer class="py-5 main-footer nav-bg">
     <div>
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>

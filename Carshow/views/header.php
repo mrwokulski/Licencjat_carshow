@@ -21,11 +21,7 @@
           </div>
         </div>
         <a class="navbar-brand nav-bar-homepage" href="#">Carshow</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        Lista rozwijana
-      -->
+       
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="btn btn-nav-login" href="<?php echo URL; ?>login">Zaloguj<span class="sr-only">(current)</span></a>
@@ -35,6 +31,6 @@
       </div>
     </nav>
 	
-<div id="content">
+
 	
 	
