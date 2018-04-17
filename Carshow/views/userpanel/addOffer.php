@@ -9,7 +9,7 @@
   <div class="row row-margin">
     <div class="col-md-12 userpanel-view-table">
     <br/><!--  action="<?= URL ?>addoffer/newOffer" method="post"  miejsce na poszczegolne elementy dla menu ktore beda albo hidden albo sie zrobi osobne widoki ctrl c + v i zmieni tylko tego diva -->
-    <form >
+    <form action="addoffer/newOffer">
       <div class="row row-margin">
         <div class="form-group" style="margin-left: auto; margin-right: auto;">
           <label for="offerType">Rodzaj ogłoszenia:</label>
@@ -27,6 +27,7 @@
       </div>
 			<div class="row row-margin" id="categories">
 				<p style="margin-left: auto; margin-right: auto;">tu maja byc kat</p>
+        	<input type="text" class="form-control" name="category" value="<?php View::saveValue('er_category') ?>" placeholder="Kategoria">
 			</div>
 			<div class="form-row">
 				<div class="col-sm-3 col-centered">
@@ -71,8 +72,9 @@
 				  <textarea class="form-control" rows="5" name="desc" id="description"><?php View::saveValue('er_description') ?></textarea>
 				</div>
 			</div>
-
-    Kategoria- wybieram i sa dropdown list z parametrami produktu
+      <div class="row">
+          <p class="btn-search-form"><input type="submit" value="Dodaj ogłoszenie" class="btn btn-search"></p>
+      </div>
     </form>
     </div>
   </div>
