@@ -12,7 +12,7 @@
       <div class="container">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle btn-nav-vehicletype" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kategorie pojazdów
+            Telefony
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Action</a><hr class="hr-style"/>

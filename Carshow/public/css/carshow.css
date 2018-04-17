@@ -143,9 +143,28 @@ body {
 }
 
 .car-thumb{
+  position: relative;
   width: 100%;
+  height: 100%;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.car-thumb-text{ 
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background-color: #c13a3a;
+  padding-left: 10px;
+  color: white;
+}
+
+.car-thumb-type{  
+  position: absolute;
+  font-weight: bold;
+  padding-left: 10px;
+    text-shadow: 0 0 3px #fff, 0 0 5px #e2d5d5;
+  color: #c13a3a;
 }
 
 .view-main-separator {
@@ -168,6 +187,7 @@ body {
   .car-thumb {
     margin-top: 20px;
   }
+
   .view-main-separator {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -212,7 +232,6 @@ body {
   padding-top: 0;
   min-height: 40vh;
   background-image: url('../images/bck.png');
-
 }
 
 .btn-nav-usermenu{
