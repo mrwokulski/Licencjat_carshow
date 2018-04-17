@@ -27,6 +27,10 @@ body {
   }
 }
 
+.title-clr{
+  color: #565656;
+}
+
 .nav-bg {
   background-color: #c13a3a;
 }
@@ -207,6 +211,8 @@ body {
   background-color: #e2d5d5;
   padding-top: 0;
   min-height: 40vh;
+  background-image: url('../images/bck.png');
+
 }
 
 .btn-nav-usermenu{
@@ -352,4 +358,22 @@ A.userpanel-link-showmore:hover{
 
 .btn-userpanel-addoffer-category {
   margin: 0 auto;
+}
+
+
+.btn-userpanel-settings{
+  color: #fff;
+  background-color: #c13a3a;
+  border-color: #fff;
+  border-radius: 0px;
+}
+
+.btn-userpanel-settings:hover{
+  margin-left: 0px;
+  color: #c13a3a;
+  background-color: #fff;
+  border-color: rgba(0,0,0,.15);
+  border-radius: 0px;
+  margin: 0 auto;
+  text-align: center;
 }
