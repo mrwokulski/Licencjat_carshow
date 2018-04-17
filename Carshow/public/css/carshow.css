@@ -206,7 +206,7 @@ body {
 .userpanel-view-table {
   background-color: #e2d5d5;
   padding-top: 0;
-  height: 40vh;
+  min-height: 40vh;
 }
 
 .btn-nav-usermenu{
