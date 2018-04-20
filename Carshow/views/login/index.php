@@ -21,6 +21,7 @@
         </div>
         <div class="col-md-7" style="background-color: gray;">
 
+          <?php  $err = Session::get('error'); View::printModal($err); Session::unset('error') ?>
 
 
 

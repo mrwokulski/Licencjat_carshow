@@ -10,7 +10,7 @@
       <div class="row row-margin">
         <div class="col-md-5 input-datatable">
         <br/>
-        <h2 style="color: #565656">Formularz rejestracyjny</h2>
+        <h2 class="title-clr">Formularz rejestracyjny</h2>
 
         <form action="register/newAccount" method="post">
          Login:
