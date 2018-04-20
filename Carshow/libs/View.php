@@ -48,4 +48,14 @@ class View {
 		}
 	}
 
+	public static function forLogged($location, $key){
+		if(empty(Session::get('loggedIn')) && $key == true){
+			header('Location: '.$location);
+		}
+		if(!empty(Session::get('loggedIn')) && $key == false){
+			header('Location: '.$location);
+		}			
+	}
+	
+
 }

@@ -16,4 +16,15 @@ class Index_Model extends Model {
 		  echo json_encode($offer);
 	}
 
+	public function premiumOffers(){
+
+	      $premiumQuery = $this->db->prepare('SELECT o.*, p.link FROM offer o JOIN offer_has_picture h ON o.id = h.id_picture JOIN picture p ON h.id_picture=p.id WHERE o.premium=1 LIMIT 4');	
+
+	      $premiumQuery->execute();
+	      $premium = $premiumQuery->fetchAll();
+
+		  echo json_encode($premium);
+	}
+
+
 }

@@ -1,6 +1,5 @@
 <?php
 
-// Use an autoloader!
 require 'libs/Carshow.php';
 require 'libs/Controller.php';
 require 'libs/Model.php';
