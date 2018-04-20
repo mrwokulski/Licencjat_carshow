@@ -18,8 +18,7 @@ class Addoffer extends Controller {
     $this->model->getCategories();
   }
 
-  public function getTest() {
-
-    $this->model->test1();
+  public function index(){
+    $this->model->render('index/index');
   }
 }

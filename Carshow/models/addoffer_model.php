@@ -23,13 +23,6 @@ class Addoffer_Model extends Model {
 		$keys = array("type", "category", "maker", "model", "state", "price", "type2", "description");
  	 $labels = array("rodzaj", "kategoria", "producent", "model", "stan", "cena", "rodzaj2", "opis");
 
-	 for($i = 0; $i < count ($keys); $i++){
-		if (strlen($_POST[$keys[$i]]) < 1  || strlen($_POST[$keys[$i]]) > 40){
-			 $err = $err . '<br/>' . $labels[$i] . " - długość musi znajdować się w przedziale od 1 do 40 znaków ";
-			 $correct_params = false;
-		 }
- 		}
-
 		if(!$correct_params){
 			$this->saveValue();
 			Session::set('error',$err);
@@ -45,7 +38,7 @@ class Addoffer_Model extends Model {
 		$type2 = filter_input(INPUT_POST, 'type2');
 		$description = filter_input(INPUT_POST, 'description');
 
-		$registerQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,description,date_added) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :description, :dateadded)');
+		$registerQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,description,date_added) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :description, :date_added)');
 
 		$registerQuery->bindValue(':type', $type, PDO::PARAM_STR);
 		$registerQuery->bindValue(':category', $category, PDO::PARAM_STR);
@@ -57,11 +50,12 @@ class Addoffer_Model extends Model {
 		$registerQuery->bindValue(':description', $description, PDO::PARAM_STR);
 		$registerQuery->bindValue(':date_added', date("Y-m-d"), PDO::PARAM_STR);
 		$registerQuery->execute();
-		header('Location: ../index')
+
+		header('Location: ../index');
 		}
 
   }
-
+/*
   public function getCategories() {
 
       $categoriesQuery = $this->db->query('SELECT * FROM categories');
@@ -89,12 +83,6 @@ class Addoffer_Model extends Model {
      }
      else
       echo "0 results";
-
-
   }
-
-	public function test1() {
-
-		echo "<div>sciezka xmlhttp dziala</div>";
-	}
+*/
 }
