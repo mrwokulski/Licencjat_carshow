@@ -167,6 +167,14 @@ body {
   color: #c13a3a;
 }
 
+.car-thumb-type-premium {  
+  position: absolute;
+  font-weight: bold;
+  padding-left: 10px;
+    text-shadow: 0 0 3px #fff, 0 0 5px #f7f156;
+  color: #000;
+}
+
 .view-main-separator {
   margin-top: 20px;
   margin-bottom: 20px;

@@ -21,5 +21,9 @@ class Index extends Controller {
 	function premiumOffers(){
 		$this->model->premiumOffers();
 	}
+
+	function geoIp(){
+		$this->model->geoIp();
+	}
 	
 }

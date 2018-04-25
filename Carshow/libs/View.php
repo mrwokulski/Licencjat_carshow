@@ -19,7 +19,6 @@ class View {
 				require 'views/layout/header_userpanel.php';
 			else
 				require 'views/layout/header.php';
-
 				require 'views/' . $name . '.php';
 				require 'views/layout/footer.php';
 		}
@@ -56,6 +55,6 @@ class View {
 			header('Location: '.$location);
 		}			
 	}
-	
 
+	
 }
