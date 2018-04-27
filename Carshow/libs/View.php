@@ -24,6 +24,22 @@ class View {
 		}
 	}
 
+	public function renderOffer($key)
+	{		
+			Session::init();
+			$logged = Session::get('loggedIn');
+
+			if($logged)
+				require 'views/layout/header_userpanel.php';
+			else 
+				require 'views/layout/header.php';	
+				Session::set('id_offer', $key);				
+				require 'views/offer/index.php';
+				require 'views/layout/footer.php';
+			
+		
+	}
+
 
 	public static function printModal($str){
 		if(!empty($str)){

@@ -71,37 +71,22 @@ $correct_params = true;
 		$lastId++;		
 
 		try{	
-			mkdir("views/offer/$lastId/", 0755);
-			mkdir("views/offer/$lastId/images", 0755);
+			mkdir("views/offer/$lastId/", 0755);			
 		} 
 		catch(Exception $e){
 			$correct_params = 0;
 		}
-
-		$data = file_get_contents(URL.'libs/Offer.php');
-
-		$myfile = fopen("views/offer/$lastId/index.php", "w");		
-		fwrite($myfile, $data);
-		$data = '<script src="<?= URL ?>public/js/ajaxOffer.js"></script>
-					<script>
-					  window.onload = getOffer('.$lastId.');
-					  window.onload = setImage(1, '.$lastId.');
-					</script>';
-
-
-		fwrite($myfile, $data);
-		fclose($myfile);
-
+		
 		$lastPhotoId = 1;
 
 
-		$target_dir = "views/offer/$lastId/images/";
+		$target_dir = "views/offer/$lastId/";
 		
 		$uploadOk = 1;
 
 		for($i=1;$i<5;$i++){
 
-	    $target_file = "views/offer/$lastId/images/img".$lastPhotoId.".jpg";  
+	    $target_file = "views/offer/$lastId/img".$lastPhotoId.".jpg";  
 
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 			
@@ -166,7 +151,7 @@ $correct_params = true;
 				}
 		}*/
 		
-		header('location: '.URL);
+		header('location: '.URL.'offer/show/'.$lastId);
 		}
 
 

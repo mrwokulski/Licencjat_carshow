@@ -7,11 +7,11 @@ class Offer extends Controller {
 	}
 	
 	function index() {		
-		$this->view->render('offer/1/index');
+		$this->view->render('offer/top');
 	}
 
 	function show($key) {		
-		$this->view->render("offer/$key/index");
+		$this->view->renderOffer($key);
 	}
 
 	function getOffer($key) {
