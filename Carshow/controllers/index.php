@@ -14,8 +14,16 @@ class Index extends Controller {
 		$this->view->render('index/index');
 	}
 
-	function TopOffers(){
+	function topOffers(){
 		$this->model->topOffers();
+	}
+
+	function premiumOffers(){
+		$this->model->premiumOffers();
+	}
+
+	function geoIp(){
+		$this->model->geoIp();
 	}
 	
 }

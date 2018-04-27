@@ -23,21 +23,21 @@ class Login_Model extends Model {
 
 		      if(password_verify($password, $user['password'])){		         
 		         Session::set('loggedIn', true);
-		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register']);
+		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register'],$user['id']);
 		         Session::set('log', $logArr);
 				 Session::set('login', $login);				 
-		         header('location: ../index');
+		         header('location: '.URL);
 
 		      } else {
 		       	 Session::set('error', 'Dane logowania są niepoprawne');
-		         header('location: ../login');
+		         header('location: '.URL.'/login');
 		     }
 		        
 
 
 	   } else {
 	  	  Session::set('error', 'Dane logowania są niepoprawne');
-	      header('location: ../login');
+	      header('location: '.URL.'/login');
 	    }
 
 
