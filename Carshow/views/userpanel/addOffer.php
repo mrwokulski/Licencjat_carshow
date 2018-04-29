@@ -9,7 +9,9 @@
   <div class="row row-margin">
     <div class="col-md-12 userpanel-view-table">
     <br/><!--  action="<?= URL ?>addoffer/newOffer" method="post"  miejsce na poszczegolne elementy dla menu ktore beda albo hidden albo sie zrobi osobne widoki ctrl c + v i zmieni tylko tego diva -->
+
     <form action="<?= URL ?>addoffer/newOffer" method="post"  enctype="multipart/form-data">
+
       <div class="row row-margin">
         <div class="form-group" style="margin-left: auto; margin-right: auto;">
           <label for="offerType">Rodzaj ogłoszenia:</label>

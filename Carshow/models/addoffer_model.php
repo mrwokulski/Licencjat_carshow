@@ -23,29 +23,10 @@ $correct_params = true;
 //DO REFAKTORYZACJI WIKTOR
 	 
 
+
 	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "description");
  	 $labels = array("rodzaj", "kategoria", "producent", "model", "stan", "cena", "rodzaj2", "opis");
 
-		if(!$correct_params){
-			$this->saveValue();
-			Session::set('error',$err);
-			header('location: '.URL.'userpanel/addOffer'); 
-		}
-		else {
-
-		$lastIdQuery = $this->db->prepare('SELECT id FROM offer ORDER BY id DESC LIMIT 1');
-		$lastIdQuery->execute();
-		$lastId = $lastIdQuery->fetch();
-		$lastId = $lastId[0];
-
-		$type = filter_input(INPUT_POST, 'type');
-		$category = filter_input(INPUT_POST, 'category');
-		$maker = filter_input(INPUT_POST, 'maker');
-		$model = filter_input(INPUT_POST, 'model');
-		$state = filter_input(INPUT_POST, 'state');
-		$price = filter_input(INPUT_POST, 'price');
-		$type2 = filter_input(INPUT_POST, 'type2');
-		$description = filter_input(INPUT_POST, 'description');
 
 		$registerQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,description,date_added,user, premium) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :description, :date_added, :user, :premium)');
 
@@ -157,10 +138,6 @@ $correct_params = true;
 
 
   }
-
-
-  
-
 
 /*
   public function getCategories() {
