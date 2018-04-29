@@ -9,7 +9,9 @@
   <div class="row row-margin">
     <div class="col-md-12 userpanel-view-table">
     <br/><!--  action="<?= URL ?>addoffer/newOffer" method="post"  miejsce na poszczegolne elementy dla menu ktore beda albo hidden albo sie zrobi osobne widoki ctrl c + v i zmieni tylko tego diva -->
-    <form action="<?= URL ?>addoffer/newOffer" method="post">
+
+    <form action="<?= URL ?>addoffer/newOffer" method="post"  enctype="multipart/form-data">
+
       <div class="row row-margin">
         <div class="form-group" style="margin-left: auto; margin-right: auto;">
           <label for="offerType">Rodzaj ogłoszenia:</label>
@@ -72,9 +74,25 @@
 				  <textarea class="form-control" rows="5" name="description" id="description"><?php View::saveValue('er_description') ?></textarea>
 				</div>
 			</div>
+
+			<div>         
+     	      
+                Zdjęcie 1: <input class="upload-form-input" type="file" name="img1" id="img1"><br/>
+               	Zdjęcie 2: <input class="upload-form-input" type="file" name="img2" id="img2"><br/>
+                Zdjęcie 3: <input class="upload-form-input" type="file" name="img3" id="img3"><br/>
+                Zdjęcie 4: <input class="upload-form-input" type="file" name="img4" id="img4"><br/>
+                Zdjęcie 5: <input class="upload-form-input" type="file" name="img5" id="img5"><br/>
+            </div>   
+
+
       <div class="row">
           <p class="btn-search-form"><input type="submit" value="Dodaj ogłoszenie" class="btn btn-search"></p>
       </div>
+
+       
+     
+
+
     </form>
     </div>
   </div>

@@ -19,10 +19,25 @@ class View {
 				require 'views/layout/header_userpanel.php';
 			else
 				require 'views/layout/header.php';
-
 				require 'views/' . $name . '.php';
 				require 'views/layout/footer.php';
 		}
+	}
+
+	public function renderOffer($key)
+	{		
+			Session::init();
+			$logged = Session::get('loggedIn');
+
+			if($logged)
+				require 'views/layout/header_userpanel.php';
+			else 
+				require 'views/layout/header.php';	
+				Session::set('id_offer', $key);				
+				require 'views/offer/index.php';
+				require 'views/layout/footer.php';
+			
+		
 	}
 
 
@@ -48,4 +63,14 @@ class View {
 		}
 	}
 
+	public static function forLogged($location, $key){
+		if(empty(Session::get('loggedIn')) && $key == true){
+			header('Location: '.$location);
+		}
+		if(!empty(Session::get('loggedIn')) && $key == false){
+			header('Location: '.$location);
+		}			
+	}
+
+	
 }

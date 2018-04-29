@@ -1,12 +1,6 @@
-
+<?php View::forLogged(URL,false) ?>
 <div class="container">
-
-      <!-- Page Heading -->
-      <!-- ADS
-      <div class="row" id="ad" style="background-color: blue; height: 100px; display: none;">
-           <div class="col"></div>
-      </div>
-      -->
+     
       <div class="row row-margin">
         <div class="col-md-5 input-datatable">
         <br/>

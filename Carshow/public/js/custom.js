@@ -1,3 +1,6 @@
+var URL = "http://localhost:8080/Carshow/";
+
+
 function zmien(){
 
 	document.getElementById('test').innerHTML = "SIEMANDERO";
@@ -26,3 +29,5 @@ function generateCategories() {
 	 	xmlhttp.open("GET","addoffer/getTest",true);
 		xmlhttp.send();
 };
+	
+	
