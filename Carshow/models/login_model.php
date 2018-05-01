@@ -25,7 +25,9 @@ class Login_Model extends Model {
 		         Session::set('loggedIn', true);
 		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register'],$user['id']);
 		         Session::set('log', $logArr);
-				 Session::set('login', $login);				 
+				 Session::set('login', $login);
+				 Session::set('login_id', $user['id']);		
+				 		 
 		         header('location: '.URL);
 
 		      } else {

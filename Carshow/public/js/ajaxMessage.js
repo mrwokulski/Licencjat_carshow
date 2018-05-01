@@ -1,9 +1,9 @@
 var URL = "http://localhost:8080/Carshow/";
 
-function unreadMessage(id_user1, id_user2){
+function unreadMessage(id_user1){
 
 var xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", URL+'userpanel/unreadMessage/'+id_user1+'/'+id_user2, true);
+xmlhttp.open("GET", URL+'userpanel/unreadMessage/'+id_user1, true);
 xmlhttp.send();
 }
 

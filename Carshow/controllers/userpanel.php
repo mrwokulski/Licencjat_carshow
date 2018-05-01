@@ -4,15 +4,8 @@ class Userpanel extends Controller {
 
 	function __construct() {
 		parent::__construct();
-		Session::init();
-		$logged = Session::get('loggedIn');
-		if($logged == false){
-			Session::destroy();
-			header('location: '.$url.'login');
-			exit;
-		}
-
-	}
+		//View::forLogged('login', true); 	
+	}	
 
 	function index() {
 		$this->view->render('userpanel/index');
@@ -25,7 +18,10 @@ class Userpanel extends Controller {
 	function addOffer() {
 		$this->view->render('userpanel/addOffer');
 	}
+
 	function messages() {
+		$this->view->messages = $this->model->showMessagesUnread();
+		$this->view->messagesRead = $this->model->showMessagesRead();
 		$this->view->render('userpanel/messages');
 	}
 
@@ -36,11 +32,10 @@ class Userpanel extends Controller {
 	function unreadMessage($id1) {
 		$this->model->unreadMessage($id1);
 	}
+
 	function unreadMessages() {
 		$this->model->unreadMessages();
-	}
-
-	
+	}	
 
 	function message($id_1, $id_2){
 		$this->view->messageAuthor = $this->model->messageAuthor($id_1,$id_2);

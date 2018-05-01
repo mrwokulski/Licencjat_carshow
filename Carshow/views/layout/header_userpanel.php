@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Test</title>
+
     <link rel="stylesheet" href="<?php echo URL; ?>public/vendor/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/carshow.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">

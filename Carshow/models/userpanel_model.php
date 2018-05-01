@@ -4,6 +4,7 @@ class Userpanel_Model extends Model {
 
 	public function __construct() {
 		parent::__construct();
+		 Session::init();
 	}
 	
 	public function message($id_1, $id_2){
@@ -29,9 +30,8 @@ class Userpanel_Model extends Model {
 
 	      $messageQuery = $this->db->prepare('INSERT INTO message (id_user1, id_user2, message, date, id_offer, unread) VALUES (:id_user1, :id_user2, :message, :date, NULL, :unread);');	
 
-	      $date = date("Y-m-d H:i:s");	      	      
-
-	      $me = View::showArrayValue('log',6);
+	      $date = date("Y-m-d H:i:s");	
+	      $me = View::showArrayValue('log',6);	      
 	      $messageQuery->bindValue(':id_user1', $me, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':id_user2', $id, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':message', $_POST['message'], PDO::PARAM_STR);
@@ -68,37 +68,35 @@ class Userpanel_Model extends Model {
   	}
 
   	public function unreadMessages(){
-  		$me = View::showArrayValue('log',6);
-  		$messageQuery = $this->db->prepare('SELECT count(*) as many FROM message where id_user2 = :id_user2 AND unread = 1');
-  		$messageQuery->bindValue(':id_user2', $me, PDO::PARAM_INT);
-  		$messageQuery->execute();
-  		$message = $messageQuery->fetch();
-  		echo json_encode($message);
+
+	  		$me = View::showArrayValue('log',6);
+	  		$messageQuery = $this->db->prepare('SELECT count(*) as many FROM message where id_user2=:id_user2 AND unread = 1');
+	  		$messageQuery->bindValue(':id_user2', $me, PDO::PARAM_INT);
+	  		$messageQuery->execute();
+	  		$message = $messageQuery->fetch();
+	  		echo json_encode($message);
   	}
-		  
+
+  	public function showMessagesUnread(){
+
+			$me = View::showArrayValue('log',6);			
+			$messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message FROM message m RIGHT JOIN users u ON m.id_user1=u.id WHERE m.id_user2=:id_user AND m.unread = 1 GROUP BY u.id;');
+	  		$messageQuery->bindValue(':id_user', $me, PDO::PARAM_INT);
+	  		$messageQuery->execute();
+	  		$message = $messageQuery->fetchAll();
+
+	  		return $message;
+	}
 	
+	public function showMessagesRead(){
 
+			$me = View::showArrayValue('log',6);			
+			$messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message FROM message m RIGHT JOIN users u ON m.id_user1=u.id WHERE m.id_user2=:id_user AND m.unread = 0 GROUP BY u.id;');
+	  		$messageQuery->bindValue(':id_user', $me, PDO::PARAM_INT);
+	  		$messageQuery->execute();
+	  		$message = $messageQuery->fetchAll();
 
-	/*public function sendMessage($id){
-
-		 if(!empty($_POST['message'])){
-
-	      $messageQuery = $this->db->prepare('INSERT INTO message (id_user1, id_user2, message, date, id_offer) VALUES (:id_user1, :id_user2, :message, :date, NULL);');	
-
-	      $date = date("Y-m-d H:i:s");	      	      
-
-	      $me = View::showArrayValue('log',6);
-	      $messageQuery->bindValue(':id_user1', $me, PDO::PARAM_INT);
-	      $messageQuery->bindValue(':id_user2', $id, PDO::PARAM_INT);
-	      $messageQuery->bindValue(':message', $_POST['message'], PDO::PARAM_STR);
-	      $messageQuery->bindValue(':date', $date, PDO::PARAM_STR);
-
-	      $messageQuery->execute();
-	      $message = $messageQuery->fetchAll();
-
-	     header('Location:' .URL.'userpanel/message/'.$me.'/'.$id);
-	  }
-		  
-	}*/
+	  		return $message;
+	}	  
 	
 }

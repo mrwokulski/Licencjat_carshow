@@ -8,7 +8,7 @@
 			    <?php 
 
 				    $me = $this->showArrayValue('log',6);
-				  	$this->testIdMessage($this->idOne, $this->idTwo);
+				  	$this->testIdMessage($this->idOne, $this->idTwo);				  	
 
 				  	$who = 1;	
 				  	$last = $me;
@@ -22,6 +22,7 @@
 						}					
 					}
 
+					echo '<a class="message-content1" style="color:#212529; background-color:#e9cec3; border:solid gray 1px; text-decoration:none; float:right;" href="'.URL.'userpanel/messages">Powrót</a>';
 					echo '<br><hr/>';
 
 				    for($i=0; $i<count($this->message); $i++){				    		    	
@@ -30,8 +31,7 @@
 				    		$who = 2;
 				    	} else {
 				    		$who = 1;
-				    	}
-				    	
+				    	}				    	
 				    
 				    	echo '<p class="message-content'.$who.'"> ';
 				    	echo $this->message[$i]['message']. " </p><br><br>";
@@ -51,6 +51,6 @@
 </div>
 <script src="<?= URL ?>public/js/ajaxMessage.js"></script>
 <script>
-  window.onload = unreadMessage(<?= $me .','. $notMe ?>);
+  window.onload = unreadMessage(<?= $notMe ?>);
 </script>
 

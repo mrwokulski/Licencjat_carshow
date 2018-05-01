@@ -15,12 +15,12 @@
 
 	   	</tr>
 	   	<tr>
-	   		<td><?php View::showArrayValue('log',0);?></td>
-	   		<td><?php View::showArrayValue('log',1);?></td>
-	   		<td><?php View::showArrayValue('log',2);?></td>
-	   		<td><?php View::showArrayValue('log',3);?></td>
-	   		<td><?php View::showArrayValue('log',4);?></td>
-	   		<td><?php View::showArrayValue('log',5);?></td>
+	   		<td><?= View::showArrayValue('log',0);?></td>
+	   		<td><?= View::showArrayValue('log',1);?></td>
+	   		<td><?= View::showArrayValue('log',2);?></td>
+	   		<td><?= View::showArrayValue('log',3);?></td>
+	   		<td><?= View::showArrayValue('log',4);?></td>
+	   		<td><?= View::showArrayValue('log',5);?></td>
 	   	</tr>
 	   </table>
     <hr/>
