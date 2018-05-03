@@ -5,6 +5,10 @@ class Index extends Controller {
 	function __construct() {
 		parent::__construct();
 	}
+
+	function sitePatch(){
+		$this->model->sitePatch();
+	}
 	
 	function index() {		
 		$this->view->render('index/index');
@@ -25,5 +29,6 @@ class Index extends Controller {
 	function geoIp(){
 		$this->model->geoIp();
 	}
+
 	
 }

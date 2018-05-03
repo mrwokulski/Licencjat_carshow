@@ -38,6 +38,6 @@
 <script src="<?= URL ?>public/js/ajaxOffer.js"></script>
 
 <script>
-	<?= "window.onload = getOffer($id);" ?>
-	<?= "window.onload = setImage(1,$id);" ?>
+	<?= "window.onload = getOffer($id,\"".URL."\");" ?>
+	<?= "window.onload = setImage(1,$id, \"".URL."\");" ?>
 </script>

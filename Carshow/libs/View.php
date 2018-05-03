@@ -6,9 +6,9 @@ class View {
 		//echo 'this is the view';
 	}
 
-	public function render($name, $noInclude = false)
+	public function render($name, $function = false, $function_arg = false)
 	{
-		if ($noInclude == true) {
+		if ($function == true && $function=='test') {
 			require 'views/' . $name . '.php';
 		}
 		else {
@@ -35,7 +35,7 @@ class View {
 				require 'views/layout/header.php';
 				Session::set('id_offer', $key);
 				require 'views/offer/index.php';
-				require 'views/layout/footer.php';
+				require 'views/layout/footer.php';		
 
 
 	}
@@ -58,19 +58,42 @@ class View {
 
 	public static function showArrayValue($key,$id){
 		if(!empty(Session::get($key))){
-			$value = Session::get($key);
-			echo $value[$id];
+			$value = Session::get($key);			
+			return $value[$id];
 		}
 	}
 
 	public static function forLogged($location, $key){
 		if(empty(Session::get('loggedIn')) && $key == true){
 			header('Location: '.$location);
+			exit;
 		}
 		if(!empty(Session::get('loggedIn')) && $key == false){
 			header('Location: '.$location);
+			exit;
+		}			
+	}
+
+
+	public function testIdMessage($id_1, $id_2){
+	    $me = $this->showArrayValue('log',6);
+		if($id_1 != $me && $id_2 != $me){
+			header('Location: '.URL);
+			exit;
 		}
 	}
 
+	public function notMe($id_1, $id_2, $me){
+		if($id_1 == $me)
+			return $id_2;
+		else
+			return $id_1;
+	}
+
+
+	public static function polishDate($date){
+		 $date_pl = explode("-", $date);
+    	return $date_pl[2].'-'.$date_pl[1].'-'.$date_pl[0];
+	}
 
 }

@@ -2,9 +2,16 @@
 <html>
 <head>
 	<title>Test</title>
+
     <link rel="stylesheet" href="<?php echo URL; ?>public/vendor/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/carshow.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">
+
+  <script src="<?= URL ?>public/js/ajaxMessage.js"></script>
+  <script>
+   unreadMessages("<?=URL?>");
+  </script>  
+
 </head>
 <body>
 
@@ -26,14 +33,14 @@
           <ul class="navbar-nav ml-auto">    
             <li class="nav-item active">
               <div class="dropdown" style="width: 200px;">
-                <button class="btn btn-secondary dropdown-toggle btn-nav-usermenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= URL ?>public/images/msg2.png" width="40">
+                <button class="btn btn-secondary dropdown-toggle btn-nav-usermenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><div id="message_img" style="float: left; padding-left: 10%;"><img src="<?= URL ?>public/images/msg1.png" width="40"></div>
                   <?php
                     $login = Session::get('login');
                     echo $login;
                    ?>
                 </button>
                 <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute; width: 200px;" aria-labelledby="dropdownMenuButton">
-                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/messages">Pokaż wiadomości (1)</a><hr class="hr-style-userpanel"/>
+                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/messages"><div id="messages"></div></a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/addOffer">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
