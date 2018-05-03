@@ -25,18 +25,19 @@ class View {
 	}
 
 	public function renderOffer($key)
-	{		
+	{
 			Session::init();
 			$logged = Session::get('loggedIn');
 
 			if($logged)
 				require 'views/layout/header_userpanel.php';
-			else 
-				require 'views/layout/header.php';	
-				Session::set('id_offer', $key);				
+			else
+				require 'views/layout/header.php';
+				Session::set('id_offer', $key);
 				require 'views/offer/index.php';
-				require 'views/layout/footer.php';			
-		
+				require 'views/layout/footer.php';		
+
+
 	}
 
 
@@ -94,6 +95,5 @@ class View {
 		 $date_pl = explode("-", $date);
     	return $date_pl[2].'-'.$date_pl[1].'-'.$date_pl[0];
 	}
-
 
 }
