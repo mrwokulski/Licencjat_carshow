@@ -89,4 +89,11 @@ class View {
 			return $id_1;
 	}
 
+
+	public static function polishDate($date){
+		 $date_pl = explode("-", $date);
+    	return $date_pl[2].'-'.$date_pl[1].'-'.$date_pl[0];
+	}
+
+
 }

@@ -9,7 +9,7 @@
 
   <script src="<?= URL ?>public/js/ajaxMessage.js"></script>
   <script>
-   unreadMessages();
+   unreadMessages("<?=URL?>");
   </script>  
 
 </head>

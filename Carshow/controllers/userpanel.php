@@ -3,8 +3,7 @@
 class Userpanel extends Controller {
 
 	function __construct() {
-		parent::__construct();
-		//View::forLogged('login', true); 	
+		parent::__construct();		
 	}	
 
 	function index() {
@@ -12,6 +11,7 @@ class Userpanel extends Controller {
 	}
 
 	function settings() {
+		$this->view->data = $this->model->userData();
 		$this->view->render('userpanel/settings');
 	}
 
@@ -23,6 +23,44 @@ class Userpanel extends Controller {
 		$this->view->messages = $this->model->showMessagesUnread();
 		$this->view->messagesRead = $this->model->showMessagesRead();
 		$this->view->render('userpanel/messages');
+	}
+
+	function change($type) {		
+
+		if($type == "password"){
+			$this->view->type = "password";	
+		} 
+		else if($type == "email"){
+			$this->view->type = "email";			
+		}
+		else if($type == "phone"){
+			$this->view->type = "phone";
+		} 
+		else if($type == "personal"){
+			$this->view->data = $this->model->userData();
+			$this->view->type = "personal";
+		} 
+		else {
+			$this->settings();
+			exit;
+		}
+
+	$this->view->render('userpanel/change');
+
+	}
+
+	function changePost($type) {
+		if($type == "password")
+			$this->model->changePassword();
+		else if($type == "email")
+			$this->model->changeEmail();
+		else if($type == "phone")
+			$this->model->changePhone();
+		else if($type == "personal")
+			$this->model->changePersonal();
+		else 
+			$this->settings();		
+
 	}
 
 	function sendMessage($id) {

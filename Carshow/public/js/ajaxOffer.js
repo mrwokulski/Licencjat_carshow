@@ -1,6 +1,4 @@
-var URL = "http://localhost:8080/Carshow/";
-
-function getOffer(id){
+function getOffer(id, URL){
 
 var xmlhttp = new XMLHttpRequest();
 
@@ -23,7 +21,7 @@ xmlhttp.onreadystatechange = function() {
         var it = 1;
         for(i=19; i<24; i++){
             if(myObj.hasOwnProperty(i)){
-                images += '<span onclick="setImage('+it+","+id+')" style="cursor:pointer;"><img src="'+URL+'views/offer/'+id+'/'+myObj[i].link+'" class="car-thumb" style="width:20%; border: solid #e2d5d5 2px; height:100px;"></span>';
+                images += '<span onclick="setImage('+it+","+id+',\''+URL+'\')" style="cursor:pointer;"><img src="'+URL+'views/offer/'+id+'/'+myObj[i].link+'" class="car-thumb" style="width:20%; border: solid #e2d5d5 2px; height:100px;"></span>';
                 //images = images + '<img src="'+URL+'views/offer/'+id+'/images/'+myObj[i].link+'" style="width:95%"></div>';
                 it++;           
             }
@@ -58,7 +56,7 @@ return diffDays;
 }
 
 
-function setImage(nr, id){            
+function setImage(nr, id, URL){            
 
     var plik = '<img src="'+URL+'views/offer/'+id+'/img'+nr+'.jpg" class="car-thumb">';
     document.getElementById("slider").innerHTML = plik;

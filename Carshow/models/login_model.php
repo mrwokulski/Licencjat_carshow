@@ -39,7 +39,7 @@ class Login_Model extends Model {
 
 	   } else {
 	  	  Session::set('error', 'Dane logowania są niepoprawne');
-	      header('location: '.URL.'/login');
+	      header('location: '.URL.'login');
 	    }
 
 

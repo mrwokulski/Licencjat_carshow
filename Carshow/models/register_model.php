@@ -96,29 +96,7 @@ class Register_Model extends Model {
 
 		header('Location: ../login');
 	}
-
-
-	     /* $login = filter_input(INPUT_POST, 'login');
-	      $password = filter_input(INPUT_POST, 'password');
-
-	      $loginQuery = $this->db->prepare('SELECT * FROM users WHERE login= :login');
-	      $loginQuery->bindValue(':login', $login, PDO::PARAM_STR);
-	      $loginQuery->execute();
-
-	      $user = $loginQuery->fetch();
-
-		      if(password_verify($password, $user['password'])){
-		         Session::init();
-		         Session::set('loggedIn', true);
-		         header('location: ../userpanel');
-
-		      } else
-		         header('location: ../login');
-
-
-	   } else
-	      header('location: ../login');
-    */
+	     
 	}
 
 }

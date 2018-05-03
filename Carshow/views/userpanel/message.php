@@ -22,7 +22,7 @@
 						}					
 					}
 
-					echo '<a class="message-content1" style="color:#212529; background-color:#e9cec3; border:solid gray 1px; text-decoration:none; float:right;" href="'.URL.'userpanel/messages">Powrót</a>';
+					echo '<a class="message-content1" style="color:#212529; border:solid gray 1px; text-decoration:none; float:right;" href="'.URL.'userpanel/messages">Powrót</a>';
 					echo '<br><hr/>';
 
 				    for($i=0; $i<count($this->message); $i++){				    		    	
@@ -51,6 +51,6 @@
 </div>
 <script src="<?= URL ?>public/js/ajaxMessage.js"></script>
 <script>
-  window.onload = unreadMessage(<?= $notMe ?>);
+  window.onload = unreadMessage(<?= $notMe ?>,"<?=URL?>");
 </script>
 

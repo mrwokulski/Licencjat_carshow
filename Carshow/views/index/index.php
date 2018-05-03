@@ -162,5 +162,5 @@
 
 <script src="<?= URL ?>public/js/ajaxOffers.js"></script>
 <script>
-  window.onload = startAjax;
+  window.onload = startAjax("<?=URL?>");
 </script>

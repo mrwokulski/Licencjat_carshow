@@ -8,14 +8,25 @@
 			    <?php 			   
 
 			    $me = View::showArrayValue('log',6);
-			    $repeatArray = array();			    
+			    $repeatArray = array();		
+
+			    if(count($this->messages)>0)
+			    	echo "Nowe wiadomości: <br><br>"; 
+			       
 
 				  for($i=0; $i<count($this->messages); $i++){	
 
-					    	echo '<div class="message-author"><a style="color:white; text-decoration: none;" href="'.URL.'userpanel/message/'.$me.'/'.$this->messages[$i]['id'].'">'. $this->messages[$i]['name']. " ";
-					   	    echo $this->messages[$i]['surname']. '</div> <div class="message-unread-content">'.$this->messages[$i]['message'].'</a></div><br><br>';
+				  			$mess = substr($this->messages[$i]['message'], 0, 17);
+				  			if(strlen($this->messages[$i]['message'])>17)
+				  				$mess = $mess." ...";
+
+					    	echo '<div class="message-author col-md-5"><a style="color:white; text-decoration: none;" href="'.URL.'userpanel/message/'.$me.'/'.$this->messages[$i]['id'].'">'. $this->messages[$i]['name']. " ";
+					   	    echo $this->messages[$i]['surname']. '</div> <div class="message-unread-content col-md-6">'.$mess.'</a></div><br><br>';
 					   	    array_push($repeatArray, $this->messages[$i]['id']);
 					}
+
+
+					echo "<hr/> Przeczytane wiadomości: <br><br>"; 
 
 					for($i=0; $i<count($this->messagesRead); $i++){	
 						if(!in_array($this->messagesRead[$i]['id'], $repeatArray)){

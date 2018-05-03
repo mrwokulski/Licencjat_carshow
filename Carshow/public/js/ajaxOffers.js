@@ -1,9 +1,9 @@
-function startAjax(){
-	getOffers();
-	getPremiumOffers();
+function startAjax(URL){
+	getOffers(URL);
+	getPremiumOffers(URL);
 }
 
-function getOffers(){
+function getOffers(URL){
 
 var xmlhttp = new XMLHttpRequest();
 
@@ -25,7 +25,7 @@ xmlhttp.send();
 };
 
 
-function getPremiumOffers(){
+function getPremiumOffers(URL){
 
 var xmlhttp = new XMLHttpRequest();
 
@@ -45,3 +45,4 @@ xmlhttp.open("GET", URL+"index/premiumOffers", true);
 xmlhttp.send();
 
 };
+

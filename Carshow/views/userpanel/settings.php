@@ -15,21 +15,21 @@
 
 	   	</tr>
 	   	<tr>
-	   		<td><?= View::showArrayValue('log',0);?></td>
-	   		<td><?= View::showArrayValue('log',1);?></td>
-	   		<td><?= View::showArrayValue('log',2);?></td>
-	   		<td><?= View::showArrayValue('log',3);?></td>
-	   		<td><?= View::showArrayValue('log',4);?></td>
-	   		<td><?= View::showArrayValue('log',5);?></td>
+	   		<td><?= $this->data['login'] ?></td>
+	   		<td><?= $this->data['email'] ?></td>
+	   		<td><?= $this->data['name'] ?></td>
+	   		<td><?= $this->data['surname'] ?></td>
+	   		<td><?= $this->data['tel'] ?></td>
+	   		<td><?= View::polishDate($this->data['date_register']) ?></td>
 	   	</tr>
 	   </table>
     <hr/>
     <h2 class="title-clr">Edycja profilu</h2>
     <hr/>
-	    <a href="" data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-nav-login">Zmień hasło</a>
-	    <a href="" class="btn btn-nav-login">Zmień email</a>
-	    <a href="" class="btn btn-nav-login">Zmień telefon</a>
-	    <a href="" class="btn btn-nav-login">Zmień dane osobowe</a>
+	    <a href="<?=URL?>userpanel/change/password" class="btn btn-nav-login">Zmień hasło</a>
+	    <a href="<?=URL?>userpanel/change/email" class="btn btn-nav-login">Zmień email</a>
+	    <a href="<?=URL?>userpanel/change/phone" class="btn btn-nav-login">Zmień telefon</a>
+	    <a href="<?=URL?>userpanel/change/personal" class="btn btn-nav-login">Zmień dane osobowe</a>
     <hr/>
 
     <h2 class="title-clr">Lokalizacja</h2>
@@ -38,13 +38,7 @@
 	    <a href="" class="btn btn-nav-login">Ustaw lokalizację</a>
     <hr/>
     </div>
-		<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		  <div class="modal-dialog modal-lg">
-		    <div class="modal-content">
-		      ...
-		    </div>
-		  </div>
-		</div>
+		
 
   </div>
 </div>
