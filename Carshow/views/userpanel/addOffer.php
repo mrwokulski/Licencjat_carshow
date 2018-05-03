@@ -1,47 +1,87 @@
-<script src="<?= URL ?>public/js/custom.js"></script>
 <style>
 .col-centered{
-    float: none;
     margin: 0 auto;
 }
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-type2{
+  margin-left: auto;
+}
+
+.selected-category {
+
+}
+@media (min-width: 992px) {
+
+}
 </style>
+
 <div class="container">
   <div class="row row-margin">
-    <div class="col-md-12 userpanel-view-table">
-    <br/><!--  action="<?= URL ?>addoffer/newOffer" method="post"  miejsce na poszczegolne elementy dla menu ktore beda albo hidden albo sie zrobi osobne widoki ctrl c + v i zmieni tylko tego diva -->
-
+    <br/>
+    <div class="col-md-2"></div>
+    <div class="col-md-8 userpanel-view-table" style="padding-top: 30px;">
     <form action="<?= URL ?>addoffer/newOffer" method="post"  enctype="multipart/form-data">
 
       <div class="row row-margin">
-        <div class="form-group" style="margin-left: auto; margin-right: auto;">
-          <label for="offerType">Rodzaj ogłoszenia:</label>
-            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>">
+        <div class="form-group center">
+          <label for="offerType">Wybierz rodzaj ogłoszenia:</label>
+            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" onchange="hideBlock('type_2')">
               Rodzaj ogłoszenia
-              <option value="1">Kupna</option>
-              <option value="2">Sprzedaży</option> <!-- onclick="hide(tu id zamienie/oddam)" -->
+              <option value="1" selected>Sprzedaży</option>
+              <option value="2">Kupna</option>
             </select>
         </div>
       </div>
+
       <div class="row row-margin">
-				<button type="button" class="btn btn-secondary btn-userpanel-addoffer">
+				<button type="button" class="btn btn-secondary btn-userpanel-addoffer" id="cat_button" data-toggle="modal" data-target="#categories" >
 				Wybierz kategorie
 				</button>
+        <div class="modal fade" id="categories" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title center" id="categoriesTitle">Kategorie</h5>
+              </div>
+              <div class="modal-body" id="allcategories">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-			<div class="row row-margin" id="categories">
-				<p style="margin-left: auto; margin-right: auto;">tu maja byc kat</p>
-        	<input type="text" class="form-control" name="category" value="<?php View::saveValue('er_category') ?>" placeholder="Kategoria">
-			</div>
-			<div class="form-row">
-				<div class="col-sm-3 col-centered">
+        <div class="col-centered" id="catSelected">
+
+        </div>
+    </br>
+			<div class="col-centered">
+				<div style="margin-right: 35%; margin-left: 35%;">
 					<input type="text" class="form-control" name="maker" value="<?php View::saveValue('er_maker') ?>" placeholder="Marka">
 				</div>
-				<div class="col-sm-3 col-centered">
+				<div style="margin-right: 35%; margin-left: 35%; padding-top:10px;">
 					<input type="text" class="form-control" name="model" value="<?php View::saveValue('er_model') ?>" placeholder="Model">
 				</div>
 			</div>
+    </br>
 			<div class="form-row">
-				<div class="col-sm-3 col-centered">
-					<div class="form-group col-sm-3 col-centered">
+
+					<div class="form-group col-centered">
+            <label for="offerType">Wybierz stan produktu z ogłoszenia:</label>
 	            <select class="form-control btn-userpanel-addoffer" name="state" value="<?php View::saveValue('er_state') ?>" placeholder="Stan">
 	              Stan przedmiotu oferty
 	              <option value="1">Nowy</option>
@@ -49,51 +89,59 @@
 								<option value="3">Używany - uszkodzony</option>
 	            </select>
 	        </div>
-				</div>
-				<div class="col-sm-3 col-centered">
-					<input type="text" class="form-control" name="price" value="<?php View::saveValue('er_price') ?>" placeholder="Cena">
-				</div>
 			</div>
-			<div class="form-group row col-centered">
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="type2" id="giveaway" value="1">
-					<label class="form-check-label" for="giveaway">
-						Oddam
-					</label>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="type2" id="trade" value="2">
-					<label class="form-check-label" for="trade">
-						Zamienię
-					</label>
-				</div>
-			</div>
+    </br>
+      <div name="type_2" id="type_2">
+        <div class="row">
+          <div style="margin-left: auto; margin-right: auto;" id="priceform">
+  					<input type="text" class="form-control" id="price" name="price" value="<?php View::saveValue('er_price') ?>" placeholder="Cena">
+  				</div>
+    			<div class="form-group" id="type2form" onchange="hideBlock('priceform')">
+    				<div class="form-check" id="type2form1" style="right: 5vw;">
+    					<input class="form-check-input" type="radio" name="type2" id="giveaway" value="1">
+    					<label class="form-check-label" for="giveaway">
+    						Oddam
+    					</label>
+    				</div>
+    				<div class="form-check" id="type2form2" style="right: 5vw;">
+    					<input class="form-check-input" type="radio" name="type2" id="trade" value="2" checked="checked">
+    					<label class="form-check-label" for="trade">
+    						Zamienię
+    					</label>
+    				</div>
+    			</div>
+        </div>
+      </div>
+
 			<div class="form-row">
-				<div class="form-group">
+				<div class="form-group center">
 				  <label for="description">Opis:</label>
-				  <textarea class="form-control" rows="5" name="description" id="description"><?php View::saveValue('er_description') ?></textarea>
+				  <textarea class="form-control" rows="5" name="description" id="description" style="width: 30vw;"><?php View::saveValue('er_description') ?></textarea>
 				</div>
 			</div>
 
-			<div>         
-     	      
+			      <div class="center">
                 Zdjęcie 1: <input class="upload-form-input" type="file" name="img1" id="img1"><br/>
                	Zdjęcie 2: <input class="upload-form-input" type="file" name="img2" id="img2"><br/>
                 Zdjęcie 3: <input class="upload-form-input" type="file" name="img3" id="img3"><br/>
                 Zdjęcie 4: <input class="upload-form-input" type="file" name="img4" id="img4"><br/>
                 Zdjęcie 5: <input class="upload-form-input" type="file" name="img5" id="img5"><br/>
-            </div>   
-
+            </div>
 
       <div class="row">
           <p class="btn-search-form"><input type="submit" value="Dodaj ogłoszenie" class="btn btn-search"></p>
       </div>
-
-       
-     
-
-
     </form>
+      <div class="row" style="text-align: center;">
+        <div class="center">
+          <?php  $err = Session::get('error'); View::printModal($err); Session::unset('error') ?>
+        </div>
+      </div>
+
     </div>
-  </div>
+
 </div>
+<script src="<?= URL ?>public/js/ajaxCategories.js"></script>
+<script>
+ window.onload = getCategories();
+</script>

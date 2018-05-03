@@ -1,4 +1,5 @@
-var URL = "http://localhost:8080/Carshow/";
+var URL = "http://localhost/elektronika/Licencjat_carshow/Carshow/";
+
 
 function getOffer(id){
 
@@ -6,7 +7,7 @@ var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        myObj = JSON.parse(this.responseText);      
+        myObj = JSON.parse(this.responseText);
 
         document.getElementById("maker").innerHTML = myObj.maker +" "+ myObj.model;
         document.getElementById("maker_top").innerHTML = myObj.maker +" "+ myObj.model;
@@ -25,11 +26,11 @@ xmlhttp.onreadystatechange = function() {
             if(myObj.hasOwnProperty(i)){
                 images += '<span onclick="setImage('+it+","+id+')" style="cursor:pointer;"><img src="'+URL+'views/offer/'+id+'/'+myObj[i].link+'" class="car-thumb" style="width:20%; border: solid #e2d5d5 2px; height:100px;"></span>';
                 //images = images + '<img src="'+URL+'views/offer/'+id+'/images/'+myObj[i].link+'" style="width:95%"></div>';
-                it++;           
+                it++;
             }
         }
         document.getElementById("images").innerHTML = images;
-        
+
 
     }
 };
@@ -51,16 +52,15 @@ function getDiffDate(date){
     var date1 = new Date(m+"/"+d+"/"+y);
     var date2 = new Date();
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
 return diffDays;
 
 }
 
 
-function setImage(nr, id){            
+function setImage(nr, id){
 
     var plik = '<img src="'+URL+'views/offer/'+id+'/img'+nr+'.jpg" class="car-thumb">';
     document.getElementById("slider").innerHTML = plik;
 }
-            
