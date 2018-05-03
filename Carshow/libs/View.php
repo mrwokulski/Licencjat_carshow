@@ -25,19 +25,19 @@ class View {
 	}
 
 	public function renderOffer($key)
-	{		
+	{
 			Session::init();
 			$logged = Session::get('loggedIn');
 
 			if($logged)
 				require 'views/layout/header_userpanel.php';
-			else 
-				require 'views/layout/header.php';	
-				Session::set('id_offer', $key);				
+			else
+				require 'views/layout/header.php';
+				Session::set('id_offer', $key);
 				require 'views/offer/index.php';
 				require 'views/layout/footer.php';
-			
-		
+
+
 	}
 
 
@@ -58,7 +58,7 @@ class View {
 
 	public static function showArrayValue($key,$id){
 		if(!empty(Session::get($key))){
-			$value = Session::get($key);			
+			$value = Session::get($key);
 			echo $value[$id];
 		}
 	}
@@ -69,8 +69,8 @@ class View {
 		}
 		if(!empty(Session::get('loggedIn')) && $key == false){
 			header('Location: '.$location);
-		}			
+		}
 	}
 
-	
+
 }
