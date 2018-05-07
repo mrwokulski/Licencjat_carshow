@@ -3,30 +3,41 @@
 class View {
 
 	function __construct() {
-		//echo 'this is the view';
+		Session::init();
 	}
 
-	public function render($name, $function = false, $function_arg = false)
+	public function render($name, $function = false, $argument = false)
 	{
-		if ($function == true && $function=='test') {
-			require 'views/' . $name . '.php';
-		}
-		else {
-			Session::init();
+					
 			$logged = Session::get('loggedIn');
 
 			if($logged)
 				require 'views/layout/header_userpanel.php';
 			else
-				require 'views/layout/header.php';
+				require 'views/layout/header.php';	
 				require 'views/' . $name . '.php';
 				require 'views/layout/footer.php';
+		
+	}
+
+	public function onlyForAdmin(){
+		if(View::showArrayValue('log',7) == 0){
+			header('Location: '.URL);
+			exit;
 		}
 	}
 
+
+	public function onlyForLogged(){
+		if(empty(Session::get('log'))){
+			header('Location: '.URL);
+			exit;
+		}
+
+	}
+
 	public function renderOffer($key)
-	{
-			Session::init();
+	{			
 			$logged = Session::get('loggedIn');
 
 			if($logged)

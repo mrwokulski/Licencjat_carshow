@@ -20,7 +20,7 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>index/index">Carshow</a>
+        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>">Carshow</a>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="btn btn-nav-login" href="<?php echo URL; ?>login">Zaloguj<span class="sr-only">(current)</span></a>

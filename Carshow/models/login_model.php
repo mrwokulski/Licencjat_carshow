@@ -23,7 +23,7 @@ class Login_Model extends Model {
 
 		      if(password_verify($password, $user['password'])){		         
 		         Session::set('loggedIn', true);
-		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register'],$user['id']);
+		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register'],$user['id'],$user['admin']);
 		         Session::set('log', $logArr);
 				 Session::set('login', $login);
 				 Session::set('login_id', $user['id']);		

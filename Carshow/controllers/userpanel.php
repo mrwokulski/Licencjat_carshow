@@ -4,10 +4,12 @@ class Userpanel extends Controller {
 
 	function __construct() {
 		parent::__construct();		
+		$this->view->onlyForLogged();
 	}	
 
 	function index() {
-		$this->view->render('userpanel/index');
+		$this->view->data = $this->model->userData();
+		$this->view->render('userpanel/settings');
 	}
 
 	function settings() {

@@ -84,7 +84,7 @@
       <!-- /.row -->
       <div class="view-main-content">
         <div>
-          <div class="col-sm view-main-separator">
+          <div id="TEST" class="col-sm view-main-separator">
             Najpopularniejsze wyszukiwania:
           </div>
         </div>
@@ -160,6 +160,8 @@
     </div>
   </div>
 
+
+<script src="<?php echo URL; ?>public/vendor/jquery/jquery.min.js"></script>
 <script src="<?= URL ?>public/js/ajaxOffers.js"></script>
 <script>
   window.onload = startAjax("<?=URL?>");

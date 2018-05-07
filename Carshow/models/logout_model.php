@@ -10,7 +10,7 @@ class Logout_Model extends Model {
 
 	  Session::init();
 	  Session::destroy();
-	  header('Location: ../index');	
+	  header('Location: '.URL);	
 	}
 
 }

@@ -27,7 +27,7 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>index/index">Elektronika</a>
+        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>">Elektronika</a>
 
 
           <ul class="navbar-nav ml-auto">    
@@ -44,6 +44,10 @@
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/addOffer">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
+
+                  <?php if(View::showArrayValue('log',7) == 1) 
+                    echo ' <a class="dropdown-item dropdown-item-nav-userpanel" href="'.URL.'admin">Panel Administracyjny</a><hr class="hr-style-userpanel"/>'; ?>
+
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>logout/logOut">Wyloguj</a><hr class="hr-style-userpanel"/>
                 </div>
               </div>
