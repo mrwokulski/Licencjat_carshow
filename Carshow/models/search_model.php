@@ -42,7 +42,7 @@ class Search_Model extends Model {
 		$searchQuery = $this->db->prepare("SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
 										   WHERE o.type LIKE :type AND o.category LIKE :category AND
 										    o.state LIKE :state AND o.maker LIKE :maker AND
-										    o.model LIKE :model AND o.price BETWEEN :price1 AND :price2");
+										    o.model LIKE :model AND o.price BETWEEN :price1 AND :price2 AND o.actual = 1");
 		/*
 		SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
 										   WHERE o.type LIKE '%%' AND o.category LIKE '%%' AND
@@ -65,7 +65,7 @@ class Search_Model extends Model {
 			for($i=0; $i<count($tag); $i++){
 				$tagQuery = $this->db->prepare("SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
 											   WHERE o.type LIKE \'%:type%\', o.category LIKE \'%:category%\', o.state LIKE \'%:state%\', o.maker LIKE \'%:maker%\',
-											    o.model LIKE \'%:model%\', o.title LIKE \'%:tag%\', o.description LIKE \'%:tag%\', o.price BETWEEN :price1 AND :price2");
+											    o.model LIKE \'%:model%\', o.title LIKE \'%:tag%\', o.description LIKE \'%:tag%\', o.price BETWEEN :price1 AND :price2 AND o.actual = 1");
 
 				$tagQuery->bindValue(':tag', $tag[i], PDO::PARAM_STR);
 				$tagQuery->execute();

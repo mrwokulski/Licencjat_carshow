@@ -12,7 +12,7 @@ class Index_Model extends Model {
 
 	public function topOffers(){
 
-	      $offersQuery = $this->db->prepare('SELECT o.*, p.link FROM offer o JOIN offer_has_picture h ON o.id = h.id_picture JOIN picture p ON h.id_picture=p.id LIMIT 8');
+	      $offersQuery = $this->db->prepare('SELECT o.*, p.link FROM offer o LEFT JOIN offer_has_picture h ON o.id = h.id_picture LEFT JOIN picture p ON h.id_picture=p.id WHERE o.actual=1 ORDER BY o.id DESC LIMIT 8');
 
 	      $offersQuery->execute();
 	      $offer = $offersQuery->fetchAll();
@@ -41,8 +41,7 @@ class Index_Model extends Model {
 
 	}
 
-	
- master
+
 	public function geoIp(){
 
 		$latitude = "52.2486241";  

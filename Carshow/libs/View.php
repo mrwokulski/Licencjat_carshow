@@ -36,6 +36,7 @@ class View {
 
 	}
 
+	
 	public function renderOffer($key)
 	{			
 			$logged = Session::get('loggedIn');

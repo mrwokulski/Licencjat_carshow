@@ -3,7 +3,7 @@
 .txtcenter {
 	text-align: center;
 }
-
+<?php $id = Session::get('id_offer'); ?>
 </style>
 		<div class="container">
 		<div class="row row-margin">
@@ -33,7 +33,21 @@
 			  	  <p style="text-align: center; font-size: 25px" id="name"></p>
 			  	  <div style="padding-left: 10%;">
 			  	   Kontakt:
-			  	</div><p style="text-align: center; font-size: 30px" id="tel"></p>
+			  	</div><p style="text-align: center; font-size: 30px" id="tel"></p>			  	
+			
+			  	<?php 
+
+			  	if(!empty(Session::get('log'))){
+			  		echo '<p style="text-align: center; font-size: 30px">Wyślij Wiadomość</p>';
+			  		 echo '<form action="'.URL. "userpanel/sendMessage/$this->id".'" method="post"  enctype="multipart/form-data"  style="text-align:center; margin: 0 auto;">
+					<textarea class="form-control" rows="5" name="message" id="message" style="background-color: #fff3f3;"></textarea>
+					<input name="offer" type="hidden" value="'.$id.'">
+					<input type="submit" value="Wyślij" class="btn btn-search" style="margin-top: 10px;">
+					</form>';
+
+			  	}
+
+			  	?>
 	        </div>
 
 	        <div class="col-md-12 userpanel-view-table">
@@ -41,7 +55,7 @@
 	         <p class="txtcenter" id="description"></p>
 	     		</div>
 </div>
-<?php $id = Session::get('id_offer'); ?>
+
 
 <script src="<?= URL ?>public/js/ajaxOffer.js"></script>
 

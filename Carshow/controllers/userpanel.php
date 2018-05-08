@@ -18,7 +18,10 @@ class Userpanel extends Controller {
 	}
 
 	function addOffer() {
-		$this->view->render('userpanel/addOffer');
+		if($this->model->isBanned() == true)
+			$this->view->render('index/index');
+		else
+			$this->view->render('userpanel/addOffer');
 	}
 
 	function messages() {
