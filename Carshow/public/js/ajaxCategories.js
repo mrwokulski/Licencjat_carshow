@@ -41,14 +41,17 @@ function hideBlock(id) {
 
 		if(id == 'priceform'){
 			var elem = document.getElementById('type2form');
-			var elem1 = document.getElementById('type2form1');
-			var elem2 = document.getElementById('type2form2');
-
 			var price = document.getElementById('price');
 			price.value = 0;
 			elem.style.marginLeft = "auto";
 			elem.style.marginRight = "auto";
 		}
+
+		if(id == 'type2form1'){
+			var elem = document.getElementById('type2form2');
+			elem.style.marginRight = '20%';
+		}
+
 }
 
 
@@ -56,4 +59,10 @@ function hideModal(value){
 
 	document.getElementById("cat_button").innerHTML = value;
 	$('#categories').modal('hide');
+}
+
+function dropPrices(id){
+
+	var elem = document.getElementById(id);	
+	$(id).attr("aria-expanded","true");
 }

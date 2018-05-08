@@ -27,6 +27,22 @@ body {
   }
 }
 
+/* KATEGORIE INDEX */
+
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+/* KONIEC */
+
 .title-clr{
   color: #565656;
 }
@@ -150,7 +166,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.car-thumb-text{ 
+.car-thumb-text{
   position: absolute;
   width: 100%;
   height: 10%;
@@ -159,7 +175,7 @@ body {
   color: white;
 }
 
-.car-thumb-type{  
+.car-thumb-type{
   position: absolute;
   font-weight: bold;
   padding-left: 10px;
@@ -167,7 +183,7 @@ body {
   color: #c13a3a;
 }
 
-.car-thumb-type-premium {  
+.car-thumb-type-premium {
   position: absolute;
   font-weight: bold;
   padding-left: 10px;
@@ -418,7 +434,7 @@ A.userpanel-link-showmore:hover{
 .message-content2{
   float: left;
   color: white;
-  font-size: 20px; 
+  font-size: 20px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: #a32a3b;

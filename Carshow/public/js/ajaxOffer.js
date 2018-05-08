@@ -8,9 +8,25 @@ xmlhttp.onreadystatechange = function() {
         myObj = JSON.parse(this.responseText);
 
         document.getElementById("maker").innerHTML = myObj.maker +" "+ myObj.model;
-        document.getElementById("maker_top").innerHTML = myObj.maker +" "+ myObj.model;
-        document.getElementById("type").innerHTML = myObj.type;
-        document.getElementById("type2").innerHTML = myObj.type2;
+        document.getElementById("maker_top").innerHTML = myObj.title;
+
+        if(myObj.type == 1){
+          document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Sprzedaż';
+        }
+        if(myObj.type == 2){
+          document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Kupna';
+        }
+
+        if(myObj.type2 == 0){
+          document.getElementById("type2").innerHTML = 'Nie interesuje mnie zamiana.';
+        }
+        if(myObj.type2 == 1){
+          document.getElementById("type2").innerHTML = 'Interesuje mnie zamiana';
+        }
+        if(myObj.type2 == 2){
+          document.getElementById("type2").innerHTML = 'Oddam za darmo';
+        }
+
         document.getElementById("price").innerHTML = myObj.price + "zł";
         document.getElementById("description").innerHTML = myObj[7];
         document.getElementById("date").innerHTML = "Ogłoszenie w serwisie od: " + getDiffDate(myObj.date_added) + " dni";
@@ -20,7 +36,7 @@ xmlhttp.onreadystatechange = function() {
 
         var images = '';
         var it = 1;
-        for(i=19; i<24; i++){
+        for(i=21; i<26; i++){
             if(myObj.hasOwnProperty(i)){
                 images += '<span onclick="setImage('+it+","+id+',\''+URL+'\')" style="cursor:pointer;"><img src="'+URL+'views/offer/'+id+'/'+myObj[i].link+'" class="car-thumb" style="width:20%; border: solid #e2d5d5 2px; height:100px;"></span>';
                 //images = images + '<img src="'+URL+'views/offer/'+id+'/images/'+myObj[i].link+'" style="width:95%"></div>';
@@ -57,7 +73,7 @@ return diffDays;
 }
 
 
-function setImage(nr, id, URL){          
+function setImage(nr, id, URL){
 
     var plik = '<img src="'+URL+'views/offer/'+id+'/img'+nr+'.jpg" class="car-thumb">';
     document.getElementById("slider").innerHTML = plik;

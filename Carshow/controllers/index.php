@@ -9,11 +9,11 @@ class Index extends Controller {
 	function sitePatch(){
 		$this->model->sitePatch();
 	}
-	
-	function index() {		
+
+	function index() {
 		$this->view->render('index/index');
 	}
-	
+
 	function details() {
 		$this->view->render('index/index');
 	}
@@ -30,5 +30,7 @@ class Index extends Controller {
 		$this->model->geoIp();
 	}
 
-	
+	function search(){
+		$this->model->search();
+	}
 }

@@ -23,11 +23,16 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   margin-left: auto;
 }
 
-.selected-category {
-
+.radiofix {
+  right: 5.5vw;
 }
 @media (min-width: 992px) {
 
+}
+@media (min-width: 1200px) {
+      .radiofix {
+        right: 11vw;
+      }
 }
 </style>
 
@@ -41,7 +46,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
       <div class="row row-margin">
         <div class="form-group center">
           <label for="offerType">Wybierz rodzaj ogłoszenia:</label>
-            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" onchange="hideBlock('type_2')">
+            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" onchange="hideBlock('type2form1'); hideBlock('')">
               Rodzaj ogłoszenia
               <option value="1" selected>Sprzedaży</option>
               <option value="2">Kupna</option>
@@ -91,19 +96,19 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	        </div>
 			</div>
     </br>
-      <div name="type_2" id="type_2">
+      <div>
         <div class="row">
           <div style="margin-left: auto; margin-right: auto;" id="priceform">
   					<input type="text" class="form-control" id="price" name="price" value="<?php View::saveValue('er_price') ?>" placeholder="Cena">
   				</div>
     			<div class="form-group" id="type2form" onchange="hideBlock('priceform')">
-    				<div class="form-check" id="type2form1" style="right: 5vw;">
+    				<div class="form-check radiofix" id="type2form1">
     					<input class="form-check-input" type="radio" name="type2" id="giveaway" value="1">
     					<label class="form-check-label" for="giveaway">
     						Oddam
     					</label>
     				</div>
-    				<div class="form-check" id="type2form2" style="right: 5vw;">
+    				<div class="form-check radiofix" id="type2form2">
     					<input class="form-check-input" type="radio" name="type2" id="trade" value="2" checked="checked">
     					<label class="form-check-label" for="trade">
     						Zamienię
@@ -113,6 +118,14 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
         </div>
       </div>
 
+      <div class="form-row">
+				<div class="form-group center">
+				  <label for="title">Tytuł ogłoszenia:</label>
+				  <input type="text" class="form-control" name="title" id="title" style="width: 30vw;"><?php View::saveValue('er_title') ?></textarea>
+				</div>
+			</div>
+
+
 			<div class="form-row">
 				<div class="form-group center">
 				  <label for="description">Opis:</label>
@@ -120,7 +133,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 				</div>
 			</div>
 
-			      <div class="center">
+			      <div class="center" style="text-align: center; margin-left: 14.5%;">
                 Zdjęcie 1: <input class="upload-form-input" type="file" name="img1" id="img1"><br/>
                	Zdjęcie 2: <input class="upload-form-input" type="file" name="img2" id="img2"><br/>
                 Zdjęcie 3: <input class="upload-form-input" type="file" name="img3" id="img3"><br/>

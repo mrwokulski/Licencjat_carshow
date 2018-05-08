@@ -8,11 +8,49 @@ class Addoffer_Model extends Model {
 
   private function saveValue(){
 
-	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "description");
+	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "description");
 		for($i = 0; $i < count ($keys); $i++){
 			if(!empty($_POST[$keys[$i]]))
 					Session::set('er_'.$keys[$i], $_POST[$keys[$i]]);
 		}
+	}
+
+	public function buyOffer() {
+
+		$type = filter_input(INPUT_POST, 'type');
+		$category = filter_input(INPUT_POST, 'category');
+		$maker = filter_input(INPUT_POST, 'maker');
+		$model = filter_input(INPUT_POST, 'model');
+		$state = filter_input(INPUT_POST, 'state');
+		$price = filter_input(INPUT_POST, 'price');
+		$type2 = filter_input(INPUT_POST, 'type2');
+		$description = filter_input(INPUT_POST, 'description');
+
+
+
+		$addOfferQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,description,date_added,user, premium) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :description, :date_added, :user, :premium)');
+
+		$value = Session::get('log');
+		$user_id = $value[6];
+
+
+		 if($type2 == null)
+				 $type2 = 0;
+
+		$addOfferQuery->bindValue(':type', $type, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':category', $category, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':maker', $maker, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':model', $model, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':state', $state, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':price', $price, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':type2', $type2, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':description', $description, PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':date_added', date("Y-m-d"), PDO::PARAM_STR);
+		$addOfferQuery->bindValue(':user', $user_id, PDO::PARAM_INT);
+		$addOfferQuery->bindValue(':premium', 0, PDO::PARAM_INT);
+
+		$addOfferQuery->execute();
+
 	}
 
   public function newOffer() {
@@ -23,12 +61,13 @@ class Addoffer_Model extends Model {
 
 				 //DO REFAKTORYZACJI WIKTOR
 
-			 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "description");
-		 	 $labels = array("Rodzaj ogłoszenia", "Kategoria", "Producent", "Model", "Stan", "Cena", "Rodzaj2", "Opis");
+			 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "description");
+		 	 $labels = array("Rodzaj ogłoszenia", "Kategoria", "Producent", "Model", "Stan", "Cena", "Rodzaj2", "Tytul", "Opis");
 
 			 $err = '';
 			 $uploadOk = 1;
 
+			 $title = preg_replace('/[^ęóąśłżźćńĘÓĄŚŁŻŹĆŃA-Z0-9a-z \-\+]+/', '', $_POST['title']);
 
 			 if(empty($_POST['type'])){
 				 $err = $err . "</br> Nie wybrano rodzaju ogłoszenia.";
@@ -50,21 +89,31 @@ class Addoffer_Model extends Model {
 					$correct_params = false;
 			 }
 
+			 if(strlen($title) <= 5){
+				 $err = $err . "</br> Tytuł zbyt krótki. (min 5 liter lub cyfr)";
+			 	 $correct_params = false;
+			 }
+
+			 if(strlen($title) > 99){
+				$err = $err . "</br> Tytuł zbyt długi. (ogranicz liczbę znaków poniżej 100)";
+				$correct_params = false;
+			}
+
 			 if(strlen($_POST['description']) <= 20){
 			   $err = $err . "</br> Opis zbyt krótki.";
 			 	 $correct_params = false;
 			 }
 
-			 if($_POST['price'] == 0 && $_POST['type2'] == 2){
+			 if($_POST['price'] <= 0 && $_POST['type2'] == 2 && $_POST['type'] == 1){
 			 	$err = $err . "</br> Cena przy sprzedaży/kupnie nie może być równa 0.";
 			 	$correct_params = false;
 			 }
+			 if($_POST['type'] == 2) $_POST['price'] = 0;
 
 			 if(!is_numeric($_POST['price'])){
 			 	$err = $err . "</br> Cena musi być liczbą!";
 			 	$correct_params = false;
 			 }
-
 
 			if($correct_params){
 
@@ -81,6 +130,7 @@ class Addoffer_Model extends Model {
 				 $correct_params = false;
 			 }
 
+
 		   $lastPhotoId = 1;
 			 $photoCounter = 0;
 
@@ -89,6 +139,7 @@ class Addoffer_Model extends Model {
 					 break;
 					$photoCounter++;
 				}
+
 
 				 for($i=1;$i<($photoCounter+1);$i++){
 						 $type = array();
@@ -124,6 +175,8 @@ class Addoffer_Model extends Model {
 						 $uploadOk = 0;
 			 	 }
 
+
+
 				 if($uploadOk == 0){
 					 $correct_params = false;
 
@@ -150,7 +203,7 @@ class Addoffer_Model extends Model {
 
 
 
-				 $addOfferQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,description,date_added,user, premium) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :description, :date_added, :user, :premium)');
+				 $addOfferQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,title,description,date_added,user, premium) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :title, :description, :date_added, :user, :premium)');
 
 				 $value = Session::get('log');
 				 $user_id = $value[6];
@@ -166,6 +219,7 @@ class Addoffer_Model extends Model {
 				 $addOfferQuery->bindValue(':state', $state, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':price', $price, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':type2', $type2, PDO::PARAM_STR);
+				 $addOfferQuery->bindValue(':title', $title, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':description', $description, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':date_added', date("Y-m-d"), PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':user', $user_id, PDO::PARAM_INT);

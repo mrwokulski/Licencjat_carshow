@@ -21,18 +21,18 @@ class Userpanel_Model extends Model {
 
 		$userQuery = $this->db->prepare('SELECT login, email, name, surname, tel, date_register FROM users WHERE id=:id');
 		$me = View::showArrayValue('log',6);
-		$userQuery->bindValue(':id', $me, PDO::PARAM_INT);	   
+		$userQuery->bindValue(':id', $me, PDO::PARAM_INT);
 	    $userQuery->execute();
 	    $user = $userQuery->fetch();
 
 	    return $user;
 	}
 
-	
+
 	public function message($id_1, $id_2){
 
-	      $messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message, m.date from message m LEFT JOIN users u ON m.id_user1=u.id where (m.id_user1 = :id1 AND m.id_user2 = :id2) OR (m.id_user1 = :id4 AND m.id_user2 = :id3) ORDER BY m.date ASC;');	
-	      
+	      $messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message, m.date from message m LEFT JOIN users u ON m.id_user1=u.id where (m.id_user1 = :id1 AND m.id_user2 = :id2) OR (m.id_user1 = :id4 AND m.id_user2 = :id3) ORDER BY m.date ASC;');
+
 	      $messageQuery->bindValue(':id1', $id_1, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':id2', $id_2, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':id3', $id_1, PDO::PARAM_INT);
@@ -42,7 +42,7 @@ class Userpanel_Model extends Model {
 	      $message = $messageQuery->fetchAll();
 
 	      return $message;
-		  
+
 	}
 
 
@@ -50,10 +50,10 @@ class Userpanel_Model extends Model {
 
 		 if(!empty($_POST['message'])){
 
-	      $messageQuery = $this->db->prepare('INSERT INTO message (id_user1, id_user2, message, date, id_offer, unread) VALUES (:id_user1, :id_user2, :message, :date, NULL, :unread);');	
+	      $messageQuery = $this->db->prepare('INSERT INTO message (id_user1, id_user2, message, date, id_offer, unread) VALUES (:id_user1, :id_user2, :message, :date, NULL, :unread);');
 
-	      $date = date("Y-m-d H:i:s");	
-	      $me = View::showArrayValue('log',6);	      
+	      $date = date("Y-m-d H:i:s");
+	      $me = View::showArrayValue('log',6);
 	      $messageQuery->bindValue(':id_user1', $me, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':id_user2', $id, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':message', $_POST['message'], PDO::PARAM_STR);
@@ -63,7 +63,7 @@ class Userpanel_Model extends Model {
 
 	     header('Location:' .URL.'userpanel/message/'.$me.'/'.$id);
 	  }
-		  
+
 	}
 
 	public function unreadMessage($id1){
@@ -71,22 +71,22 @@ class Userpanel_Model extends Model {
 		$messageQuery = $this->db->prepare('UPDATE message SET unread = 0 WHERE id_user1 = :id_user1 AND id_user2 = :id_user2');
 		$me = View::showArrayValue('log',6);
 		$messageQuery->bindValue(':id_user1', $id1, PDO::PARAM_INT);
-	    $messageQuery->bindValue(':id_user2', $me, PDO::PARAM_INT);	
+	    $messageQuery->bindValue(':id_user2', $me, PDO::PARAM_INT);
 	    $messageQuery->execute();
 
 	}
 
 
 	public function messageAuthor($id, $id2){
-		 
-	      $messageQuery = $this->db->prepare('SELECT name, surname, id FROM users where id = :id_user OR id = :id_user2');		     
+
+	      $messageQuery = $this->db->prepare('SELECT name, surname, id FROM users where id = :id_user OR id = :id_user2');
 	      $messageQuery->bindValue(':id_user', $id, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':id_user2', $id2, PDO::PARAM_INT);
 	      $messageQuery->execute();
 	      $messageAuthor = $messageQuery->fetchAll();
 
-	      return $messageAuthor;    
-	   
+	      return $messageAuthor;
+
   	}
 
   	public function unreadMessages(){
@@ -101,7 +101,7 @@ class Userpanel_Model extends Model {
 
   	public function showMessagesUnread(){
 
-			$me = View::showArrayValue('log',6);			
+			$me = View::showArrayValue('log',6);
 			$messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message FROM message m RIGHT JOIN users u ON m.id_user1=u.id WHERE m.id_user2=:id_user AND m.unread = 1 GROUP BY u.id;');
 	  		$messageQuery->bindValue(':id_user', $me, PDO::PARAM_INT);
 	  		$messageQuery->execute();
@@ -109,17 +109,17 @@ class Userpanel_Model extends Model {
 
 	  		return $message;
 	}
-	
+
 	public function showMessagesRead(){
 
-			$me = View::showArrayValue('log',6);			
+			$me = View::showArrayValue('log',6);
 			$messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message FROM message m RIGHT JOIN users u ON m.id_user1=u.id WHERE m.id_user2=:id_user AND m.unread = 0  GROUP BY u.id;');
 	  		$messageQuery->bindValue(':id_user', $me, PDO::PARAM_INT);
 	  		$messageQuery->execute();
 	  		$message = $messageQuery->fetchAll();
 
 	  		return $message;
-	}	  
+	}
 
 
 	public function changePassword(){
@@ -143,14 +143,14 @@ class Userpanel_Model extends Model {
 			}
 
 			if($correct_params) {
-				$me = View::showArrayValue('log',6);	
+				$me = View::showArrayValue('log',6);
 				$userQuery = $this->db->prepare('SELECT password FROM users WHERE id=:id');
 				$userQuery->bindValue(':id', $me, PDO::PARAM_INT);
 				$userQuery->execute();
 				$pass = $userQuery->fetch();
 
 				if(!password_verify($_POST['password_old'], $pass['password'])){
-					$correct_params = false;	
+					$correct_params = false;
 					$err = $err . '<br/>'. "Dawne hasło nie jest poprawne";
 				}
 
@@ -159,16 +159,16 @@ class Userpanel_Model extends Model {
 					$userQuery->bindValue(':id', $me, PDO::PARAM_INT);
 					$userQuery->bindValue(':pass', password_hash($_POST['password_new'], PASSWORD_DEFAULT), PDO::PARAM_STR);
 					$userQuery->execute();
-					header('Location: '.URL.'userpanel/settings');					
-				}			
+					header('Location: '.URL.'userpanel/settings');
+				}
 			}
 
 			if(!$correct_params){
 				header('Location: '.URL.'userpanel/change/password');
 				Session::set('error', $err);
 			}
-			
-	}	
+
+	}
 
 	public function changeEmail(){
 
@@ -187,31 +187,31 @@ class Userpanel_Model extends Model {
 
 			if($correct_params)	{
 				$userQuery = $this->db->prepare('SELECT count(*) as many FROM users WHERE email=:email');
-				$userQuery->bindValue(':email', $_POST['email'], PDO::PARAM_STR);					
-				$userQuery->execute();		
-				$user = $userQuery->fetch();				
+				$userQuery->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
+				$userQuery->execute();
+				$user = $userQuery->fetch();
 
 				if($user['many'] != 0){
 					$err = $err . '<br/>'. "Podany email znajduje się już w bazie";
 
 				} else {
-					$me = View::showArrayValue('log',6);	
+					$me = View::showArrayValue('log',6);
 					$userQuery = $this->db->prepare('UPDATE users SET email = :email WHERE id=:id');
 					$userQuery->bindValue(':id', $me, PDO::PARAM_INT);
 					$userQuery->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
 					$userQuery->execute();
-					header('Location: '.URL.'userpanel/settings');							
+					header('Location: '.URL.'userpanel/settings');
 				}
 
 			} else {
 				header('Location: '.URL.'userpanel/change/email');
 				Session::set('error', $err);
 
-			}	
+			}
 
 	}
 
-	public function changePhone(){ 
+	public function changePhone(){
 
 		$correct_params = true;
 		$err = "";
@@ -227,12 +227,12 @@ class Userpanel_Model extends Model {
    		}
 
    		if($correct_params)	{
-   			$me = View::showArrayValue('log',6);	
+   			$me = View::showArrayValue('log',6);
 			$userQuery = $this->db->prepare('UPDATE users SET tel = :phone WHERE id=:id');
 			$userQuery->bindValue(':id', $me, PDO::PARAM_INT);
 			$userQuery->bindValue(':phone', $_POST['phone'], PDO::PARAM_STR);
 			$userQuery->execute();
-			header('Location: '.URL.'userpanel/settings');	
+			header('Location: '.URL.'userpanel/settings');
 
 		} else {
 			header('Location: '.URL.'userpanel/change/phone');
@@ -240,11 +240,11 @@ class Userpanel_Model extends Model {
 
 		}
 
-	} 
+	}
 
 
 
-	public function changePersonal(){ 
+	public function changePersonal(){
 
 		$correct_params = true;
 		$err = "";
@@ -260,21 +260,21 @@ class Userpanel_Model extends Model {
    		}
 
    		if($correct_params)	{
-   			$me = View::showArrayValue('log',6);	
+   			$me = View::showArrayValue('log',6);
 			$userQuery = $this->db->prepare('UPDATE users SET name = :name, surname =:surname WHERE id=:id');
 			$userQuery->bindValue(':id', $me, PDO::PARAM_INT);
 			$userQuery->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
 			$userQuery->bindValue(':surname', $_POST['surname'], PDO::PARAM_STR);
 			$userQuery->execute();
-			header('Location: '.URL.'userpanel/settings');	
-			
+			header('Location: '.URL.'userpanel/settings');
+
 		} else {
 			header('Location: '.URL.'userpanel/change/personal');
 			Session::set('error', $err);
 
 		}
 
-	} 
-	
-	
+	}
+
+
 }
