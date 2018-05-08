@@ -15,10 +15,17 @@
         Hasło:
         <input type="password" name="password" value="qwerty123" style="width: 100%">
 
-          <p class="btn-search-form"><input type="submit" value="Zaloguj" class="btn btn-search"></p>
+        <p class="btn-search-form"><input type="submit" value="Zaloguj" class="btn btn-search"></p>
         </form>
 
+         <p style="text-align: center;"> Nie masz jeszcze konta? </p>
+         <p class="btn-search-form"><button  onclick="location.href='<?=URL?>register';" class="btn btn-search">Załóż nowe konto</button></p>
+
         </div>
+
+
+
+
         <div class="col-md-7" style="background-color: gray;">
 
           <?php  $err = Session::get('error'); View::printModal($err); Session::unset('error') ?>
