@@ -1,40 +1,48 @@
+<style>
+
+.txtcenter {
+	text-align: center;
+}
+
+</style>
 		<div class="container">
 		<div class="row row-margin">
 	        <div class="col-md-6 userpanel-view-table" >
 		        <br/>
-		        <h2 id="maker_top"></h2>
+		        <h2 class="txtcenter" id="maker_top"></h2>
 				<hr/>
 
 
 				<div id="slider"></div>
 				<div id="images"></div>
 
-				        
-		     </div>   
+
+		     </div>
 	        <div class="col-md-6 userpanel-view-table" style="padding-top: 62px;">
 	        	<hr/>
 		       	 <h1 style="text-align: center;" id="price"></h1>
 		        <hr/>
 			      <div style="padding-left: 10%;">
-			        <p id="maker"></p>        
+			        <p id="maker"></p>
 			        <p id="type"></p>
 			        <p id="type2"></p>
-			        <p>Miasto</p>			        
-			        <p id="date"></p>			       
+			        <p>Lokalizacja twórcy ogłoszenia</p>
+			        <p id="date"></p>
 			  	  </div>
 			  	  <hr/>
 			  	  <p style="text-align: center; font-size: 25px" id="name"></p>
-			  	  <div style="padding-left: 10%;">			  	  	
-			  	   kontakt: 
+			  	  <div style="padding-left: 10%;">
+			  	   Kontakt:
 			  	</div><p style="text-align: center; font-size: 30px" id="tel"></p>
 	        </div>
+
 	        <div class="col-md-12 userpanel-view-table">
 	        	<hr/>
-	         Opis: <p id="description"></p>
-	     	</div>
+	         <p class="txtcenter" id="description"></p>
+	     		</div>
 </div>
-<?php $id = Session::get('id_offer'); ?> 
-	
+<?php $id = Session::get('id_offer'); ?>
+
 <script src="<?= URL ?>public/js/ajaxOffer.js"></script>
 
 <script>
