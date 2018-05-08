@@ -132,5 +132,51 @@ class Admin_Model extends Model {
 	  
 	}
 
+
+	public function editSettings(){
+
+		$url = filter_input(INPUT_POST, 'url');
+		$title = filter_input(INPUT_POST, 'title');
+		$header = filter_input(INPUT_POST, 'header');
+		$footer = filter_input(INPUT_POST, 'footer');
+
+		echo $url . " " . $title . " " . $header ." ". $footer;
+		if(!empty($header) && !empty($title) && !empty($url) && !empty($footer)){
+
+			$fp = fopen('config/paths.php', 'w');
+			fwrite($fp, '
+				<?php
+				define("URL", "'.$url.'");
+				define("Tittle", "'.$title.'");
+				define("Header", "'.$header.'");
+				define("Footer", "'.$footer.'");'
+				);
+			fclose($fp);
+
+
+			$settingsQuery = $this->db->prepare('UPDATE settings SET url=:url, title=:title, header=:header, footer=:footer WHERE id = 1');
+			$settingsQuery->bindValue('url', $url, PDO::PARAM_STR); 
+			$settingsQuery->bindValue('title', $title, PDO::PARAM_STR); 
+			$settingsQuery->bindValue('header', $header, PDO::PARAM_STR); 
+			$settingsQuery->bindValue('footer', $footer, PDO::PARAM_STR); 
+			$settingsQuery->execute();
+
+			header('Location: '.URL.'admin/settings');
+		
+
+		}
+
+	}
+
+	public function getSettings(){
+		
+		$settingsQuery = $this->db->prepare('SELECT * FROM settings');
+		$settingsQuery->execute();
+		$settings = $settingsQuery->fetch();
+
+		return $settings;
+
+	}
+
 	
 }

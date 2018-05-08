@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-	<title>Test</title>
+	<title><?= Tittle ?></title>
 
-    <link rel="stylesheet" href="<?php echo URL; ?>public/vendor/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="<?php echo URL; ?>public/css/carshow.css" />
+    <link rel="stylesheet" href="<?= URL; ?>public/vendor/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="<?= URL; ?>public/css/carshow.css" />
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Open+Sans+Condensed:300|Quicksand|Titillium+Web" rel="stylesheet">
 
   <script src="<?= URL ?>public/js/ajaxMessage.js"></script>
@@ -27,7 +27,7 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>">Elektronika</a>
+        <a class="navbar-brand nav-bar-homepage" href="<?= URL ?>"><?= Header ?></a>
 
 
           <ul class="navbar-nav ml-auto">    

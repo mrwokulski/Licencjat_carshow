@@ -30,6 +30,17 @@ class Index_Model extends Model {
 		  echo json_encode($premium);
 	}
 
+
+	public function getSettings(){
+		
+		$settingsQuery = $this->db->prepare('SELECT * FROM settings');
+		$settingsQuery->execute();
+		$settings = $settingsQuery->fetch();
+
+		return $settings;
+
+	}
+
 	
 	public function geoIp(){
 

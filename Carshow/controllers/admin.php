@@ -21,6 +21,15 @@ class Admin extends Controller {
 		$this->view->render('admin/users');				
 	}
 
+	function settings(){
+		$this->view->settings = $this->model->getSettings();
+		$this->view->render('admin/settings');
+	}
+
+	function editSettings(){
+		$this->model->editSettings();
+	}
+
 
 	function edit_user($id){
 		$this->view->user = $this->model->user($id);	
@@ -38,6 +47,7 @@ class Admin extends Controller {
 	function isBanned($id){
 		$this->model->isBanned($id);
 	}
+
 
 	
 	
