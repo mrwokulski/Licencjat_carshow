@@ -156,5 +156,5 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 </div>
 <script src="<?= URL ?>public/js/ajaxCategories.js"></script>
 <script>
- window.onload = getCategories();
+ window.onload = getCategories('<?= URL ?>');
 </script>

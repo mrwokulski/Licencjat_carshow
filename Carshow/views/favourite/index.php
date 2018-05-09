@@ -66,9 +66,7 @@
 		        
 <?php 
 
-	$offers = Session::get('offers');
-
-	//var_dump($offers); 
+	$offers = $this->offers;
 
 	for($i=0 ; $i<count($offers); $i++){
 	$type = ($offers[$i]["type"] == 1)? "Sprzedam" : "Kupię";
@@ -97,7 +95,6 @@
 							<div style="text-align: center;">'. $offers[$i]["maker"] .' '. $offers[$i]["model"]  .'</div>
 							<div style="text-align: center;"> '. $offers[$i][8] .'  </div>
 							<div style="text-align: center;"> Miasto </div>
-							<div style="text-align: center;"> <a href="'.URL.'favourite/add/'.$offers[$i][0].'">Dodaj do ulubionych</a> </div>
 						</div>           
 					</div>
 		         </div>';
