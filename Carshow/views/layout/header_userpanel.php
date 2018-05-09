@@ -42,7 +42,7 @@
                 <div class="dropdown-menu dropdown-menu-userpanel" style="position:absolute; width: 200px;" aria-labelledby="dropdownMenuButton">
                    <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/messages"><div id="messages"></div></a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/addOffer">Wystaw ogłoszenie</a><hr class="hr-style-userpanel"/>
-                  <a class="dropdown-item dropdown-item-nav-userpanel" href="#">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
+                  <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>favourite">Pokaż ulubione</a><hr class="hr-style-userpanel"/>
                   <a class="dropdown-item dropdown-item-nav-userpanel" href="<?= URL ?>userpanel/settings">Ustawienia</a><hr class="hr-style-userpanel"/>
 
                   <?php if(View::showArrayValue('log',7) == 1) 
