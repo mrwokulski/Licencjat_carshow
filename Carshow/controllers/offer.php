@@ -10,7 +10,8 @@ class Offer extends Controller {
 		$this->view->render('offer/top');
 	}
 
-	function show($key) {		
+	function show($key) {
+		$this->view->id = $this->model->getAuthor($key);		
 		$this->view->renderOffer($key);
 	}
 

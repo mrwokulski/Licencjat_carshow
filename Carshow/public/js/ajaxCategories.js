@@ -1,6 +1,5 @@
-var URL = "http://localhost/elektronika/Licencjat_carshow/Carshow/";
 var type2 = 0;
-function getCategories(){
+function getCategories(URL){
 
 	var xmlhttp = new XMLHttpRequest();
 

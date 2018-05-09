@@ -26,8 +26,10 @@ xmlhttp.onreadystatechange = function() {
         if(myObj.type2 == 2){
           document.getElementById("type2").innerHTML = 'Oddam za darmo';
         }
-
-        document.getElementById("price").innerHTML = myObj.price + "zł";
+        if(myObj.actual == 0)
+             document.getElementById("price").innerHTML = "Oferta nieaktualna";
+        else            
+             document.getElementById("price").innerHTML = myObj.price + "zł";
         document.getElementById("description").innerHTML = myObj[7];
         document.getElementById("date").innerHTML = "Ogłoszenie w serwisie od: " + getDiffDate(myObj.date_added) + " dni";
         document.getElementById("name").innerHTML = myObj.name + " " + myObj.surname;
@@ -36,7 +38,7 @@ xmlhttp.onreadystatechange = function() {
 
         var images = '';
         var it = 1;
-        for(i=21; i<26; i++){
+        for(i=22; i<27; i++){
             if(myObj.hasOwnProperty(i)){
                 images += '<span onclick="setImage('+it+","+id+',\''+URL+'\')" style="cursor:pointer;"><img src="'+URL+'views/offer/'+id+'/'+myObj[i].link+'" class="car-thumb" style="width:20%; border: solid #e2d5d5 2px; height:100px;"></span>';
                 //images = images + '<img src="'+URL+'views/offer/'+id+'/images/'+myObj[i].link+'" style="width:95%"></div>';
