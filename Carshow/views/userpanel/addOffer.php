@@ -143,5 +143,8 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 <script src="<?= URL ?>public/js/ajaxCategories.js"></script>
 <script>
  window.onload = getCategories('<?= URL ?>');
+<<<<<<< HEAD
  window.onload = hideBlock('type2form');
+=======
+>>>>>>> 06c769cba1e9d3f6fb511ceb4f16dad8d97e3793
 </script>
