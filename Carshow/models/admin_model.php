@@ -49,6 +49,24 @@ class Admin_Model extends Model {
 	     return $users;
 	}
 
+	public function offers(){
+
+		 $offersQuery = $this->db->prepare('SELECT * FROM offer WHERE actual=1 ORDER BY id DESC;');	
+	     $offersQuery->execute();
+	     $offers = $offersQuery->fetchAll();
+
+	     return $offers;
+	}
+
+	public function endedOffers(){
+
+		 $offersQuery = $this->db->prepare('SELECT * FROM offer WHERE actual=0 ORDER BY id DESC;');	
+	     $offersQuery->execute();
+	     $offers = $offersQuery->fetchAll();
+
+	     return $offers;
+	}
+
 	public function user($id){
 
 		 $usersQuery = $this->db->prepare('SELECT login, email, name, surname, tel, date_register, id FROM users WHERE id=:id');
@@ -114,6 +132,27 @@ class Admin_Model extends Model {
 	    $updateQuery->execute();
 
 	    header('Location: '.URL.'admin/users'); 
+	}
+
+
+		public function closeOffer($id){
+
+		$offerQuery = $this->db->prepare('SELECT actual FROM offer WHERE id=:id');
+		$offerQuery->bindValue(':id', $id, PDO::PARAM_INT); 
+		$offerQuery->execute();
+		$act = $offerQuery->fetch()['actual'];
+
+		if($act == 1)
+			$act = 0;
+		else
+			$act = 1;
+
+		$updateQuery = $this->db->prepare('UPDATE offer SET actual = :act WHERE id=:id');
+		$updateQuery->bindValue(':act', $act, PDO::PARAM_INT); 
+		$updateQuery->bindValue(':id', $id, PDO::PARAM_INT); 
+	    $updateQuery->execute();
+
+	    header('Location: '.URL.'admin/offers'); 
 	}
 
 	public function isBanned($id){

@@ -31,10 +31,26 @@
 				    		$who = 2;
 				    	} else {
 				    		$who = 1;
-				    	}				    	
-				    
+				    	}	
+
+				    	if(!empty($this->message[$i]['id_offer'])){
+				    		if($who == 2){
+				    			$color = "white";
+				    		}
+				    		else
+				    			$color = "black";
+
+				    		$message = '<a href="'.URL.'offer/show/'.$this->message[$i]['id_offer'].'"><img width="20" src="'.URL.'public/images/globe_'.$color.'.png">  </a> ' . $this->message[$i]['message'];
+
+
+				    		
+				    	}
+
+				    	else 
+				    		$message = $this->message[$i]['message'];
+
 				    	echo '<p class="message-content'.$who.'"> ';
-				    	echo $this->message[$i]['message']. " </p><br><br>";
+				    	echo $message. " </p><br><br>";
 			    	}
 
 			    	$notMe = $this->notMe($this->idOne, $this->idTwo, $me);

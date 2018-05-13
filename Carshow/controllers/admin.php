@@ -15,10 +15,20 @@ class Admin extends Controller {
 		$this->view->render('admin/index');			
 	}
 
-	function users() {
-		$users = $this->model->users();		
-		$this->view->users = $users;
+	function users() { 
+		$this->view->users = $this->model->users();
 		$this->view->render('admin/users');				
+	}
+
+
+	function offers() {
+		$this->view->offers = $this->model->offers();		
+		$this->view->render('admin/offers');				
+	}
+
+	function archive() {
+		$this->view->offers = $this->model->endedOffers();		
+		$this->view->render('admin/archive');				
 	}
 
 	function settings(){
@@ -26,10 +36,13 @@ class Admin extends Controller {
 		$this->view->render('admin/settings');
 	}
 
+	function closeOffer($id){
+		$this->model->closeOffer($id);
+	}
+
 	function editSettings(){
 		$this->model->editSettings();
 	}
-
 
 	function edit_user($id){
 		$this->view->user = $this->model->user($id);	

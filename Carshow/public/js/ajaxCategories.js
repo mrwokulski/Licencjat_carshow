@@ -1,6 +1,5 @@
-var URL = "http://localhost/elektronika/Licencjat_carshow/Carshow/";
 var type2 = 0;
-function getCategories(){
+function getCategories(URL){
 
 	var xmlhttp = new XMLHttpRequest();
 
@@ -38,15 +37,6 @@ function hideBlock(id) {
 
 		x.style.display = (x.style.display == 'none')? 'block' : 'none';
 
-
-		if(id == 'priceform'){
-			var elem = document.getElementById('type2form');
-			var price = document.getElementById('price');
-			price.value = 0;
-			elem.style.marginLeft = "auto";
-			elem.style.marginRight = "auto";
-		}
-
 		if(id == 'type2form1'){
 			var elem = document.getElementById('type2form2');
 			elem.style.marginRight = '20%';
@@ -65,4 +55,26 @@ function dropPrices(id){
 
 	var elem = document.getElementById(id);	
 	$(id).attr("aria-expanded","true");
+}
+
+function giveaway(){
+			var elem = document.getElementById('type2form');
+			var price = document.getElementById('price');
+			price.value = 0;
+			elem.style.marginLeft = "auto";
+			elem.style.marginRight = "auto";
+		
+}
+
+function test(value){
+
+			var elem = document.getElementById('type2form');
+			if(value == 1){
+			var x = document.getElementById('type2form');
+			}
+			else{
+
+			}
+		x.style.display = (x.style.display == 'none')? 'block' : 'none';
+
 }

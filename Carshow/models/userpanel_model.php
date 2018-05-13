@@ -31,7 +31,7 @@ class Userpanel_Model extends Model {
 
 	public function message($id_1, $id_2){
 
-	      $messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message, m.date from message m LEFT JOIN users u ON m.id_user1=u.id where (m.id_user1 = :id1 AND m.id_user2 = :id2) OR (m.id_user1 = :id4 AND m.id_user2 = :id3) ORDER BY m.date ASC;');
+	      $messageQuery = $this->db->prepare('SELECT u.id, u.name, u.surname, m.message, m.date, m.id_offer from message m LEFT JOIN users u ON m.id_user1=u.id where (m.id_user1 = :id1 AND m.id_user2 = :id2) OR (m.id_user1 = :id4 AND m.id_user2 = :id3) ORDER BY m.date ASC;');
 
 	      $messageQuery->bindValue(':id1', $id_1, PDO::PARAM_INT);
 	      $messageQuery->bindValue(':id2', $id_2, PDO::PARAM_INT);
@@ -46,11 +46,28 @@ class Userpanel_Model extends Model {
 	}
 
 
+	public function isBanned(){
+
+		    $me = View::showArrayValue('log',6);
+			$userQuery = $this->db->prepare('SELECT banned FROM users WHERE id=:id');
+			$userQuery->bindValue(':id', $me, PDO::PARAM_INT); 
+			$userQuery->execute();
+			$ban = $userQuery->fetch()['banned'];
+
+			if($ban == 1)
+				$ban = true;
+			else
+				$ban = false;
+
+			return $ban;		
+		  
+		}
+
 	public function sendMessage($id){
 
 		 if(!empty($_POST['message'])){
 
-	      $messageQuery = $this->db->prepare('INSERT INTO message (id_user1, id_user2, message, date, id_offer, unread) VALUES (:id_user1, :id_user2, :message, :date, NULL, :unread);');
+	      $messageQuery = $this->db->prepare('INSERT INTO message (id_user1, id_user2, message, date, id_offer, unread) VALUES (:id_user1, :id_user2, :message, :date, :id_offer, :unread);');
 
 	      $date = date("Y-m-d H:i:s");
 	      $me = View::showArrayValue('log',6);
@@ -59,9 +76,14 @@ class Userpanel_Model extends Model {
 	      $messageQuery->bindValue(':message', $_POST['message'], PDO::PARAM_STR);
 	      $messageQuery->bindValue(':date', $date, PDO::PARAM_STR);
 	      $messageQuery->bindValue(':unread', 1, PDO::PARAM_INT);
+	      $messageQuery->bindValue(':id_offer', $_POST['offer'], PDO::PARAM_INT);
 	      $messageQuery->execute();
 
 	     header('Location:' .URL.'userpanel/message/'.$me.'/'.$id);
+
+	  } else {
+
+	     header('Location:' .URL.'userpanel/messages');
 	  }
 
 	}
