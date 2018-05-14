@@ -81,3 +81,7 @@ function setImage(nr, id, URL){
     var plik = '<img src="'+URL+'views/offer/'+id+'/img'+nr+'.jpg" class="car-thumb">';
     document.getElementById("slider").innerHTML = plik;
 }
+
+function addFav(id) {
+    
+}
