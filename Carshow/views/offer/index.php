@@ -53,7 +53,7 @@
 			
 			  	<?php 
 
-			  	if(!empty(Session::get('log'))){
+			  	if(!empty(Session::get('log')) && View::showArrayValue('log',6) != $this->id ){
 			  		echo '<p style="text-align: center; font-size: 30px">Wyślij Wiadomość</p>';
 			  		 echo '<form action="'.URL. "userpanel/sendMessage/$this->id".'" method="post"  enctype="multipart/form-data"  style="text-align:center; margin: 0 auto;">
 					<textarea class="form-control" rows="5" name="message" id="message" style="background-color: #fff3f3;"></textarea>

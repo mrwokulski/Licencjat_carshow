@@ -20,12 +20,9 @@ function unreadMessages(URL){
            if(myObj.many != 0){
                 many = "(" + myObj.many + ")";  
                document.getElementById('message_img').innerHTML = '<img src="'+URL+'public/images/msg2.png" width="40">';
-
            }  
            
            document.getElementById('messages').innerHTML = "Pokaż wiadomości " + many ;
-
-
         }
     };
 

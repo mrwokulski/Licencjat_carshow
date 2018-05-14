@@ -86,10 +86,9 @@ class View {
 		}			
 	}
 
-
 	public function testIdMessage($id_1, $id_2){
 	    $me = $this->showArrayValue('log',6);
-		if($id_1 != $me && $id_2 != $me){
+		if(($id_1 != $me && $id_2 != $me) || $id_1 == $id_2){
 			header('Location: '.URL);
 			exit;
 		}

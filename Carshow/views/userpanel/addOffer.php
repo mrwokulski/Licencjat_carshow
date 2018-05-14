@@ -112,6 +112,14 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 			</div>
 
 
+      <div class="form-row">
+        <div class="form-group center">
+          <label for="city">Miasto:</label>
+          <input type="text" class="form-control" name="city" id="city" style="width: 30vw;"><?php View::saveValue('er_city') ?></textarea>
+        </div>
+      </div>
+
+
 			<div class="form-row">
 				<div class="form-group center">
 				  <label for="description">Opis:</label>

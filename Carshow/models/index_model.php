@@ -41,42 +41,6 @@ class Index_Model extends Model {
 
 	}
 
-
-	public function geoIp(){
-
-		$latitude = "52.2486241";  
-		$longitude = "21.0119712";
-	
-
-		if(!empty($_POST['lon']) && !empty($_POST['lat']) && !empty($_POST['city']) && $_POST['lon'] != "err" && $_POST['lat'] != "err" && $_POST['city'] != "err"){
-
-			$latitude = $_POST['latitude'];
-			$longitude = $_POST['longitude'];
-			$city = $_POST['city'];
-
-		} else {
-
-			$user_ip = Getenv("REMOTE_ADDR");
-			$user_ip = "94.75.90.68";
-			$geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-
-			if(!empty($geo["geoplugin_latitude"]) && !empty($geo["geoplugin_longitude"])){		
-				$latitude = $geo["geoplugin_latitude"];
-				$longitude = $geo["geoplugin_longitude"];
-				$city = $geo["geoplugin_city"];
-			}
-		
-		}		
-
-		$loc = array();
-		array_push($loc,$latitude);
-		array_push($loc,$longitude);
-		array_push($loc,$city);	
-		echo json_encode($loc);		
-
-	}
-	
-
 	private function saveValue(){
 
 		 $keys = array("type", "state", "category", "maker", "model", "tags", "price1", "price2");

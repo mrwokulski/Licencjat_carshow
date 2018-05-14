@@ -10,28 +10,27 @@ xmlhttp.onreadystatechange = function() {
         document.getElementById("maker").innerHTML = myObj.maker +" "+ myObj.model;
         document.getElementById("maker_top").innerHTML = myObj.title;
 
-        if(myObj.type == 1){
-          document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Sprzedaż';
-        }
-        if(myObj.type == 2){
-          document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Kupna';
-        }
+        if(myObj.type == 1)
+            document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Sprzedaż';
+        
+        if(myObj.type == 2)
+            document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Kupna';        
 
-        if(myObj.type2 == 0){
-          document.getElementById("type2").innerHTML = 'Nie interesuje mnie zamiana.';
-        }
-        if(myObj.type2 == 1){
-          document.getElementById("type2").innerHTML = 'Interesuje mnie zamiana';
-        }
-        if(myObj.type2 == 2){
-          document.getElementById("type2").innerHTML = 'Oddam za darmo';
-        }
+        if(myObj.type2 == 0)
+            document.getElementById("type2").innerHTML = 'Nie interesuje mnie zamiana.';
+        
+        if(myObj.type2 == 1)
+            document.getElementById("type2").innerHTML = 'Interesuje mnie zamiana';
+        
+        if(myObj.type2 == 2)
+            document.getElementById("type2").innerHTML = 'Oddam za darmo';
+       
         if(myObj.actual == 0)
-             document.getElementById("price").innerHTML = "Oferta nieaktualna";
+            document.getElementById("price").innerHTML = "Oferta nieaktualna";
         else            
-             document.getElementById("price").innerHTML = myObj.price + "zł";
+            document.getElementById("price").innerHTML = myObj.price + "zł";
 
-        document.getElementById("description").innerHTML = myObj[8];
+        document.getElementById("description").innerHTML = myObj[7];
         document.getElementById("date").innerHTML = "Ogłoszenie w serwisie od: " + getDiffDate(myObj.date_added) + " dni";
         document.getElementById("name").innerHTML = myObj.name + " " + myObj.surname;
         document.getElementById("tel").innerHTML = '<img src="'+URL+'public/images/tel.png" width=15>' + myObj.tel;
@@ -39,10 +38,9 @@ xmlhttp.onreadystatechange = function() {
 
         var images = '';
         var it = 1;
-        for(i=22; i<27; i++){
+        for(i=23; i<28; i++){
             if(myObj.hasOwnProperty(i)){
                 images += '<span onclick="setImage('+it+","+id+',\''+URL+'\')" style="cursor:pointer;"><img src="'+URL+'views/offer/'+id+'/'+myObj[i].link+'" class="car-thumb" style="width:20%; border: solid #e2d5d5 2px; height:100px;"></span>';
-                //images = images + '<img src="'+URL+'views/offer/'+id+'/images/'+myObj[i].link+'" style="width:95%"></div>';
                 it++;
             }
         }
@@ -59,8 +57,8 @@ xmlhttp.send();
 
 function getDiffDate(date){
 
-  date = String(date);
-  date = date.split("-");
+    date = String(date);
+    date = date.split("-");
 
     var d = date[2];
     var m = date[1];
@@ -71,7 +69,7 @@ function getDiffDate(date){
     var timeDiff = Math.abs(date2.getTime() - date1.getTime());
     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
-return diffDays;
+    return diffDays;
 
 }
 
