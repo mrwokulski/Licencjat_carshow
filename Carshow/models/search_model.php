@@ -41,38 +41,9 @@ class Search_Model extends Model {
 		if(empty($model))
 			$model = '';
 
-<<<<<<< HEAD
 		if(!empty($tags))
 		{
-=======
-		$searchQuery = $this->db->prepare("SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
-										   WHERE o.type LIKE :type AND o.category LIKE :category AND
-										    o.state LIKE :state AND o.maker LIKE :maker AND
-										    o.model LIKE :model AND o.price BETWEEN :price1 AND :price2 AND o.actual = 1");
-		/*
-		SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
-										   WHERE o.type LIKE '%%' AND o.category LIKE '%%' AND
-										    o.state LIKE '%%' AND o.maker LIKE '%%' AND
-										    o.model LIKE '%%' AND o.price BETWEEN 0 AND 10000; */
 
-		$searchQuery->bindValue(":type", "%".$type."%", PDO::PARAM_STR);
-		$searchQuery->bindValue(":category", "%".$category."%", PDO::PARAM_STR);
-		$searchQuery->bindValue(":state", "%".$state."%", PDO::PARAM_STR);
-		$searchQuery->bindValue(":maker", "%".$maker."%", PDO::PARAM_STR);
-		$searchQuery->bindValue(":model", "%".$model."%", PDO::PARAM_STR);
-		$searchQuery->bindValue(":price1", $price1, PDO::PARAM_INT);
-		$searchQuery->bindValue(":price2", $price2, PDO::PARAM_INT);
-		$searchQuery->execute();
-
-		$offers = $searchQuery->fetchAll();
-		
-		if(!empty($tags))
-		{
-			for($i=0; $i<count($tag); $i++){
-				$tagQuery = $this->db->prepare("SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
-											   WHERE o.type LIKE \'%:type%\', o.category LIKE \'%:category%\', o.state LIKE \'%:state%\', o.maker LIKE \'%:maker%\',
-											    o.model LIKE \'%:model%\', o.title LIKE \'%:tag%\', o.description LIKE \'%:tag%\', o.price BETWEEN :price1 AND :price2 AND o.actual = 1");
->>>>>>> 06c769cba1e9d3f6fb511ceb4f16dad8d97e3793
 
 			for($i=0; $i<count($tag); $i++){
 				$tagQuery = $this->db->prepare("SELECT o.* FROM offer o 

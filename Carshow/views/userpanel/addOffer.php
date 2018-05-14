@@ -107,7 +107,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
       <div class="form-row">
 				<div class="form-group center">
 				  <label for="title">Tytuł ogłoszenia:</label>
-				  <input type="text" class="form-control" name="title" id="title" style="width: 30vw;"><?php View::saveValue('er_title') ?></textarea>
+				  <input type="text" class="form-control" name="title" value="<?php View::saveValue('er_title') ?>" id="title" style="width: 30vw;">
 				</div>
 			</div>
 
@@ -143,8 +143,5 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 <script src="<?= URL ?>public/js/ajaxCategories.js"></script>
 <script>
  window.onload = getCategories('<?= URL ?>');
-<<<<<<< HEAD
  window.onload = hideBlock('type2form');
-=======
->>>>>>> 06c769cba1e9d3f6fb511ceb4f16dad8d97e3793
 </script>
