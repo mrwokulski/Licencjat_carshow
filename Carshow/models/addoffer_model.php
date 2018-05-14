@@ -35,7 +35,7 @@ class Addoffer_Model extends Model {
 
 
 		 if($type2 == null)
-				 $type2 = 0;
+				 $type2 = 1;
 
 		$addOfferQuery->bindValue(':type', $type, PDO::PARAM_STR);
 		$addOfferQuery->bindValue(':category', $category, PDO::PARAM_STR);

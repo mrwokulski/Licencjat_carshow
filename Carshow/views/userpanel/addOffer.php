@@ -46,7 +46,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
       <div class="row row-margin">
         <div class="form-group center">
           <label for="offerType">Wybierz rodzaj ogłoszenia:</label>
-            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" onchange="hideBlock('type2form1'); hideBlock('')">
+            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" >
               Rodzaj ogłoszenia
               <option value="1" selected>Sprzedaży</option>
               <option value="2">Kupna</option>
@@ -101,20 +101,6 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
           <div style="margin-left: auto; margin-right: auto;" id="priceform">
   					<input type="text" class="form-control" id="price" name="price" value="<?php View::saveValue('er_price') ?>" placeholder="Cena">
   				</div>
-    			<div class="form-group" id="type2form" onchange="hideBlock('priceform')">
-    				<div class="form-check radiofix" id="type2form1">
-    					<input class="form-check-input" type="radio" name="type2" id="giveaway" value="1">
-    					<label class="form-check-label" for="giveaway">
-    						Oddam
-    					</label>
-    				</div>
-    				<div class="form-check radiofix" id="type2form2">
-    					<input class="form-check-input" type="radio" name="type2" id="trade" value="2" checked="checked">
-    					<label class="form-check-label" for="trade">
-    						Zamienię
-    					</label>
-    				</div>
-    			</div>
         </div>
       </div>
 
@@ -157,4 +143,5 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 <script src="<?= URL ?>public/js/ajaxCategories.js"></script>
 <script>
  window.onload = getCategories('<?= URL ?>');
+ window.onload = hideBlock('type2form');
 </script>

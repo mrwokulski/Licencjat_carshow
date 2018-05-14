@@ -15,7 +15,11 @@
 		
 			<div class="col-md-10 userpanel-view-table"  style="display: inline-block">					
 
+<<<<<<< HEAD
+				<table class="table table-hover table-responsive" style="background-color: rgba(255,255,255,0.5); width: 100%">
+=======
 				<table class="table table-hover table-responsive" style="background-color: rgba(255,255,255,0.5); width: 90%">
+>>>>>>> 06c769cba1e9d3f6fb511ceb4f16dad8d97e3793
 				  <thead>
 				    <tr>				      
 				      <th scope="col">Numer</th>
