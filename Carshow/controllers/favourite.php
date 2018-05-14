@@ -10,6 +10,10 @@ class Favourite extends Controller {
 		$this->model->add($id);
 	}
 
+	function addFromOffer($id){
+		$this->model->addFromOffer($id);
+	}
+
 	function index() {
 		$this->view->offers = $this->model->getFavs(); 
 		$this->view->render('favourite/index');

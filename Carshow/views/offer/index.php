@@ -23,11 +23,27 @@
 		       	 <h1 style="text-align: center;" id="price"></h1>
 		        <hr/>
 			      <div style="padding-left: 10%;">
-			        <p id="maker"></p>
-			        <p id="type"></p>
-			        <p id="type2"></p>
-			        <p>Lokalizacja twórcy ogłoszenia</p>
-			        <p id="date"></p>
+			      	<div class="row">
+				        <div class="col-md-6">
+				        	<p id="maker"></p>
+				        	<p id="type"></p>
+				        	<p id="type2"></p>
+				        	<p>Lokalizacja twórcy ogłoszenia</p>
+				        	<p id="date"></p>
+				        </div>
+				        <div class="col-md-6">
+				        	<div style="margin: 0 ;">
+				        		<?php 
+				        						        		
+				        		if($this->status == 0)
+				        			echo '<a href="'.URL.'favourite/addFromOffer/'.$id.'"> <img src="'.URL.'/public/images/favicon_0.png" style="width: 30%; height: 30%; margin-left: auto; margin-right: auto; display: block;"/> </a>';
+				        		else
+				        			echo '<a href="'.URL.'favourite/addFromOffer/'.$id.'"> <img src="'.URL.'/public/images/favicon.png" style="width: 30%; height: 30%; margin-left: auto; margin-right: auto; display: block;"/> </a>';
+				        		?>
+
+				        	</div>
+				        </div>
+				    </div>
 			  	  </div>
 			  	  <hr/>
 			  	  <p style="text-align: center; font-size: 25px" id="name"></p>

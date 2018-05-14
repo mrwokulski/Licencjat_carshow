@@ -20,10 +20,35 @@ class Favourite_Model extends Model {
 
 	}
 
-	public function getFavs(){
-		
+	public function addFromOffer($id){
+
 		$me = View::showArrayValue('log',6);
-		$favQuery = $this->db->prepare("SELECT DISTINCT o.*, p.* FROM favourite f LEFT JOIN offer o ON f.id_offer=o.id LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id WHERE o.user = :id_user;");
+		$favQuery = $this->db->prepare("SELECT COUNT(*) as many FROM favourite WHERE id_offer = :id_offer ");	
+		$favQuery->bindValue("id_offer", $id, PDO::PARAM_INT);		
+		$favQuery->execute();
+		$fav = $favQuery->fetch()['many'];
+
+		if($fav == 0){
+			$favQuery = $this->db->prepare("INSERT INTO favourite(id_user, id_offer) VALUES(:id_user, :id_offer) ");
+			$favQuery->bindValue("id_user", $me, PDO::PARAM_INT);
+			$favQuery->bindValue("id_offer", $id, PDO::PARAM_INT);
+			$favQuery->execute();
+		}
+		else
+		{
+			$favQuery = $this->db->prepare("DELETE FROM favourite WHERE id_offer = :id_offer ");		
+			$favQuery->bindValue("id_offer", $id, PDO::PARAM_INT);
+			$favQuery->execute();
+		}
+
+
+		header('Location: '.URL.'offer/show/'.$id); 
+	}
+
+	public function getFavs(){
+
+		$me = View::showArrayValue('log',6);
+		$favQuery = $this->db->prepare("SELECT DISTINCT o.* FROM favourite f LEFT JOIN offer o ON f.id_offer=o.id WHERE o.user = :id_user;");
 		$favQuery->bindValue("id_user", $me, PDO::PARAM_INT);
 		$favQuery->execute();
 		$favs = $favQuery->fetchAll();
