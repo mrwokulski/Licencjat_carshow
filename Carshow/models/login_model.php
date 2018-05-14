@@ -19,27 +19,27 @@ class Login_Model extends Model {
 
 	      $user = $loginQuery->fetch();
 
-	      Session::init();
+	      
 
-		      if(password_verify($password, $user['password'])){		         
-		         Session::set('loggedIn', true);
-		         $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register'],$user['id'],$user['admin'], $user['banned']);
-		         Session::set('log', $logArr);
-				 Session::set('login', $login);
-				 Session::set('login_id', $user['id']);		
+	   if(password_verify($password, $user['password'])){
+	  		Session::init();		         
+		    Session::set('loggedIn', true);
+		    $logArr =  array($user['login'], $user['email'], $user['name'], $user['surname'], $user['tel'], $user['date_register'],$user['id'],$user['admin'], $user['banned']);
+		    Session::set('log', $logArr);
+			Session::set('login', $login);
+			Session::set('login_id', $user['id']);		
 				 		 
-		         header('location: '.URL);
+		    header('location: '.URL);
 
-		      } else {
-		       	 Session::set('error', 'Dane logowania są niepoprawne');
-		         header('location: '.URL.'/login');
-		     }
-		        
+		} else {
+			Session::set('error', 'Dane logowania są niepoprawne');
+		    header('location: '.URL.'/login');
+		}        
 
 
 	   } else {
-	  	  Session::set('error', 'Dane logowania są niepoprawne');
-	      header('location: '.URL.'login');
+	  	  	Session::set('error', 'Dane logowania są niepoprawne');
+	      	header('location: '.URL.'login');
 	    }
 
 

@@ -90,11 +90,7 @@ class Search_Model extends Model {
 											   WHERE o.type LIKE :type AND o.category LIKE :category AND
 											    o.state LIKE :state AND o.maker LIKE :maker AND
 											    o.model LIKE :model AND o.price BETWEEN :price1 AND :price2 AND o.actual = 1");
-			/*
-			SELECT o.*, p.* FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id 
-											   WHERE o.type LIKE '%%' AND o.category LIKE '%%' AND
-											    o.state LIKE '%%' AND o.maker LIKE '%%' AND
-											    o.model LIKE '%%' AND o.price BETWEEN 0 AND 10000; */
+			
 			$searchQuery->bindValue(":type", "%".$type."%", PDO::PARAM_STR);
 			$searchQuery->bindValue(":category", "%".$category."%", PDO::PARAM_STR);
 			$searchQuery->bindValue(":state", "%".$state."%", PDO::PARAM_STR);
@@ -112,11 +108,6 @@ class Search_Model extends Model {
 		Session::set('offers', $uniqueOffers);
 
 		header('location: '.URL.'search/');
-
-		//$uniqueOffers = array_map("unserialize", array_unique(array_map("serialize", $offers))); - usuwa powtorki
-		//$picQuery = $this->db->prepare("SELECT p.link FROM offer o LEFT JOIN offer_has_picture s ON o.id=s.id_offer LEFT JOIN picture p ON s.id_picture=p.id WHERE o.id=:id_offer");
-		//$picQuery->bindValue("id_offer", $id, PDO::PARAM_INT);
-		//$picQuery->execute();
 
 	}
 

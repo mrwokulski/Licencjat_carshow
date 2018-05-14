@@ -8,58 +8,19 @@ class Addoffer_Model extends Model {
 
   private function saveValue(){
 
-	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "description");
+	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "offer", "description");
 		for($i = 0; $i < count ($keys); $i++){
 			if(!empty($_POST[$keys[$i]]))
 					Session::set('er_'.$keys[$i], $_POST[$keys[$i]]);
 		}
 	}
 
-	public function buyOffer() {
-
-		$type = filter_input(INPUT_POST, 'type');
-		$category = filter_input(INPUT_POST, 'category');
-		$maker = filter_input(INPUT_POST, 'maker');
-		$model = filter_input(INPUT_POST, 'model');
-		$state = filter_input(INPUT_POST, 'state');
-		$price = filter_input(INPUT_POST, 'price');
-		$type2 = filter_input(INPUT_POST, 'type2');
-		$description = filter_input(INPUT_POST, 'description');
-
-
-
-		$addOfferQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,description,date_added,user, premium) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :description, :date_added, :user, :premium)');
-
-		$value = Session::get('log');
-		$user_id = $value[6];
-
-
-		 if($type2 == null)
-				 $type2 = 1;
-
-		$addOfferQuery->bindValue(':type', $type, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':category', $category, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':maker', $maker, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':model', $model, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':state', $state, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':price', $price, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':type2', $type2, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':description', $description, PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':date_added', date("Y-m-d"), PDO::PARAM_STR);
-		$addOfferQuery->bindValue(':user', $user_id, PDO::PARAM_INT);
-		$addOfferQuery->bindValue(':premium', 0, PDO::PARAM_INT);
-
-		$addOfferQuery->execute();
-
-	}
 
   public function newOffer() {
 
 		   	 Session::init();
 
-				 $correct_params = true;
-
-				 //DO REFAKTORYZACJI WIKTOR
+		    $correct_params = true;
 
 			 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "description");
 		 	 $labels = array("Rodzaj ogłoszenia", "Kategoria", "Producent", "Model", "Stan", "Cena", "Rodzaj2", "Tytul", "Opis");
@@ -200,10 +161,11 @@ class Addoffer_Model extends Model {
 				 $price = filter_input(INPUT_POST, 'price');
 				 $type2 = filter_input(INPUT_POST, 'type2');
 				 $description = filter_input(INPUT_POST, 'description');
+				 $city = filter_input(INPUT_POST, 'city');
 
 
 
-				 $addOfferQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,title,description,date_added,user, premium) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :title, :description, :date_added, :user, :premium)');
+				 $addOfferQuery = $this->db->prepare('INSERT INTO offer (type,category,maker,model,state,price,type2,title,description,date_added,user, premium, city) VALUES (:type, :category, :maker, :model, :state, :price, :type2, :title, :description, :date_added, :user, :premium, :city)');
 
 				 $value = Session::get('log');
 				 $user_id = $value[6];
@@ -219,6 +181,7 @@ class Addoffer_Model extends Model {
 				 $addOfferQuery->bindValue(':state', $state, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':price', $price, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':type2', $type2, PDO::PARAM_STR);
+				 $addOfferQuery->bindValue(':city', $city, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':title', $title, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':description', $description, PDO::PARAM_STR);
 				 $addOfferQuery->bindValue(':date_added', date("Y-m-d"), PDO::PARAM_STR);

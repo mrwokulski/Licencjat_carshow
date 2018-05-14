@@ -40,10 +40,7 @@
 				    		else
 				    			$color = "black";
 
-				    		$message = '<a href="'.URL.'offer/show/'.$this->message[$i]['id_offer'].'"><img width="20" src="'.URL.'public/images/globe_'.$color.'.png">  </a> ' . $this->message[$i]['message'];
-
-
-				    		
+				    		$message = '<a href="'.URL.'offer/show/'.$this->message[$i]['id_offer'].'"><img width="20" src="'.URL.'public/images/globe_'.$color.'.png">  </a> ' . $this->message[$i]['message'];	
 				    	}
 
 				    	else 

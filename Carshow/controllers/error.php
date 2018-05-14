@@ -7,7 +7,7 @@ class Error_Code extends Controller {
 	}
 	
 	function index() {
-		$this->view->msg = 'This page doesnt exist';
+		$this->view->msg = 'Ta strona nie istnieje';
 		$this->view->render('error/index');
 	}
 

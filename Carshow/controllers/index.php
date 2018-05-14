@@ -26,10 +26,6 @@ class Index extends Controller {
 		$this->model->premiumOffers();
 	}
 
-	function geoIp(){
-		$this->model->geoIp();
-	}
-
 	function search(){
 		$this->model->search();
 	}

@@ -66,15 +66,3 @@ function giveaway(){
 		
 }
 
-function test(value){
-
-			var elem = document.getElementById('type2form');
-			if(value == 1){
-			var x = document.getElementById('type2form');
-			}
-			else{
-
-			}
-		x.style.display = (x.style.display == 'none')? 'block' : 'none';
-
-}

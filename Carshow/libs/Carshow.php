@@ -8,7 +8,6 @@ class Carshow {
 		$url = rtrim($url, '/');
 		$url = explode('/', $url);
 
-		//print_r($url);
 		
 		if (empty($url[0])) {
 			require 'controllers/index.php';
@@ -26,10 +25,9 @@ class Carshow {
 		}
 
 		$controller = new $url[0];
-		$controller->loadModel($url[0]);
-				
+		$controller->loadModel($url[0]);				
 
-		// calling methods
+	
 		if (isset($url[3])) {
 			if (method_exists($controller, $url[1])) {
 				$controller->{$url[1]}($url[2],$url[3]);
