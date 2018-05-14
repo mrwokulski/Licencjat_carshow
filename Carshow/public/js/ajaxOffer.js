@@ -30,11 +30,8 @@ xmlhttp.onreadystatechange = function() {
              document.getElementById("price").innerHTML = "Oferta nieaktualna";
         else            
              document.getElementById("price").innerHTML = myObj.price + "zł";
-<<<<<<< HEAD
+
         document.getElementById("description").innerHTML = myObj[8];
-=======
-        document.getElementById("description").innerHTML = myObj[7];
->>>>>>> 06c769cba1e9d3f6fb511ceb4f16dad8d97e3793
         document.getElementById("date").innerHTML = "Ogłoszenie w serwisie od: " + getDiffDate(myObj.date_added) + " dni";
         document.getElementById("name").innerHTML = myObj.name + " " + myObj.surname;
         document.getElementById("tel").innerHTML = '<img src="'+URL+'public/images/tel.png" width=15>' + myObj.tel;

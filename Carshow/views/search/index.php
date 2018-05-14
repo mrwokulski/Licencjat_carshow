@@ -186,26 +186,9 @@
 									<div style="text-align: center;"> <a href="'.URL.'favourite/add/'.$offers[$i][0].'">Dodaj do ulubionych</a> </div>
 								</div>           
 							</div>
-<<<<<<< HEAD
+
 				         </div>';
-=======
-						</div>
-					</div>	
-					<div class="col-md-8" style="display: block; width: 100%; height: 100%; background-color: #e6e6e6; padding: 0px; height: 22.5vw;">
-						<div class="car-thumb-text" style="padding-left: 0px; text-align: center;">	 
-							'. $offers[$i]["title"] .'
-						</div>
-						<br/>
-						<div>						
-							<div style="text-align: center;">'. $offers[$i]["maker"] .' '. $offers[$i]["model"]  .'</div>
-							<div style="text-align: center;"> '. $offers[$i][8] .'  </div>
-							<div style="text-align: center;"> Miasto </div>
-							<div style="text-align: center;"> <a href="'.URL.'favourite/add/'.$offers[$i][0].'">Dodaj do ulubionych</a> </div>
-						</div>           
-					</div>
-		         </div>';
-		
->>>>>>> 06c769cba1e9d3f6fb511ceb4f16dad8d97e3793
+
 		}
 
 	  }
