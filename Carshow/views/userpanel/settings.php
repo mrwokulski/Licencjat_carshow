@@ -31,12 +31,6 @@
 	    <a href="<?=URL?>userpanel/change/phone" class="btn btn-nav-login">Zmień telefon</a>
 	    <a href="<?=URL?>userpanel/change/personal" class="btn btn-nav-login">Zmień dane osobowe</a>
     <hr/>
-
-    <h2 class="title-clr">Lokalizacja</h2>
-    <hr/>
-	    <a href="" class="btn btn-nav-login">Włącz lokalizację</a>
-	    <a href="" class="btn btn-nav-login">Ustaw lokalizację</a>
-    <hr/>
     </div>
 		
 
