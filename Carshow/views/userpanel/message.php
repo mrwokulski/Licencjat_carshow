@@ -44,10 +44,12 @@
 				    	}
 
 				    	else 
-				    		$message = $this->message[$i]['message'];
+				    		$message = $this->message[$i]['message'];				    		
 
-				    	echo '<p class="message-content'.$who.'"> ';
-				    	echo $message. " </p><br><br>";
+				    		echo '<p class="message-content'.$who.'"> ';
+				    		echo $message. " </p> <br><br> ";
+				    		echo "&nbsp;";				    	
+
 			    	}
 
 			    	$notMe = $this->notMe($this->idOne, $this->idTwo, $me);

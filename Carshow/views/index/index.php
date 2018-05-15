@@ -53,15 +53,7 @@
   					<input type="text" class="form-control input-form-search" name="model" value="<?php View::saveValue('er_model') ?>" placeholder="Model">
   				</div>
   			</div>
-        <!--
-        <div class="row" style="padding-top: 10px;">
-          <p style="padding-left: 5%;">Typ:</p>
-            <select class="form-control form-control-sm input-form-search" style="width:50%; margin-left: 13%;">
-              <option value="1" selected>Chcę kupić</option>
-              <option value="2">Chcę sprzedać</option>
-            </select>
-        </div>
-        -->
+      
         Cena:
         <div class="row">
           <div class="col-md-6">
@@ -103,7 +95,6 @@
           </div>
         </div>
 
-        <div id="demo"></div>
         <div class="row">
             <div class="col-md-3">
               <div class="car-thumb" id="offer_1">
