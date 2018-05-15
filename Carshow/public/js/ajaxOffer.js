@@ -14,22 +14,17 @@ xmlhttp.onreadystatechange = function() {
             document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Sprzedaż';
         
         if(myObj.type == 2)
-            document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Kupna';        
+            document.getElementById("type").innerHTML = 'Rodzaj ogłoszenia: Kupna';     
 
-        if(myObj.type2 == 0)
-            document.getElementById("type2").innerHTML = 'Nie interesuje mnie zamiana.';
-        
-        if(myObj.type2 == 1)
-            document.getElementById("type2").innerHTML = 'Interesuje mnie zamiana';
-        
-        if(myObj.type2 == 2)
-            document.getElementById("type2").innerHTML = 'Oddam za darmo';
+        var price = "";
+        myObj.price == 0 ? price = "oddam za darmo" : price = myObj.price + "zł";       
        
         if(myObj.actual == 0)
             document.getElementById("price").innerHTML = "Oferta nieaktualna";
         else            
-            document.getElementById("price").innerHTML = myObj.price + "zł";
+            document.getElementById("price").innerHTML = price;
 
+        document.getElementById("city").innerHTML = myObj.city;
         document.getElementById("description").innerHTML = myObj[7];
         document.getElementById("date").innerHTML = "Ogłoszenie w serwisie od: " + getDiffDate(myObj.date_added) + " dni";
         document.getElementById("name").innerHTML = myObj.name + " " + myObj.surname;
@@ -78,8 +73,4 @@ function setImage(nr, id, URL){
 
     var plik = '<img src="'+URL+'views/offer/'+id+'/img'+nr+'.jpg" class="car-thumb">';
     document.getElementById("slider").innerHTML = plik;
-}
-
-function addFav(id) {
-    
 }

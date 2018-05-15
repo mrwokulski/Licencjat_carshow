@@ -31,7 +31,10 @@
 					for($i=0; $i<count($this->messagesRead); $i++){	
 						if(!in_array($this->messagesRead[$i]['id'], $repeatArray)){
 					    	echo '<div class="message-author-read"><a style="color:#212529; text-decoration: none;" href="'.URL.'userpanel/message/'.$me.'/'.$this->messagesRead[$i]['id'].'">'. $this->messagesRead[$i]['name']. " ";
-					   	    echo $this->messagesRead[$i]['surname']. '</div>  <div class="message-read-content">'.$this->messagesRead[$i]['message'].'</div><br><br>';
+					    	$mess = substr($this->messagesRead[$i]['message'], 0, 17);
+				  			if(strlen($this->messagesRead[$i]['message'])>17)
+				  				$mess = $mess." ...";
+					   	    echo $this->messagesRead[$i]['surname']. '</div>  <div class="message-read-content">'.$mess.'</div><br><br>';
 					   	}
 					}	
 

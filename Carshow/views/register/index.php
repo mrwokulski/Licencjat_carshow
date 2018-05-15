@@ -43,80 +43,52 @@
             Najpopularniejsze wyszukiwania:
           </div>
         </div>
-        <div class="row">
+       <div class="row">
             <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
+              <div class="car-thumb" id="offer_1">
+
               </div>
             </div>
             <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
+              <div class="car-thumb" id="offer_2">
               </div>
             </div>
             <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
+              <div class="car-thumb" id="offer_3">
               </div>
             </div>
             <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
+              <div class="car-thumb" id="offer_4">
               </div>
             </div>
           </div>
           <div class="view-main-blankseparator"></div>
           <div class="row">
-              <div class="col-md-3">
-                <div class="car-thumb">
-                  <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-                </div>
+             <div class="col-md-3">
+              <div class="car-thumb" id="offer_5">
               </div>
-              <div class="col-md-3">
-                <div class="car-thumb">
-                  <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-                </div>
+            </div>
+               <div class="col-md-3">
+              <div class="car-thumb" id="offer_6">
               </div>
-              <div class="col-md-3">
-                <div class="car-thumb">
-                  <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-                </div>
+            </div>
+               <div class="col-md-3">
+              <div class="car-thumb" id="offer_7">
               </div>
-              <div class="col-md-3">
-                <div class="car-thumb">
-                  <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-                </div>
+            </div>
+               <div class="col-md-3">
+              <div class="car-thumb" id="offer_8">
               </div>
+            </div>
             </div>
       </div>
-      <div class="view-main-content">
-        <div>
-          <div class="col-md-12 view-main-separator">
-            Sponsorowane ogłoszenia:
-          </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="car-thumb">
-                <a href="#"><img src="https://sztuczne-rosliny.pl/wp-content/uploads/2017/01/sztuczny-kaktus-karnegia-800-800-1.jpg" style="width: 100%;"/></a>
-              </div>
-            </div>
-          </div>
-          <div class="view-main-blankseparator"></div>
-    </div>
+      <div class="view-main-content">       
+          <div class="view-main-blankseparator"></div>  
   </div>
+
+
+<script src="<?php echo URL; ?>public/vendor/jquery/jquery.min.js"></script>
+<script src="<?= URL ?>public/js/ajaxOffers.js"></script>
+<script>
+  window.onload = startAjax("<?=URL?>");
+</script>

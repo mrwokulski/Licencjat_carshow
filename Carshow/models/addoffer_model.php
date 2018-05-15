@@ -197,7 +197,7 @@ class Addoffer_Model extends Model {
 
 			 if($correct_params && $uploadOk != 0){
 
-					$picQuery = $this->db->prepare('INSERT INTO PICTURE(description, link) VALUES(:description, :link)');
+					$picQuery = $this->db->prepare('INSERT INTO picture (description, link) VALUES (:description, :link)');
 					$pictureQueryMan = $this->db->prepare('INSERT INTO offer_has_picture(id_offer, id_picture) VALUES(:id_off, :id_pic)');
 
 					for($i=1;$i<($photoCounter+1);$i++){

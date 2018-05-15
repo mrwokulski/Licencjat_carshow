@@ -33,15 +33,19 @@ class Offer_Model extends Model {
 
 	}
 
-		public function getFav($id){
-		Session::init();		
+
+	public function getFav($id){
+		
+		Session::init();	
+
 		$me = View::showArrayValue('log',6);
 		$favQuery = $this->db->prepare("SELECT COUNT(*) as many FROM favourite WHERE id_offer = :id_offer ");	
-		$favQuery->bindValue("id_offer", $id, PDO::PARAM_INT);		
+		$favQuery->bindValue("id_offer", $id, PDO::PARAM_INT);	
 		$favQuery->execute();
 		$fav = $favQuery->fetch()['many'];
 
 		return $fav;
+
 	}
 
 }	
