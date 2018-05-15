@@ -30,7 +30,7 @@ xmlhttp.onreadystatechange = function() {
         else            
             document.getElementById("price").innerHTML = myObj.price + "zł";
 
-        document.getElementById("description").innerHTML = myObj[7];
+        document.getElementById("description").innerHTML = myObj[8];
         document.getElementById("date").innerHTML = "Ogłoszenie w serwisie od: " + getDiffDate(myObj.date_added) + " dni";
         document.getElementById("name").innerHTML = myObj.name + " " + myObj.surname;
         document.getElementById("tel").innerHTML = '<img src="'+URL+'public/images/tel.png" width=15>' + myObj.tel;
@@ -78,8 +78,4 @@ function setImage(nr, id, URL){
 
     var plik = '<img src="'+URL+'views/offer/'+id+'/img'+nr+'.jpg" class="car-thumb">';
     document.getElementById("slider").innerHTML = plik;
-}
-
-function addFav(id) {
-    
 }

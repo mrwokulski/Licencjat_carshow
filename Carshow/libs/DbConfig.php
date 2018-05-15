@@ -1,9 +1,9 @@
-<?php
-
-return [ 
-	'host'=> '127.0.0.1',
-    'user' => 'root',  
-    'password' => '',
-    'database' => 'carshow'
-];
-
+<?php
+
+return [ 
+	'host'=> 'localhost',
+    'user' => 'wokumiki_root',  
+    'password' => 'licencjat321',
+    'database' => 'wokumiki_licencjat'
+];
+

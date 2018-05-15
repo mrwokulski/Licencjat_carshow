@@ -13,7 +13,7 @@
         Login:
         <input type="text" name="login" value="admin" style="width: 100%">
         Hasło:
-        <input type="password" name="password" value="qwerty123" style="width: 100%">
+        <input type="password" name="password" value="" style="width: 100%">
 
         <p class="btn-search-form"><input type="submit" value="Zaloguj" class="btn btn-search"></p>
         </form>
