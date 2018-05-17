@@ -26,6 +26,28 @@ class Admin extends Controller {
 		$this->view->render('admin/offers');				
 	}
 
+	function category() {
+		$this->view->category = $this->model->getCategory();		
+		$this->view->render('admin/category');				
+	}
+
+	function newCategory() {			
+		$this->view->render('admin/add_category');				
+	}
+
+	function editCategory($id){
+		$this->view->category = $this->model->category($id);	
+		$this->view->render('admin/edit_category');
+	}
+
+	function saveCategory($id){
+		$this->model->editCategory($id);		
+	}
+
+	function addCategory() {			
+		$this->model->newCategory();			
+	}
+
 	function archive() {
 		$this->view->offers = $this->model->endedOffers();		
 		$this->view->render('admin/archive');				

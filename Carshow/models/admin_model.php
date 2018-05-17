@@ -49,6 +49,35 @@ class Admin_Model extends Model {
 	     return $users;
 	}
 
+	public function getCategory(){
+
+		 $catQuery = $this->db->prepare('SELECT * FROM categories');	
+	     $catQuery->execute();
+	     $cats = $catQuery->fetchAll();
+
+	     return $cats;
+	}
+
+	public function newCategory(){
+
+		$name = filter_input(INPUT_POST, 'name');
+		$description = filter_input(INPUT_POST, 'description');
+		$icon_path = filter_input(INPUT_POST, 'icon_path');
+
+		if(!empty($name) && !empty($description) && !empty($icon_path)){		
+
+			 $catQuery = $this->db->prepare('INSERT INTO categories(name,description,icon_path) VALUES(:name,:description,:icon_path)');
+			 $catQuery->bindValue(':name', $name, PDO::PARAM_STR); 
+			 $catQuery->bindValue(':description', $description, PDO::PARAM_STR); 
+			 $catQuery->bindValue(':icon_path', $icon_path, PDO::PARAM_STR); 
+			 $catQuery->execute();
+			
+		} 
+		
+			 header('Location: '.URL.'admin/category');
+
+	}
+
 	public function offers(){
 
 		 $offersQuery = $this->db->prepare('SELECT * FROM offer WHERE actual=1 ORDER BY id DESC;');	
@@ -75,6 +104,36 @@ class Admin_Model extends Model {
 	     $user = $usersQuery->fetch();
 
 	     return $user;
+	}
+
+	public function category($id){
+
+		 $catQuery = $this->db->prepare('SELECT * FROM categories WHERE id=:id');
+		 $catQuery->bindValue(':id', $id, PDO::PARAM_STR);   	
+	     $catQuery->execute();
+	     $cats = $catQuery->fetch();
+
+	     return $cats;
+	}
+
+	public function editCategory($id){
+
+		$name = filter_input(INPUT_POST, 'name');
+		$description = filter_input(INPUT_POST, 'description');
+		$icon_path = filter_input(INPUT_POST, 'icon_path');
+
+		if(!empty($name) && !empty($description) && !empty($icon_path)){	
+
+			$catQuery = $this->db->prepare('UPDATE categories SET name=:name, description=:description, icon_path=:icon_path WHERE id=:id');
+			$catQuery->bindValue(':id', $id, PDO::PARAM_INT); 
+			$catQuery->bindValue(':name', $name, PDO::PARAM_STR);    	
+			$catQuery->bindValue(':description', $description, PDO::PARAM_STR);  
+			$catQuery->bindValue(':icon_path', $icon_path, PDO::PARAM_STR);
+			$catQuery->execute();
+		    $cats = $catQuery->fetch();
+		}
+
+	     header('Location: '.URL.'admin/category');
 	}
 
 	public function editUser($id){
@@ -108,9 +167,9 @@ class Admin_Model extends Model {
 
 	     header('Location: '.URL.'admin/users'); 
 
-	     } else {
-	     	header('Location: '.URL.'edit_user/'.$id);
-	     }
+	     } 
+	     else 
+	     	header('Location: '.URL.'admin/edit_user/'.$id);	     
 	   	
 	}
 
