@@ -14,17 +14,15 @@
 				  <a href="<?=URL?>admin/settings" class="btn btn-nav-login" style="width:100%">Ustawienia strony</a>
 			</div>	
 		
-			<div class="col-md-10 userpanel-view-table"  style="display: inline-block">	
-
-					<form action="<?=URL?>admin/editSettings" method="post">
-					URL:
-					<input type="text" name="url" value="<?= $this->settings['url'] ?>" style="width: 100%">
-					Tytuł strony:
-					<input type="text" name="title" value="<?= $this->settings['title']?>" style="width: 100%">
-					Header:
-					<input type="text" name="header" value="<?= $this->settings['header'] ?>" style="width: 100%">			
-					Footer:
-					<input type="text" name="footer" value="<?= $this->settings['footer'] ?>" style="width: 100%">
+			<div class="col-md-10 userpanel-view-table"  style="display: inline-block">				
+				
+				<form action="<?=URL?>admin/saveCategory/<?= $this->category['id'] ?>" method="post">
+					Nazwa
+					<input type="text" value="<?= $this->category['name'] ?>" name="name" style="width: 100%">
+					Opis
+					<input type="text" value="<?= $this->category['description'] ?>" name="description" style="width: 100%">
+					Ikona
+					<input type="text" value="<?= $this->category['icon_path'] ?>" name="icon_path" style="width: 100%">							
 					<input type="submit" value="Zapisz" class="btn btn-search" style="margin-top: 10px">
 				</form>
 
