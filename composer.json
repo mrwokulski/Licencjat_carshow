@@ -1,0 +1,17 @@
+{
+    "name": "vendor/licencjat",
+    "description": "Licencjat",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Mikolaj Bronk",
+            "email": "mikolaj.bronk@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "7",
+        "phpunit/dbunit": "^4.0@dev"
+    }
+}
