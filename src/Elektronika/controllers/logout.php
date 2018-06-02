@@ -1,6 +1,7 @@
 <?php
 
-class Logout extends Controller {
+class Logout extends Admin
+{
 
 	function __construct() {
 		parent::__construct();	

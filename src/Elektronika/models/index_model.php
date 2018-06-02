@@ -31,12 +31,4 @@ class Index_Model extends Model {
 
 	}
 
-	private function saveValue(){
-
-		 $keys = array("type", "state", "category", "maker", "model", "tags", "price1", "price2");
-			for($i = 0; $i < count ($keys); $i++){
-				if(!empty($_POST[$keys[$i]]))
-						Session::set('er_'.$keys[$i], $_POST[$keys[$i]]);
-			}
-	}
 }

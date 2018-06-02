@@ -32,7 +32,6 @@ class View {
                 }
 
 
-
 	}
 
 	public function onlyForAdmin(){
