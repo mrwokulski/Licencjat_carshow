@@ -4,7 +4,6 @@
  window.onload = getCategories("<?=URL ?>");
 </script>
  <div class="container">
-
       <!-- Page Heading -->
       <!-- ADS
       <div class="row" id="ad" style="background-color: blue; height: 100px; display: none;">
