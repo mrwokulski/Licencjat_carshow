@@ -16,7 +16,10 @@ require '../src/Elektronika/libs/Controller.php';
 require '../src/Elektronika/libs/Database.php';
 require '../src/Elektronika/controllers/error.php';
 require '../src/Elektronika/controllers/addoffer.php';
+require '../src/Elektronika/controllers/offer.php';
 require '../src/Elektronika/models/addoffer_model.php';
+require '../src/Elektronika/models/admin_model.php';
+require '../src/Elektronika/models/logout_model.php';
 
 
 final class ExampleTest extends TestCase
@@ -46,6 +49,50 @@ final class ExampleTest extends TestCase
 
         $this->assertNotNull(json_decode($cats));
     }
+
+    /**
+     * @runInSeparateProcess
+     */
+
+    public function test_adminStats()
+    {
+
+        $admin = new Admin_Model();
+        $stats = $admin->stats();
+
+        $this->assertEquals(4, count($stats));
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
+
+    public function test_logOut()
+    {
+        Session::init();
+        Session::set('log', true);
+        $var = new Logout_Model();
+        $var->logOut();
+        $this->assertFalse(Session::get('log'));
+    }
+
+    /**
+     * @runInSeparateProcess
+     */
+
+    public function test_View()
+    {
+        $view = new View();
+        $view->render('index\index');
+
+        $render = file_get_contents(URL);
+
+        $this->assertContains("<!DOCTYPE html>", $render);
+    }
+
+
+
+
 
 
 }

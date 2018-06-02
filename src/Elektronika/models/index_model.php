@@ -36,4 +36,5 @@ class Index_Model extends Model {
         $offerQuery = $this->db->prepare('UPDATE offer SET actual = 0 WHERE DATEDIFF(NOW(), date_added)> 30 ;');
         $offerQuery->execute();
     }
+
 }

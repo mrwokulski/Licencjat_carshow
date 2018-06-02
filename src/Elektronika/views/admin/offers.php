@@ -48,11 +48,6 @@
 					    	 else
 					    	 	$type = "Kupno";
 
-					    	  if($this->offers[$i]['actual'] == 1)
-					    	 	$type = "Tak";
-					    	 else
-					    	 	$type = "Nie";
-
 
 
 						     if($this->offers[$i]['actual'] == 0)
@@ -74,7 +69,7 @@
 
 				    </tr>
 				  </tbody>
-				</table>			 
+				</table>
 
 		     </div>
 		 </div>

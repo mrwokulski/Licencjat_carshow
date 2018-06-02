@@ -1,6 +1,7 @@
 <?php
 
-class Myoffers_Model extends Model {
+class Myoffers_Model extends Error_Code
+{
 
 	function __construct()
     {
