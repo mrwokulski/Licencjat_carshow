@@ -11,7 +11,9 @@ class Index extends Controller {
 	}
 
 	function index() {
+	    $this->model->archiveOffers();
 		$this->view->render('index/index');
+
 	}
 
 	function details() {

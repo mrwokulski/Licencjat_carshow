@@ -1,41 +1,3 @@
-<style>
-.col-centered{
-    margin: 0 auto;
-}
-label > input{ /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
-  position: absolute; /* Remove input from document flow */
-}
-label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:2px solid transparent;
-}
-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
-}
-
-.center{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.price-type2{
-  margin-left: auto;
-}
-
-.radiofix {
-  right: 5.5vw;
-}
-@media (min-width: 992px) {
-
-}
-@media (min-width: 1200px) {
-      .radiofix {
-        right: 11vw;
-      }
-}
-</style>
-
 <div class="container">
   <div class="row row-margin">
     <br/>
@@ -46,7 +8,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
       <div class="row row-margin">
         <div class="form-group center">
           <label for="offerType">Wybierz rodzaj ogłoszenia:</label>
-            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" >
+            <select class="form-control btn-userpanel-addoffer" name="type" value="<?php View::saveValue('er_type') ?>" onchange="hide('photos')">
               Rodzaj ogłoszenia
               <option value="1" selected>Sprzedaży</option>
               <option value="2">Kupna</option>
@@ -91,7 +53,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 	              Stan przedmiotu oferty
 	              <option value="1">Nowy</option>
 	              <option value="2">Używany - nieuszkodzony</option>
-								<option value="3">Używany - uszkodzony</option>
+                  <option value="3">Używany - uszkodzony</option>
 	            </select>
 	        </div>
 			</div>
@@ -127,7 +89,7 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 				</div>
 			</div>
 
-			      <div class="center" style="text-align: center; margin-left: 14.5%;">
+            <div class="center" style="text-align: center; margin-left: 14.5%;" id="photos">
                 Zdjęcie 1: <input class="upload-form-input" type="file" name="img1" id="img1"><br/>
                	Zdjęcie 2: <input class="upload-form-input" type="file" name="img2" id="img2"><br/>
                 Zdjęcie 3: <input class="upload-form-input" type="file" name="img3" id="img3"><br/>
@@ -151,5 +113,4 @@ label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
 <script src="<?= URL ?>public/js/ajaxCategories.js"></script>
 <script>
  window.onload = getCategories('<?= URL ?>');
- window.onload = hideBlock('type2form');
 </script>

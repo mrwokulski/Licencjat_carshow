@@ -11,7 +11,7 @@ function getCategories(URL){
 					category += '<div class="row row-margin">';
 
 	        for(i=0; i < myObj.length; i++){
-							category += '<div class="col-md-3"><label><input type="radio" name="category" value="'+ myObj[i].id +'"><img src="'+ myObj[i].icon_path +'" alt="'+ myObj[i].name +'" style="width: 100%; height: 100%;" onClick="hideModal(\'' + myObj[i].name + '\')"/></label></div>';
+							category += '<div class="col-md-3"><label><input type="radio" name="category" value="'+ myObj[i].id +'"><img src="'+ URL + myObj[i].icon_path +'" alt="'+ myObj[i].name +'" style="width: 100%; height: 100%;" onClick="hideModal(\'' + myObj[i].name + '\')"/></label></div>';
 						}
 					category += '</div>';
 
@@ -26,24 +26,8 @@ function getCategories(URL){
 function hide(id) {
 
   var elem = document.getElementById(id);
-
   elem.style.visibility = (elem.style.visibility === 'hidden')? 'visible' : 'hidden';
 };
-
-function hideBlock(id) {
-
-		var isHiddenPrice = true;
-    var x = document.getElementById(id);
-
-		x.style.display = (x.style.display == 'none')? 'block' : 'none';
-
-		if(id == 'type2form1'){
-			var elem = document.getElementById('type2form2');
-			elem.style.marginRight = '20%';
-		}
-
-}
-
 
 function hideModal(value){
 
@@ -51,18 +35,4 @@ function hideModal(value){
 	$('#categories').modal('hide');
 }
 
-function dropPrices(id){
-
-	var elem = document.getElementById(id);	
-	$(id).attr("aria-expanded","true");
-}
-
-function giveaway(){
-			var elem = document.getElementById('type2form');
-			var price = document.getElementById('price');
-			price.value = 0;
-			elem.style.marginLeft = "auto";
-			elem.style.marginRight = "auto";
-		
-}
 

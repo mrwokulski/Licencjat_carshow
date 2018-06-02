@@ -8,7 +8,7 @@ class Addoffer_Model extends Model {
 
   private function saveValue(){
 
-	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "offer", "description");
+	 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "city", "offer", "description");
 		for($i = 0; $i < count ($keys); $i++){
 			if(!empty($_POST[$keys[$i]]))
 					Session::set('er_'.$keys[$i], $_POST[$keys[$i]]);
@@ -20,7 +20,7 @@ class Addoffer_Model extends Model {
 
 		   	 Session::init();
 
-		    $correct_params = true;
+		     $correct_params = true;
 
 			 $keys = array("type", "category", "maker", "model", "state", "price", "type2", "title", "description");
 		 	 $labels = array("Rodzaj ogłoszenia", "Kategoria", "Producent", "Model", "Stan", "Cena", "Rodzaj2", "Tytul", "Opis");
@@ -45,12 +45,12 @@ class Addoffer_Model extends Model {
 				 $correct_params = false;
 			 }
 
-				if(empty($_POST['model'])){
+			 if(empty($_POST['model'])){
 			 		$err = $err . "</br> Nie podano modelu.";
 					$correct_params = false;
 			 }
 
-			 if(strlen($title) <= 5){
+			 if(strlen($title) < 5){
 				 $err = $err . "</br> Tytuł zbyt krótki. (min 5 liter lub cyfr)";
 			 	 $correct_params = false;
 			 }
@@ -78,78 +78,95 @@ class Addoffer_Model extends Model {
 
 			if($correct_params){
 
-				$lastIdQuery = $this->db->prepare('SELECT id FROM offer ORDER BY id DESC LIMIT 1');
-				$lastIdQuery->execute();
-				$lastId = $lastIdQuery->fetch();
-				$lastId = $lastId[0];
-				$lastId++;
+                $ifbuy = $_POST['type'];
 
-				try{
-				 mkdir("views/offer/$lastId/", 0755);
-			 }
-			 catch(Exception $e){
-				 $correct_params = false;
-			 }
+                $lastIdQuery = $this->db->prepare('SELECT id FROM offer ORDER BY id DESC LIMIT 1');
+                $lastIdQuery->execute();
+                $lastId = $lastIdQuery->fetch();
+                $lastId = $lastId[0];
+                $lastId++;
 
+                $offerPath = "views/offer/$lastId/";
 
-		   $lastPhotoId = 1;
-			 $photoCounter = 0;
+                 try{
+                     mkdir($offerPath, 0755);
+                 }
+                 catch(Exception $e){
+                     $correct_params = false;
+                 }
 
-				for($i=1; $i<6; $i++){
-					if(empty($_FILES["img".$i]["tmp_name"]))
-					 break;
-					$photoCounter++;
-				}
+                $lastPhotoId = 1;
+                $photoCounter = 0;
+                $uploadOk = 1;
 
+                if($ifbuy == 2){
 
-				 for($i=1;$i<($photoCounter+1);$i++){
-						 $type = array();
+                    $categoryName = $this->db->prepare('SELECT * FROM categories where  id = :id');
+                    $categoryName->bindValue(':id', $_POST['category'], PDO::PARAM_INT);
+                    $categoryName->execute();
 
-						 $type = explode(".", basename($_FILES["img".$i]["name"]));
-						 $imageFileType = $type[1];
-
-						 $check = getimagesize($_FILES["img".$i]["tmp_name"]);
-						 if($check !== false) {
-								 $uploadOk = 1;
-						 } else {
-								 $err = $err . "<br/>Zdjęcie " . $i . " nie jest obrazkiem.";
-								 $uploadOk = 0;
-								 break;
-						 }
-
-				 if ($_FILES["img".$i]["size"] > 500000) {
-						 $err = $err . "<br/>Twoje obrazki są zbyt duże (limit to 5MB).";
-						 $uploadOk = 0;
-				 }
-				 // Allow certain file formats
-				 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-				 && $imageFileType != "gif" ) {
-						 $err = $err . "<br/>Dopuszczalny format obrazka to png, jpg, jpeg, gif.";
-						 $uploadOk = 0;
-				 }
-
-			 }
+                    $catName = $categoryName->fetch()['icon_path'];
+                    copy("public/images/buy.jpg", $offerPath."img1.jpg");
+                    copy($catName, $offerPath."img2.jpg");
+                    $photoCounter = 2;
+                }
+                else {
 
 
-			 	if($photoCounter < 2){
-			 			 $err = $err . "</br> Dodaj minimum dwa obrazki!";
-						 $uploadOk = 0;
-			 	 }
+                    for ($i = 1; $i < 6; $i++) {
+                        if (empty($_FILES["img" . $i]["tmp_name"]))
+                            break;
+                        $photoCounter++;
+                    }
 
 
+                    for ($i = 1; $i < ($photoCounter + 1); $i++) {
+                        $type = array();
 
-				 if($uploadOk == 0){
-					 $correct_params = false;
+                        $type = explode(".", basename($_FILES["img" . $i]["name"]));
+                        $imageFileType = $type[1];
 
-					try{
-						rmdir("views/offer/$lastId/");
-					}
-						catch(Exception $e){
-					}
+                        $check = getimagesize($_FILES["img" . $i]["tmp_name"]);
+                        if ($check !== false) {
+                            $uploadOk = 1;
+                        } else {
+                            $err = $err . "<br/>Zdjęcie " . $i . " nie jest obrazkiem.";
+                            $uploadOk = 0;
+                            break;
+                        }
 
-				 }
+                        if ($_FILES["img" . $i]["size"] > 500000) {
+                            $err = $err . "<br/>Twoje obrazki są zbyt duże (limit to 5MB).";
+                            $uploadOk = 0;
+                        }
+                        // Allow certain file formats
+                        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                            && $imageFileType != "gif") {
+                            $err = $err . "<br/>Dopuszczalny format obrazka to png, jpg, jpeg, gif.";
+                            $uploadOk = 0;
+                        }
 
-			 }
+                    }
+
+
+                    if ($photoCounter < 2) {
+                        $err = $err . "</br> Dodaj minimum dwa obrazki!";
+                        $uploadOk = 0;
+                    }
+
+
+                    if ($uploadOk == 0) {
+                        $correct_params = false;
+
+                        try {
+                            rmdir($offerPath);
+                        } catch (Exception $e) {
+                        }
+
+                    }
+                }
+
+			}
 
 			 if($correct_params && $uploadOk !=0 ){
 
@@ -203,7 +220,22 @@ class Addoffer_Model extends Model {
 					for($i=1;$i<($photoCounter+1);$i++){
 						 $target_file = "views/offer/$lastId/img".$lastPhotoId.".jpg";
 
-						if (move_uploaded_file($_FILES["img".$i]["tmp_name"], $target_file)) {
+						if($ifbuy == 2){
+                             $picQuery->bindValue(':description', $lastId, PDO::PARAM_STR);
+                             $picQuery->bindValue(':link', "img".$i.".jpg", PDO::PARAM_INT);
+                             $picQuery->execute();
+
+                             $pictureQuery = $this->db->prepare('SELECT id FROM picture WHERE description=:description ORDER BY id DESC');
+                             $pictureQuery->bindValue(':description', $lastId, PDO::PARAM_STR);
+                             $pictureQuery->execute();
+                             $result = $pictureQuery->fetch();
+
+                             $pictureQueryMan->bindValue(':id_pic', $result['id'], PDO::PARAM_STR);
+                             $pictureQueryMan->bindValue(':id_off', $lastId, PDO::PARAM_STR);
+                             $pictureQueryMan->execute();
+                             $lastPhotoId++;
+						}
+						else if (move_uploaded_file($_FILES["img".$i]["tmp_name"], $target_file)) {
 
 								echo "The file ". basename( $_FILES["img".$i]["name"]). " has been uploaded.";
 								$picQuery->bindValue(':description', $lastId, PDO::PARAM_STR);

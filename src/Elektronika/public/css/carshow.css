@@ -403,6 +403,41 @@ A.userpanel-link-showmore:hover{
   margin: 0 auto;
 }
 
+.col-centered{
+  margin: 0 auto;
+}
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price-type2{
+  margin-left: auto;
+}
+
+.radiofix {
+  right: 5.5vw;
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+  .radiofix {
+    right: 11vw;
+  }
+}
 
 .btn-userpanel-settings{
   color: #fff;

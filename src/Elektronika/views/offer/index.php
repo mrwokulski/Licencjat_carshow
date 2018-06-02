@@ -30,12 +30,15 @@
 				        </div>
 				        <div class="col-md-6">
 				        	<div style="margin: 0 ;">
-				        		<?php 				        						        		
 
-				        		if($this->status == 0)
-				        			echo '<a href="'.URL.'favourite/addFromOffer/'.$id.'"> <img src="'.URL.'public/images/favicon_0.png" style="width: 30%; height: 30%; margin-left: auto; margin-right: auto; display: block;"/> </a>';
-				        		else
-				        			echo '<a href="'.URL.'favourite/addFromOffer/'.$id.'"> <img src="'.URL.'public/images/favicon.png" style="width: 30%; height: 30%; margin-left: auto; margin-right: auto; display: block;"/> </a>';
+				        		<?php
+                                if(!empty(Session::get('log')) && View::showArrayValue('log',6) != $this->id ){
+
+                                    if($this->status == 0)
+                                        echo '<a href="'.URL.'favourite/addFromOffer/'.$id.'"> <img src="'.URL.'public/images/favicon_0.png" style="width: 30%; height: 30%; margin-left: auto; margin-right: auto; display: block;"/> </a>';
+                                    else
+                                        echo '<a href="'.URL.'favourite/addFromOffer/'.$id.'"> <img src="'.URL.'public/images/favicon.png" style="width: 30%; height: 30%; margin-left: auto; margin-right: auto; display: block;"/> </a>';
+                                }
 				        		?>
 
 				        	</div>

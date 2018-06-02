@@ -30,5 +30,11 @@ class Index_Model extends Model {
 		return $settings;
 
 	}
+	
+	public function archiveOffers(){
+
+        $offerQuery = $this->db->prepare('UPDATE offer SET actual = 0 WHERE DATEDIFF(NOW(), date_added)> 30 ;');
+        $offerQuery->execute();
+    }
 
 }
