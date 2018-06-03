@@ -6,6 +6,7 @@ class Index_Model extends Model {
 		parent::__construct();
 	}
 
+
 	public function sitePatch(){
 		echo URL;
 	}

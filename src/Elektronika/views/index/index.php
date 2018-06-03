@@ -35,7 +35,7 @@
 
           <div class="row" style="padding-top: 10px;">
             <p style="padding-left: 5%;">Stan:</p>
-  	            <select class="form-control input-form-search" style="width:50%; margin-left: 13%;" name="state" value="<?php View::saveValue('er_state') ?>" placeholder="Stan">
+  	            <select class="form-control input-form-search" style="width:50%; margin-left: 13%;" name="state" value="<?php View::saveValue('er_state_index') ?>" placeholder="Stan">
   	              Stan przedmiotu oferty
                   <option value="4" selected>Wszystkie</option>
   	              <option value="1">Nowy</option>
@@ -46,23 +46,23 @@
 
         <div class="col-centered">
   				<div style="padding-top: 10px;">
-  					<input type="text" class="form-control input-form-search" name="maker" value="<?php View::saveValue('er_maker') ?>" placeholder="Marka">
+  					<input type="text" class="form-control input-form-search" name="maker" value="<?php View::saveValue('er_maker_index') ?>" placeholder="Marka">
   				</div>
   				<div style="padding-top: 10px;">
-  					<input type="text" class="form-control input-form-search" name="model" value="<?php View::saveValue('er_model') ?>" placeholder="Model">
+  					<input type="text" class="form-control input-form-search" name="model" value="<?php View::saveValue('er_model_index') ?>" placeholder="Model">
   				</div>
   			</div>
       
         Cena:
         <div class="row">
           <div class="col-md-6">
-            <input type="text" class="form-control input-form-search" placeholder="Od" id="price1" name="price1" value="<?php View::saveValue('er_price1') ?>"/>
+            <input type="text" class="form-control input-form-search" placeholder="Od" id="price1" name="price1" value="<?php View::saveValue('er_price1_index') ?>"/>
           </div>
           <div class="col-md-6">
-            <input type="text" class="form-control input-form-search" placeholder="Do" id="price2" name="price2" value="<?php View::saveValue('er_price2') ?>"/>
+            <input type="text" class="form-control input-form-search" placeholder="Do" id="price2" name="price2" value="<?php View::saveValue('er_price2_index') ?>"/>
           </div>
           <div style="padding-top: 10px; width: 93%; margin: 0 auto;">
-  					<input type="text" class="form-control input-form-search" name="tags" value="<?php View::saveValue('er_tags') ?>" placeholder="Szukaj po tagach">
+  					<input type="text" class="form-control input-form-search" name="tags" value="<?php View::saveValue('er_tags_index') ?>" placeholder="Szukaj po tagach">
   				</div>
             <div class="col-md-12">
               Pokaż:

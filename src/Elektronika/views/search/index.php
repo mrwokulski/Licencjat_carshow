@@ -18,13 +18,13 @@
 					              </div>
 					            </div>
 
-						            <select class="form-control btn btn-secondary btn-userpanel-addoffer"  style="margin: unset; width: 33%;" name="type" value="<?php View::saveValue('er_type') ?>" >
+						            <select class="form-control btn btn-secondary btn-userpanel-addoffer"  style="margin: unset; width: 33%;" name="type" value="<?php View::saveValue('er_type_index') ?>" >
 						              Rodzaj ogłoszenia
 						              <option value="1" selected>Sprzedaży</option>
 						              <option value="2">Kupna</option>
 						            </select>
 
-					  	            <select class="form-control btn btn-secondary btn-userpanel-addoffer" style="margin: unset; width: 33%;"  name="state" value="<?php View::saveValue('er_state') ?>" placeholder="Stan">
+					  	            <select class="form-control btn btn-secondary btn-userpanel-addoffer" style="margin: unset; width: 33%;"  name="state" value="<?php View::saveValue('er_state_index') ?>" placeholder="Stan">
 
 					  	              Stan przedmiotu oferty
 					                  <option value="4" selected>Wszystkie</option>
@@ -37,10 +37,10 @@
 
 				        <div class="row row-margin" style="padding-top: 10px;">
 				  				<div style="width: 33%;">
-				  					<input type="text" class="form-control input-form-search" name="maker" value="<?php View::saveValue('er_maker') ?>" placeholder="Marka">
+				  					<input type="text" class="form-control input-form-search" name="maker" value="<?php View::saveValue('er_maker_index') ?>" placeholder="Marka">
 				  				</div>
 				  				<div style="width: 33%;">
-				  					<input type="text" class="form-control input-form-search" name="model" value="<?php View::saveValue('er_model') ?>" placeholder="Model">
+				  					<input type="text" class="form-control input-form-search" name="model" value="<?php View::saveValue('er_model_index') ?>" placeholder="Model">
 
 				  				</div>
 				  		</div>
@@ -49,15 +49,15 @@
 
 				        <div class="row row-margin">
 				            <div style="width: 33%;">
-				            	<input type="text" class="form-control input-form-search" placeholder="Od" id="price1" name="price1" value="<?php View::saveValue('er_price1') ?>"/>
+				            	<input type="text" class="form-control input-form-search" placeholder="Od" id="price1" name="price1" value="<?php View::saveValue('er_price1_index') ?>"/>
 				            </div>
 					        <div style="width: 33%;">
-					            <input type="text" class="form-control input-form-search" placeholder="Do" id="price2" name="price2" value="<?php View::saveValue('er_price2') ?>"/>
+					            <input type="text" class="form-control input-form-search" placeholder="Do" id="price2" name="price2" value="<?php View::saveValue('er_price2_index') ?>"/>
 					        </div>
 				        </div>
 
 				         <div style="padding-top: 10px; width: 100%; margin: 0 auto;">
-				  				<input type="text" class="form-control input-form-search" name="tags" value="<?php View::saveValue('er_tags') ?>" placeholder="Szukaj w opisie i tytule">
+				  				<input type="text" class="form-control input-form-search" name="tags" value="<?php View::saveValue('er_tags_index') ?>" placeholder="Szukaj w opisie i tytule">
 				  		</div>				        
 
 				        <div class="row row-margin">
@@ -107,8 +107,7 @@
 									<div>			
 										<div style="text-align: center;">'. $offers[$i]["maker"] .' '. $offers[$i]["model"]  .'</div>
 										<div style="text-align: center;"> '. $description .'  </div>
-										<div style="text-align: center;"> Miasto </div>
-										<div style="text-align: center;"> <a href="'.URL.'favourite/add/'.$offers[$i][0].'">Dodaj do ulubionych</a> </div>
+										<div style="text-align: center;">'. $offers[$i]["city"] .'</div>
 									</div>         
 								</div>
 					         </div>';

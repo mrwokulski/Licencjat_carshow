@@ -89,10 +89,5 @@ final class ExampleTest extends TestCase
 
         $this->assertContains("<!DOCTYPE html>", $render);
     }
-
-
-
-
-
-
+    
 }

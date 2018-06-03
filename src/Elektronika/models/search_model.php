@@ -6,9 +6,17 @@ class Search_Model extends Model {
 		parent::__construct();
 	}
 
+
+    private function saveValue(){
+
+        $keys = array("type", "state", "category", "maker", "model", "tags", "price1", "price2");
+        for($i = 0; $i < count ($keys); $i++){
+            if(!empty($_POST[$keys[$i]]))
+                Session::set('er_'.$keys[$i].'_index', $_POST[$keys[$i]]);
+        }
+    }
+
 	public function search(){
-		
-		$keys = array("type", "state", "category", "maker", "model", "tags", "price1", "price2");
 
 		$type = filter_input(INPUT_POST, 'type');
 		$category = filter_input(INPUT_POST, 'category');
@@ -107,6 +115,7 @@ class Search_Model extends Model {
 		Session::init();
 		Session::set('offers', $uniqueOffers);
 
+        $this->saveValue();
 		header('location: '.URL.'search/');
 
 	}

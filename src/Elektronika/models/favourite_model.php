@@ -23,7 +23,7 @@ class Favourite_Model extends Model {
 	public function getFavs(){
 		
 		$me = View::showArrayValue('log',6);
-		$favQuery = $this->db->prepare("SELECT DISTINCT o.* FROM favourite f LEFT JOIN offer o ON f.id_offer=o.id WHERE o.user = :id_user;");
+		$favQuery = $this->db->prepare("SELECT DISTINCT o.* FROM favourite f LEFT JOIN offer o ON f.id_offer=o.id WHERE o.user = :id_user AND o.actual = 1;");
 		$favQuery->bindValue("id_user", $me, PDO::PARAM_INT);
 		$favQuery->execute();
 		$favs = $favQuery->fetchAll();
