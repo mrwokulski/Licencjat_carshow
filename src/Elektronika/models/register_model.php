@@ -24,8 +24,8 @@ class Register_Model extends Model {
 		 $labels = array("Login", "Hasło", "Email", "Imię", "Nazwisko");
 
 		 for($i = 0; $i < count ($keys); $i++){
-			 if (strlen($_POST[$keys[$i]]) < 6  || strlen($_POST[$keys[$i]]) > 30){
-		    	$err = $err . '<br/>' . $labels[$i] . " - długość musi znajdować się w przedziale od 6 do 30 znaków ";
+			 if (strlen($_POST[$keys[$i]]) < 4  || strlen($_POST[$keys[$i]]) > 30){
+		    	$err = $err . '<br/>' . $labels[$i] . " - długość musi znajdować się w przedziale od 4 do 30 znaków ";
 		    	$correct_params = false;
 		    }
 		}

@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d7df606-3dd1-4f38-a836-1c16b3ff897a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/config/paths.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/config/paths.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/controllers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/controllers/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/libs/Carshow.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/libs/Carshow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elektronika/controllers/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/controllers/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elektronika/libs/Offer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elektronika/models/favourite_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/models/favourite_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elektronika/models/index_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/models/index_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/public/css/carshow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/public/css/carshow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/public/js/ajaxCategories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/public/js/ajaxCategories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/public/js/ajaxOffers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/public/js/ajaxOffers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elektronika/models/register_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/models/register_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elektronika/models/search_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/models/search_model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elektronika/views/favourite/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/views/favourite/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elektronika/views/index/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/views/index/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elektronika/views/offer/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/views/offer/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elektronika/views/userpanel/addOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/views/userpanel/addOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elektronika/views/search/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elektronika/views/search/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/expampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/expampleTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,70 +42,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php">
+      <file leaf-file-name="logout_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Elektronika/models/logout_model.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="register_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Elektronika/models/register_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="322">
+              <caret line="27" column="102" selection-start-line="27" selection-start-column="102" selection-end-line="27" selection-end-column="102" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/views/index/index.php">
+      <file leaf-file-name="addoffer_model.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Carshow.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/Carshow.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myoffers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myoffers_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Elektronika/models/index_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            <state relative-caret-position="324">
+              <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -125,30 +75,43 @@
       <find>addoffer</find>
       <find>hide</find>
       <find>type2form</find>
+      <find>save</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Elektronika/libs/DbConfig.php" />
-        <option value="$PROJECT_DIR$/tests/expampleTest.php" />
-        <option value="$PROJECT_DIR$/src/Elektronika/views/favourite/index.php" />
-        <option value="$PROJECT_DIR$/src/Elektronika/views/offer/index.php" />
         <option value="$PROJECT_DIR$/src/Elektronika/public/js/ajaxOffers.js" />
         <option value="$PROJECT_DIR$/src/Elektronika/public/css/carshow.css" />
         <option value="$PROJECT_DIR$/src/Elektronika/public/js/ajaxCategories.js" />
         <option value="$PROJECT_DIR$/src/Elektronika/views/userpanel/addOffer.php" />
-        <option value="$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php" />
         <option value="$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php" />
         <option value="$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php" />
-        <option value="$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php" />
-        <option value="$PROJECT_DIR$/src/Elektronika/models/index_model.php" />
         <option value="$PROJECT_DIR$/src/Elektronika/controllers/index.php" />
-        <option value="$PROJECT_DIR$/src/Elektronika/views/index/index.php" />
         <option value="$PROJECT_DIR$/src/Elektronika/libs/Carshow.php" />
+        <option value="$PROJECT_DIR$/tests/databaseTest.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/views/index/index.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/models/index_model.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/models/search_model.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/views/favourite/index.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/libs/Offer.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/models/favourite_model.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/views/offer/index.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/views/search/index.php" />
+        <option value="$PROJECT_DIR$/tests/expampleTest.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/controllers/logout.php" />
+        <option value="$PROJECT_DIR$/src/Elektronika/models/register_model.php" />
       </list>
     </option>
   </component>
@@ -234,7 +197,7 @@
               <item name="Licencjat_carshow" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Elektronika" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Licencjat_carshow" type="b2602c69:ProjectViewProjectNode" />
@@ -256,7 +219,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Elektronika" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="offer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Licencjat_carshow" type="b2602c69:ProjectViewProjectNode" />
@@ -264,7 +227,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Elektronika" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="myoffers" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Licencjat_carshow" type="b2602c69:ProjectViewProjectNode" />
@@ -319,7 +282,19 @@
       <workItem from="1527872301591" duration="9842000" />
       <workItem from="1527939767683" duration="3677000" />
       <workItem from="1527947011655" duration="740000" />
+      <workItem from="1527948219486" duration="2505000" />
+      <workItem from="1527951145647" duration="6466000" />
+      <workItem from="1528026304253" duration="126000" />
+      <workItem from="1528026468962" duration="2059000" />
     </task>
+    <task id="LOCAL-00001" summary="Del database">
+      <created>1527948327360</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527948327360</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -331,7 +306,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14259000" />
+    <option name="totallyTimeSpent" value="25415000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -364,47 +339,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Del database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Del database" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/admin_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3247">
-          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/models/index_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -416,11 +355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -459,13 +393,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/login.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8dba984d-7e3f-4839-84ff-2a8a7ac81f29/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/login_model.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/DbConfig.php">
@@ -475,46 +403,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/databaseTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/views/register/index.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/favourite/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/expampleTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/public/js/ajaxOffer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -551,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="129" selection-start-line="25" selection-start-column="129" selection-end-line="25" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/views/userpanel/addOffer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-977">
@@ -572,18 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/offer/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/offer_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/models/admin_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -596,52 +470,72 @@
         <state relative-caret-position="-459" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php">
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="576">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/admin.php">
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/Carshow.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="62" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/databaseTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="78" selection-start-line="78" selection-end-line="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/views/index/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="558">
+          <caret line="58" column="158" selection-start-line="58" selection-start-column="158" selection-end-line="58" selection-end-column="158" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/myoffers/index.php">
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/Offer.php" />
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/favourite/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="414">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php">
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/offer/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="702">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/index_model.php">
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/views/search/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="31" lean-forward="true" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        <state relative-caret-position="1962">
+          <caret line="109" column="104" selection-start-line="109" selection-start-column="104" selection-end-line="109" selection-end-column="104" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/expampleTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/login.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/index.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -650,10 +544,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Elektronika/libs/Carshow.php">
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/favourite.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/error.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="162">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="62" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/addoffer.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/userpanel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/search.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/register.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/myoffers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/favourite_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="153" selection-start-line="25" selection-start-column="153" selection-end-line="25" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/index_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/login_model.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/myoffers_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/offer_model.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/search_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="115" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/controllers/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/userpanel_model.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/logout_model.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/register_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="27" column="102" selection-start-line="27" selection-start-column="102" selection-end-line="27" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Elektronika/models/addoffer_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
         </state>
       </provider>
     </entry>

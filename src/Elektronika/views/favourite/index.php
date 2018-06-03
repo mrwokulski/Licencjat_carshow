@@ -46,7 +46,7 @@
 									<div>
 										<div style="text-align: center;">'. $offers[$i]["maker"] .' '. $offers[$i]["model"]  .'</div>
 										<div style="text-align: center;"> '. $description .'  </div>
-										<div style="text-align: center;"> Miasto </div>
+										<div style="text-align: center;"> '.$offers[$i]["city"].'</div>
 									
 									</div>
 								</div>
